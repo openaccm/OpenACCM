@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+        <!--一级菜单-->
+        <menuitem name="智物联"
+            id="root_menu_asset_1000" sequence="1000"
+            web_icon="asset_core,static/description/icon.png"/>
+
+        <!--二级菜单-->
+        <menuitem name="概览"
+            id="sub_menu_asset_team_1009"
+            action="action_asset_team"
+            parent="root_menu_asset_1000" sequence="0"/>
+
+        <!--二级菜单-->
+        <menuitem name="设备档案"
+            id="sub_menu_asset_core_1010"
+            action="action_asset_core_server"
+            parent="root_menu_asset_1000" sequence="1"/>
+
+        <!--二级菜单-->
+        <menuitem name="日志管理"
+            id="sub_menu_asset_core_line_1020"
+            action="action_asset_core_line"
+            parent="root_menu_asset_1000" sequence="3"/>
+
+        <!--二级菜单-->
+        <menuitem name="工单管理"
+            id="sub_work_sheet_management_1025"
+            action="action_work_sheet_management"
+            parent="root_menu_asset_1000" sequence="5"/>
+
+        <!--二级菜单-->
+        <menuitem name="告警管理"
+            id="action_view_mail_mail_sub_menu"
+            action="mail.action_view_mail_mail"
+            parent="root_menu_asset_1000" sequence="7"
+            groups="base.user_admin"/>
+
+        <!--二级菜单-->
+        <menuitem name="采购管理"
+            id="sub_menu_asset_buy_request_1030"
+            parent="root_menu_asset_1000" sequence="11"/>
+        <menuitem name="采购订单"
+            id="asset_buy_order_menu"
+            action="buy.buy_order_action"
+            parent="sub_menu_asset_buy_request_1030" sequence="3"/>
+        <menuitem name="采购入库单"
+            id="asset_buy_receipt_menu"
+            action="buy.buy_receipt_action"
+            parent="sub_menu_asset_buy_request_1030" sequence="5"/>
+        <menuitem name="采购退货单"
+            id="asset_buy_return_menu"
+            action="buy.buy_return_action"
+            parent="sub_menu_asset_buy_request_1030" sequence="6"/>
+        <menuitem name="采购变更单"
+            id="asset_buy_adjust_menu"
+            action="buy.buy_adjust_action"
+            parent="sub_menu_asset_buy_request_1030" sequence="11"/>
+        <menuitem name="备件库存"
+            id="report_stock_balance_menu"
+            action="warehouse.report_stock_balance_action"
+            parent="sub_menu_asset_buy_request_1030" sequence="15"/>
+        <menuitem name="备件计划" id="asset_buy_request_menu"
+            action="scm.stock_request_action"
+            parent="sub_menu_asset_buy_request_1030" sequence="21"/>
+
+        <!--二级菜单-->
+        <menuitem name="知识库"
+            id="sub_menu_knowledge_1040"
+            parent="root_menu_asset_1000" sequence="20"/>
+        <!--三级菜单-->
+        <menuitem name='知识库'
+            id='action_page_menu'
+            parent='sub_menu_knowledge_1040'
+            action='document_page.action_page' sequence='1'/>
+        <menuitem name='类别'
+            id='action_category_menu'
+            parent='sub_menu_knowledge_1040'
+            action='document_page.action_category' sequence='3'/>
+        <menuitem name='页面历史'
+            id='action_history_menu'
+            parent='sub_menu_knowledge_1040'
+            action='document_page.action_history' sequence='5'/>
+        <menuitem name='设置'
+            id='action_knowledge_configuration_menu'
+            parent='sub_menu_knowledge_1040'
+            action='document_knowledge.action_knowledge_configuration' sequence='7'/>
+
+        <!--二级菜单-->
+        <menuitem name="主数据"
+            id="sub_asset_main_data_1020"
+            parent="root_menu_asset_1000" sequence="28"/>
+        <!--三级菜单-->
+        <menuitem name='部门'
+            id='staff_department_inherit_menu'
+            parent='sub_asset_main_data_1020'
+            action='staff.staff_department_action' sequence='3'/>
+        <menuitem name='员工'
+            id='staff_inherit_menu'
+            parent='sub_asset_main_data_1020'
+            action='staff.staff_action' sequence='5'/>
+        <menuitem name='设备标签'
+            id='asset_tag_menu'
+            parent='sub_asset_main_data_1020'
+            action='action_asset_tag' sequence='10'/>
+        <menuitem name='工单分类'
+            id='asset_task_type_menu'
+            parent='sub_asset_main_data_1020'
+            action='action_asset_task_type' sequence='10'/>
+        <menuitem name='任务'
+            id='asset_task_stage_menu'
+            parent='sub_asset_main_data_1020'
+            action='task.action_task' sequence='13'/>
+        <menuitem name='设备管理团队'
+            id='asset_team_menu'
+            parent='sub_asset_main_data_1020'
+            action='action_asset_team_00' sequence='15'/>
+
+
+        <!--二级菜单-->
+        <menuitem name="系统管理"
+            id="sub_menu_system_mgr_1050"
+            parent="root_menu_asset_1000" sequence="30" groups="base.group_no_one"/>
+        <!--数据备份-->
+        <menuitem name="备份"
+            id="auto_backup_menu"
+            parent="sub_menu_system_mgr_1050" sequence="1" groups="base.group_no_one"/>
+            <menuitem name="数据备份"
+            id="auto_backup_sub_menu"
+            action="auto_backup.action_backup"
+            parent="auto_backup_menu" sequence="1" groups="base.group_no_one"/>
+        <menuitem name="审计"
+            id="menu_group_system_audit"
+            parent="sub_menu_system_mgr_1050" sequence="11" groups="base.group_no_one"/>
+        <menuitem name="规则"
+            id="action_auditlog_rule_menu"
+            action="auditlog.action_auditlog_rule_tree"
+            parent="menu_group_system_audit" sequence="1" groups="base.group_no_one"/>
+        <menuitem name="日志"
+            id="action_auditlog_log_menu"
+            action="auditlog.action_auditlog_log_tree"
+            parent="menu_group_system_audit" sequence="3" groups="base.group_no_one"/>
+        <menuitem name="日志明细"
+            id="action_auditlog_line_menu"
+            action="auditlog.action_auditlog_line"
+            parent="menu_group_system_audit" sequence="5" groups="base.group_no_one"/>
+        <menuitem name="用户会话"
+            id="action_auditlog_http_session_menu"
+            action="auditlog.action_auditlog_http_session_tree"
+            parent="menu_group_system_audit" sequence="7" groups="base.group_no_one"/>
+        <menuitem name="HTTP请求"
+            id="action_auditlog_http_request_menu"
+            action="auditlog.action_auditlog_http_request_tree"
+            parent="menu_group_system_audit" sequence="9" groups="base.group_no_one"/>
+        <menuitem name="邮件"
+            id="mail_mail_menu"
+            parent="sub_menu_system_mgr_1050" sequence="11" groups="base.group_no_one"/>
+            <menuitem name="收件服务器"
+            id="action_email_server_sub_menu"
+            action="mail.action_email_server_tree"
+            parent="mail_mail_menu" sequence="3"
+            groups="base.group_no_one"/>
+            <menuitem name="发件服务器"
+            id="action_ir_mail_server_sub_menu"
+            action="base.action_ir_mail_server_list"
+            parent="mail_mail_menu" sequence="5"
+            groups="base.group_no_one"/>
+        <menuitem name="自动化"
+            id="ir_cron_act_menu"
+            parent="sub_menu_system_mgr_1050" sequence="15"
+            groups="base.group_no_one"/>
+            <menuitem name="安排的动作"
+            id="ir_cron_act_sub_menu"
+            action="base.ir_cron_act"
+            parent="ir_cron_act_menu" sequence="1"
+            groups="base.group_no_one"/>
+    </data>
+</odoo>

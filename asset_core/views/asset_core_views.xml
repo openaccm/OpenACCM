@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!--产品设备管理模块-->
+    <record id="view_asset_core_tree" model="ir.ui.view">
+        <field name="name">asset.core.tree</field>
+        <field name="model">asset.core</field>
+        <field name="arch" type="xml">
+            <tree string="设备档案" expand="context.get('expand', False)" multi_edit="1">
+                <header>
+                    <button name="%(work_sheet_wizard_action)d" type="action" class="btn-primary" string="批量派工单"/>
+                </header>
+                <field name="state"/>
+                <field name="ma_roll"
+                    decoration-info="ma_roll == 'normal'"
+                    decoration-warning="ma_roll == 'alarm'"
+                    decoration-danger="ma_roll == 'abnormal'"
+                    decoration-success="ma_roll == 'disconnect'"
+                    decoration-muted="ma_roll == 'closed'"
+                    widget="badge" optional="show" class="text-dark"/>
+                <field name="name"/>
+                <field name="error_detail" optional="show"/>
+                <field name="department_id" optional="show"/>
+                <field name="asset_tag_ids" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="user_id" optional="show"/>
+                <field name="depart_id" optional="show"/>
+                <field name="maintenance_team_id" optional="show"/>
+                <field name="active" optional="hide"/>
+                <field name="default_code" optional="hide"/>
+                <field name="barcode" optional="hide"/>
+                <field name="create_uid" string="创建人" optional="hide"/>
+                <field name="create_date" string="创建时间" optional="hide"/>
+                <field name="write_uid" string="修改人" optional="hide"/>
+                <field name="write_date" string="修改时间" optional="hide"/>
+                <button name="action_view_task"
+                        string="查工单"
+                        class="oe_stat_button"
+                        icon="fa-search"
+                        type="object">
+                    </button>
+                <button name="action_view_alarm"
+                        string="查日志"
+                        class="oe_stat_button"
+                        icon="fa-search"
+                        type="object">
+                    </button>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_asset_core_form" model="ir.ui.view">
+        <field name="name">asset.core.form</field>
+        <field name="model">asset.core</field>
+        <field name="arch" type="xml">
+            <form string="设备档案">
+                <header>
+                    <button name='btn_confirm' states='draft' type='object' string='确认' class='oe_highlight'/>
+					<button name='btn_draft' states='confirm,closed' type='object' string='撤销确认'/>
+                    <button name='btn_closed' states='draft' type='object' string='作废'/>
+                    <button name="%(work_sheet_wizard_action)d" type="action" states='confirm' class="btn-primary" string="派工单"/>
+                    <field name='state' widget='statusbar' options="{'clickable': '1'}" statusbar_visible="draft,confirm,closed"/>
+                    <field name="active" invisible="1"/>
+                    <field name="id" invisible="1"/>
+                    <field name="entries" invisible="1"/>
+                </header>
+                <sheet name="equipment_form">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_task"
+                            class="oe_stat_button"
+                            icon="fa-tasks"
+                            type="object">
+                            <field name="task_count" widget="statinfo" string="维检工单"/>
+                        </button>
+                        <button name="action_view_alarm"
+                            class="oe_stat_button"
+                            icon="fa-bell-o"
+                            type="object">
+                            <field name="alarm_count" widget="statinfo" string="运行日志"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="image_128" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name" string="设备"/>
+                        <h1>
+                            <div class="d-flex">
+                                <field name="priority" widget="priority" class="me-3"/>
+                                <field class="text-break" name="name"
+                                       attrs="{'required':[('state', 'in', ['draft', 'confirm'])]}"
+                                       placeholder="输入设备序列号、设备编号、设备名称等，要求全局唯一"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <style>
+                        div[name="options"] .o_field_boolean > div {
+                            margin-left: 10px;
+                            margin-right: 0px;
+                        }
+                    </style>
+                    <notebook>
+                        <page string="设备信息" name="equipment_information">
+                            <group string="设备信息">
+                                <group>
+                                    <field name="department_id"
+                                           options='{"no_create": True, "no_open": True}'
+                                           attrs="{'required':[('state', 'in', ['draft', 'confirm'])]}"/>
+                                    <field name="ma_roll" widget="radio"
+                                           options='{"no_create": True, "no_open": True, "horizontal": true}'
+                                           attrs="{'required':[('state', 'in', ['draft', 'confirm'])]}"/>
+                                    <field name="active_time"
+                                           attrs="{'required':[('state', 'in', ['draft', 'confirm'])]}"/>
+                                    <field name="error_detail"
+                                           attrs="{'readonly':[('state', 'in', ['draft', 'confirm'])]}"/>
+                                    <field name="default_code" readonly="1" force_save="1"/>
+                                    <field name="barcode"/>
+                                </group>
+                                <group>
+                                    <field name="installation_position"
+                                           attrs="{'required':[('state', 'in', ['draft', 'confirm'])]}"/>
+                                    <field name="asset_tag_ids" widget="many2many_tags" placeholder="资产标签"/>
+                                    <field name="user_id"
+                                           options='{"no_create": True, "no_open": True}'
+                                           attrs="{'readonly':[('state', 'in', ['confirm', 'confirm'])]}"/>
+                                    <field name="job_id"/>
+                                    <field name="depart_id"/>
+                                    <field name="maintenance_team_id"
+                                           options='{"no_create": True, "no_open": True}'
+                                           attrs="{'readonly':[('state', 'in', ['confirm', 'confirm'])]}"/>
+                                </group>
+                            </group>
+                            <group string="内部说明">
+                                <field colspan="2" name="description" nolabel="1" placeholder="本说明仅供内部使用。"/>
+                            </group>
+                            <group string="流程说明">
+                                <group>
+                                    <field name="create_uid" string="创建人"/>
+                                    <field name="create_date" string="创建时间"/>
+                                </group>
+                                <group>
+                                    <field name="write_uid" string="修改人"/>
+                                    <field name="write_date" string="修改时间"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="设备日志">
+                            <group>
+                                <field name="line_ids" colspan="2" nolabel="1" context="{'entries':entries}">
+                                    <tree editable="bottom" default_order="alarm_time desc">
+                                        <field name="id" invisible="1"/>
+                                        <field name='sequence' readonly="1" force_save="1" optional="hide"/>
+                                        <field name="alarm_time" optional="show"/>
+                                        <field name="bill_id" optional="show"/>
+                                        <field name="ma_roll"
+                                           decoration-info="ma_roll == 'normal'"
+                                           decoration-warning="ma_roll == 'alarm'"
+                                           decoration-danger="ma_roll == 'abnormal'"
+                                           decoration-success="ma_roll == 'disconnect'"
+                                           decoration-muted="ma_roll == 'closed'"
+                                           widget="badge" optional="show" class="text-dark"/>
+                                        <field name="path_route" optional="show"/>
+                                        <field name="measure_point" optional="show"/>
+                                        <field name="head_line" optional="show"/>
+                                        <field name="numerical_value" optional="show"/>
+                                        <field name="percentage" optional="show"/>
+                                        <field name="error_detail" optional="show"/>
+                                        <field name="verification_date" optional="show"/>
+                                        <field name="confirmed_description" optional="show"/>
+                                        <field name="confirmed_by" optional="show"/>
+                                        <field name="task_id" optional="hide"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_asset_core_kanban" model="ir.ui.view">
+        <field name="name">asset.core.kanban</field>
+        <field name="model">asset.core</field>
+        <field name="arch" type="xml">
+            <kanban sample="1">
+                <field name="name"/>
+                <field name="color"/>
+                <field name="department_id"/>
+                <field name="maintenance_team_id"/>
+                <field name="user_id"/>
+                <field name="installation_position"/>
+                <field name="active_time"/>
+                <field name="ma_roll"/>
+                <field name="state"/>
+                <field name="activity_ids" />
+                <field name="activity_state" />
+                <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+                <templates>
+                    <t t-name="kanban-tooltip">
+                        <ul class="oe_kanban_tooltip">
+                            <li t-if="record.department_id.raw_value"><b>设备归属部门:</b> <t t-esc="record.department_id.value"/></li>
+                            <li t-if="record.maintenance_team_id.raw_value"><b>设备管理团队:</b> <t t-esc="record.maintenance_team_id.value"/></li>
+                            <li t-if="record.ma_roll.raw_value"><b>设备运行状态:</b> <t t-esc="record.ma_roll.value"/></li>
+                            <li t-if="record.state.raw_value"><b>设备档案状态:</b> <t t-esc="record.state.value"/></li>
+                        </ul>
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="{{!selection_mode ? 'oe_kanban_color_' + kanban_getcolor(record.color.raw_value) : ''}} oe_kanban_card oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown" t-if="!selection_mode">
+                                <a role="button" class="dropdown-toggle o-no-caret btn" data-bs-toggle="dropdown" data-bs-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                    <span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">编辑...</a></t>
+                                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">删除</a></t>
+                                    <div role="separator" class="dropdown-divider"/>
+                                    <div role="separator" class="dropdown-header">颜色</div>
+                                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                </div>
+                            </div>
+                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                <div class="o_kanban_record_top">
+                                    <b class="o_kanban_record_title"><field name="name"/><small><span t-if="record.installation_position.raw_value"> (<field name="installation_position"/>)</span></small></b>
+                                </div>
+                                <div class="o_kanban_record_top">
+                                    <b class="o_kanban_record_title">活跃: <field name="active_time"/></b>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <div class="badge text-bg-danger" t-if="!selection_mode and record.ma_roll.value" >
+                                            <t t-out="record.ma_roll.value"/>
+                                        </div>
+                                        <div class="badge text-bg-info" t-if="!selection_mode and record.state.value" >
+                                            <t t-out="record.state.value"/>
+                                        </div>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <div class="o_kanban_inline_block" t-if="!selection_mode">
+                                            <field name="activity_ids" widget="kanban_activity" />
+                                        </div>
+                                        <field name="user_id" widget="many2one_avatar_user"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_asset_core_search" model="ir.ui.view">
+        <field name="name">设备档案</field>
+        <field name="model">asset.core</field>
+        <field name="arch" type="xml">
+            <search string="设备档案">
+                <filter name="act_false" string="已归档" domain="[('active','=',False)]"/>
+                <filter name="act_all" string="所有单据" domain="['|',('active','=',True),('active','=',False)]"/>
+                <separator/>
+                <filter string="今日数据" name="today" domain="[('create_date', '&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="本月数据" name="month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="上月数据" name="month2" domain="[('create_date','&lt;', time.strftime('%Y-%m-01')),('create_date','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="本年数据" name="year" domain="[('create_date','&lt;=', time.strftime('%Y-12-31')),('create_date','&gt;=', time.strftime('%Y-01-01'))]"/>
+                <separator/>
+                <filter string="正常" name="normal" domain="[('ma_roll', '=', 'normal')]"/>
+                <filter string="告警" name="alarm" domain="[('ma_roll', '=', 'alarm')]"/>
+                <filter string="异常" name="abnormal" domain="[('ma_roll', '=', 'abnormal')]"/>
+                <filter string="离线" name="disconnect" domain="[('ma_roll', '=', 'disconnect')]"/>
+                <filter string="关闭" name="closed" domain="[('ma_roll', '=', 'closed')]"/>
+                <separator/>
+                <field name="name"/>
+                <field name="ma_roll"/>
+                <separator/>
+                <group expand="1" string="分组">
+                    <filter string="状态" name="group_ma_roll" context="{'group_by':'ma_roll'}" />
+                </group>
+                <!--增加设备视图左侧树状菜单-->
+                <searchpanel>
+                    <field name="company_id" expand="1" groups="base.group_multi_company" icon="fa-building" enable_counters="1"/>
+                    <field name="depart_id" limit="1000" expand="1" icon="fa-users" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_asset_core_pivot" model="ir.ui.view">
+        <field name="name">asset.core.pivot</field>
+        <field name="model">asset.core</field>
+        <field name="arch" type="xml">
+            <pivot string="设备档案">
+                <field name="name" type="row"/>
+                <field name="department_id" type="col"/>
+                <field name="ma_roll" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_asset_core_graph" model="ir.ui.view">
+        <field name="name">asset.core.graph</field>
+        <field name="model">asset.core</field>
+        <field name="arch" type="xml">
+            <graph string="设备档案" type="pie" order="ma_roll">
+                <field name="name" type="row"/>
+                <field name="department_id" type="col"/>
+                <field name="ma_roll" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_asset_core_calendar">
+        <field name="name">asset.core.calendar</field>
+        <field name="model">asset.core</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar string="Calendar View" date_start="create_date" event_limit="5" mode="year">
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="ma_roll"/>
+                <field name="error_detail"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="action_asset_core_server" model="ir.actions.act_window">
+        <field name="name">设备档案</field>
+        <field name="res_model">asset.core</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban,tree,form,pivot,graph,calendar</field>
+        <!--默认分组-->
+        <!--<field name="context" eval="{'search_default_group_state': 1}"/>-->
+        <field name="search_view_id" ref="view_asset_core_search"/>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_asset_core_kanban')}),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('view_asset_core_tree')}),
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('view_asset_core_form')}),
+                  (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_asset_core_pivot')}),
+                  (0, 0, {'view_mode': 'graph', 'view_id': ref('view_asset_core_graph')}),
+                  (0, 0, {'view_mode': 'calendar', 'view_id': ref('view_asset_core_calendar')}),
+                  ]"/>
+    </record>
+
+    <!--自定义按钮动作-,批量设备批量确认 OK-->
+    <!-- 执行服务端python代码 -->
+    <record model="ir.actions.server" id="action_asset_core_batch_confirm">
+        <field name="name">批量确认</field>
+        <field name="state">code</field>
+        <field name="binding_type">action</field>
+        <field name="binding_view_types">list</field>
+        <field name="model_id" ref="asset_core.model_asset_core"/>
+        <field name="binding_model_id" ref="asset_core.model_asset_core"/>
+        <field name="code">action=records.btn_confirm()</field>
+    </record>
+</odoo>

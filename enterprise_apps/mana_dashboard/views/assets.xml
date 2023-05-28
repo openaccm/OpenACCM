@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="mana_dashboard_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+
+                <!-- css -->
+                <link rel="stylesheet" type="text/css" href="/web/static/lib/daterangepicker/daterangepicker.css" />
+                
+                <link rel="stylesheet" type="text/css" href="/mana_dashboard/static/css/mana_dashboard.scss" />
+                <link rel="stylesheet" type="text/css" href="/mana_dashboard/static/css/editor.min.css" />
+                <link rel="stylesheet" type="text/css" href="/mana_dashboard/static/css/card_style.scss" />
+                <link rel="stylesheet" type="text/css" href="/mana_dashboard/static/css/layout.scss" />
+
+                <!-- libs -->
+                <script type="application/javascript" src="/mana_dashboard/static/libs/editor/editor.min.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/libs/echarts/echarts.min.js" />
+
+                <link rel="stylesheet" type="text/css" href="/mana_dashboard/static/libs/tabulator/css/tabulator.min.css" />
+                <link rel="stylesheet" type="text/css" href="/mana_dashboard/static/libs/tabulator/css/tabulator_bootstrap4.css" />
+                
+                <!-- Mana2ManyOne -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/mana_many2one.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/preview_widget/preview_widget.js" />
+
+                <!-- tabulator -->
+                <script type="application/javascript" src="/mana_dashboard/static/libs/tabulator/js/tabulator.min.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/libs/bootstrap_blocks/blocks.min.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/libs/style_bg/style-bg.min.js" />
+
+                <!-- custom config base -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/mana_block_base.js" />
+
+                <!-- block regsitry -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/mana_block_registry.js" />
+
+                <!-- block icon -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/util/mana_icons.js" />
+
+                <!-- mana config form -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/chart_config_form/chart_config_form.js" />
+
+                <!-- preset -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/editor_preset/editor_preset.js" />
+                
+                <!-- charts --> 
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_chart_util.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_chart_builder.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_pie_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_bar_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_line_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_radar_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_funnel_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_gauge_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_custom_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_scatter_chart.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_candlestick.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_sunburst_chart.js" />
+                <!-- <script type="application/javascript" src="/mana_dashboard/static/js/charts/mana_sankey_chart.js" /> -->
+
+                <!-- data source -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/data_source/mana_data_source.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/data_source/mana_record.js" />140
+                <script type="application/javascript" src="/mana_dashboard/static/js/data_source/mana_config.js" />
+
+                <!-- basic blocks -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/basic_blocks/mana_basic_blocks.js" />
+
+                <!-- action widget -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/action_widget/mana_action_block.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/action_widget/mana_action_widget.js" />
+
+                <!-- percentage -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/percentage_block/percentage_block.js" />
+
+                <!-- field_statistics -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/field_statistics/field_statistics.js" />
+
+                <!-- progress -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/progress_bar/progress_bar.js" />
+
+                <!-- svg block -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/svg_block/svg_block.js" />
+
+                <!-- date filter -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/util/mana_date_util.js" />
+
+                <!-- add to dashboard -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/send_to_dashboard/send_to_dashboard.js" />
+
+                <!-- resize -->
+                <script type="application/javascript" src="/mana_dashboard/static/libs/ResizeObserver/ResizeObserver.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/resize_manager/resize_manager.js" />
+
+                <!-- marquee -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/marquee/marquee.js" />
+
+                <!-- dialog -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/dialog/mana_dialog.js" />
+
+                <!-- dashboard list -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/mana_dashboard_list.js" />
+
+                <!-- content -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/content_block/content_block.js" />
+
+                <!-- kpi card -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/kpi_card/kpi_card.js" />
+
+                <!-- mana sub form view -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/sub_form_view/mana_quick_create_form_view.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/sub_form_view/mana_sub_form_view.js" />
+
+                <!-- chart traits -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/form_trait/form_trait.js" />
+
+                <!-- custom card -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/empty_card/empty_card.js" />
+                
+                <!-- standlone -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/standlone_field/mana_many2one_trait.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/standlone_field/mana_many2one_field.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/standlone_field/mana_many2many_field.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/standlone_field/mana_standlone_field.js" />
+
+                <!-- qweb list -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/qweb_block/qweb_block.js" />
+
+                <!-- qweb template -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/qweb_template/qweb_template.js" />
+
+                <!-- data table --> 
+                <script type="application/javascript" src="/mana_dashboard/static/js/data_table/data_table.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/custom_list/custom_list.js" />
+
+                <!-- counter -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/counter/counter.js" />
+
+                <!-- grid widget -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/grid_widget/grid_widget.js" />
+
+                <!-- timers and timer -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/timer_block/timer_block.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/timer_block/timers_block.js" />
+
+                <!-- mutex_toggle -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/mutex_toggle.js" />
+
+                <!-- dashboard -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/mana_dashboard.js" />
+
+                <!-- search -->
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_group.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_item.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_many2many.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_button.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_input.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_many2one.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_tab.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_select.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_time_range.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_option.js" />
+                <script type="application/javascript" src="/mana_dashboard/static/js/search/mana_search_date_time.js" />
+
+            </xpath>
+        </template>
+    </data>
+</odoo>
+

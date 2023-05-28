@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wx_approval_obj_view_tree_1915" model="ir.ui.view">
+            <field name="name">审批单据</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <tree string="审批单据" default_order="submit_time desc"
+                      expand="context.get('expand, false)" multi_edit="1">
+                    <field name="sp_no" optional="show"/>
+                    <field name="res_name" optional="show"/>
+                    <field name="res" optional="show"/>
+                    <field name="approval_id" optional="show"/>
+                    <field name="approval_state" optional="show"/>
+                    <field name="submit_user_id" optional="show"/>
+                    <field name="submit_time" optional="show"/>
+                    <field name="create_date" string="制单日期" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wx_approval_obj_view_form_1459" model="ir.ui.view">
+            <field name="name">审批单据</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <form string="审批单据">
+                    <header>
+                        <button string="提交审批" name="submit_to_wechat"
+                                class="oe_highlight" type="object"
+                                attrs="{'invisible': [('approval_state', '!=', '0')]}"/>
+                        <button string="撤销审批" name="cancel_to_wechat"
+                                type="object"
+                                attrs="{'invisible': [('approval_state', '=', '0')]}"/>
+                        <button string="详细审批记录" name="multi_get_approval_status" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                           <field name="res_name"/>
+                           <field name="res"/>
+                           <field name="approval_id" options="{'no_create': True, 'no_open': True}"/>
+                           <field name="approval_state" readonly="1"/>
+                           <field name="submit_user_id" options="{'no_create': True, 'no_open': True}"/>
+                           <field name="submit_time" readonly="1"/>
+                           <field name="sp_no" readonly="1"/>
+                           <field name="record_ids">
+                               <tree>
+                                   <field name="sequence"/>
+                                   <field name="step" optional="show"/>
+                                   <field name="item_status" optional="show"/>
+                                   <field name="speech" optional="show"/>
+                                   <field name="sp_time" optional="show"/>
+                                   <field name="bill_id" optional="hide"/>
+                               </tree>
+                           </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wx_approval_obj_view_search_2015" model="ir.ui.view">
+            <field name="name">审批单据</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <search string="审批单据">
+                    <filter string="今日数据" name="today" domain="[('create_date','=', current_date)]"/>
+                    <filter string="本月数据" name="month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                    <filter string="上月数据" name="month2" domain="[('create_date','&lt;', time.strftime('%Y-%m-01')),('create_date','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                    <filter string="本年数据" name="year" domain="[('create_date','&lt;=', time.strftime('%Y-12-31')),('create_date','&gt;=', time.strftime('%Y-01-01'))]"/>
+                    <separator/>
+                    <field name="res_name"/>
+                    <field name="res"/>
+                    <field name="submit_user_id"/>
+                    <field name="submit_time"/>
+                    <field name="sp_no"/>
+                    <separator/>
+                    <group expand="1" string="分组">
+                        <filter string="单据记录名称" name="group_res_name" context="{'group_by':'res_name'}"/>
+                        <filter string="所属审批" name="group_approval_id" context="{'group_by':'approval_id'}"/>
+                        <filter string="当前审批状态" name="group_approval_state" context="{'group_by':'approval_state'}"/>
+                        <filter string="提交人" name="group_submit_user" context="{'group_by':'submit_user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="wx_approval_obj_action_705" model="ir.actions.act_window">
+            <field name="name">我的提交</field>
+            <field name="res_model">wx.approval.obj</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="domain">[('submit_user_id', '=', uid)]</field>
+            <field name="search_view_id" ref="wx_approval_obj_view_search_2015"/>
+            <field name="help" type="html"><p></p></field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('wx_approval_obj_view_tree_1915')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('wx_approval_obj_view_form_1459')}),
+                    ]"/>
+        </record>
+
+        <record id="wx_approval_obj_view_tree_1458" model="ir.ui.view">
+            <field name="name">审批单据</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <tree string="审批单据" create="0" edit="0" delete="0"
+                      default_order="submit_time desc"
+                      expand="context.get('expand, false)" multi_edit="1">
+                    <field name="sp_no" optional="show"/>
+                    <field name="res_name" optional="show"/>
+                    <field name="res" optional="show"/>
+                    <field name="approval_id" optional="show"/>
+                    <field name="approval_state" optional="show"/>
+                    <field name="submit_user_id" optional="show"/>
+                    <field name="submit_time" optional="show"/>
+                    <field name="create_date" string="制单日期" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wx_approval_obj_view_form_1460" model="ir.ui.view">
+            <field name="name">审批单据</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <form string="审批单据" create="0" edit="0" delete="0">
+                    <header>
+                        <button string="提交审批" name="submit_to_wechat"
+                                class="oe_highlight" type="object"
+                                attrs="{'invisible': [('approval_state', '!=', '0')]}"/>
+                        <button string="撤销审批" name="cancel_to_wechat"
+                                type="object"
+                                attrs="{'invisible': [('approval_state', '=', '0')]}"/>
+                        <button string="详细审批记录" name="multi_get_approval_status" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                           <field name="res_name"/>
+                           <field name="res"/>
+                           <field name="approval_id"/>
+                           <field name="approval_state"/>
+                           <field name="submit_user_id"/>
+                           <field name="submit_time"/>
+                           <field name="sp_no"/>
+                           <field name="record_ids">
+                               <tree>
+                                   <field name="sequence"/>
+                                   <field name="step" optional="show"/>
+                                   <field name="item_status" optional="show"/>
+                                   <field name="speech" optional="show"/>
+                                   <field name="sp_time" optional="show"/>
+                                   <field name="bill_id" optional="hide"/>
+                               </tree>
+                           </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wx_approval_obj_view_search_2016" model="ir.ui.view">
+            <field name="name">审批单据</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <search string="审批单据">
+                    <filter string="今日数据" name="today" domain="[('create_date','=', current_date)]"/>
+                    <filter string="本月数据" name="month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                    <filter string="上月数据" name="month2" domain="[('create_date','&lt;', time.strftime('%Y-%m-01')),('create_date','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                    <filter string="本年数据" name="year" domain="[('create_date','&lt;=', time.strftime('%Y-12-31')),('create_date','&gt;=', time.strftime('%Y-01-01'))]"/>
+                    <separator/>
+                    <field name="res_name"/>
+                    <field name="res"/>
+                    <field name="submit_user_id"/>
+                    <field name="submit_time"/>
+                    <field name="sp_no"/>
+                    <separator/>
+                    <group expand="1" string="分组">
+                        <filter string="单据记录名称" name="group_res_name" context="{'group_by':'res_name'}"/>
+                        <filter string="所属审批" name="group_approval_id" context="{'group_by':'approval_id'}"/>
+                        <filter string="当前审批状态" name="group_approval_state" context="{'group_by':'approval_state'}"/>
+                        <filter string="提交人" name="group_submit_user" context="{'group_by':'submit_user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="wx_approval_obj_action_573" model="ir.actions.act_window">
+            <field name="name">审批单</field>
+            <field name="res_model">wx.approval.obj</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="search_view_id" ref="wx_approval_obj_view_search_2016"/>
+            <field name="help" type="html"><p></p></field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('wx_approval_obj_view_tree_1458')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('wx_approval_obj_view_form_1460')}),
+                    ]"/>
+        </record>
+
+        <record id="wx_approval_obj_action_report_616" model="ir.actions.report">
+            <field name="name">审批单打印</field>
+            <field name="report_name">wx_approval_obj_report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="model">wx.approval.obj</field>
+            <field name="binding_model_id" ref="model_wx_approval_obj"/>
+            <field name="print_report_name">'审批单-%s' % (object.res_name)</field>
+            <field name="attachment">False</field>
+            <field name="attachment_use">False</field>
+        </record>
+    </data>
+</odoo>

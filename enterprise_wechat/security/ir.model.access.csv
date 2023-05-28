@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ewi_interface_manager, access.ewi_interface_manager,model_ewi_interface,group_ewi_manager,1,1,1,1
+
+access_wx_approval_manager, access.wx_approval_manager,model_wx_approval,group_ewi_manager,1,1,1,1
+access_wx_approval_template_fields_manager, access.wx_approval_template_fields_manager,model_wx_approval_template_fields,group_ewi_manager,1,1,1,1
+
+access_wx_approval_obj_manager, access.wx_approval_obj_manager,model_wx_approval_obj,group_ewi_manager,1,1,1,1
+access_wx_approval_record_ids_manager, access.wx_approval_record_ids_manager,model_wx_approval_record_ids,group_ewi_manager,1,1,1,1
+access_wx_approval_record_manager, access.wx_approval_record_manager,model_wx_approval_record,group_ewi_manager,1,1,1,1

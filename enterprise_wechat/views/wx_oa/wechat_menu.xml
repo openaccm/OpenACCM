@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!--二级菜单-->
+    <menuitem id="menu_wx_approval" name="审批管理" sequence="5" parent="menu_ewi_root"/>
+    <menuitem action="wx_approval_obj_action_573" id="wx_approval_obj_menu_1055_1552453316" name="审批单" parent="menu_wx_approval" sequence="10"/>
+
+    <menuitem action="wx_approval_obj_action_705" id="wx_approval_obj_menu_524_1579252351" name="我的提交" parent="menu_wx_approval" sequence="20"/>
+    <menuitem action="wx_approval_record_server_1" id="wx_approval_record_menu_522_1579253514" name="我的已办" parent="menu_wx_approval" sequence="30"/>
+    <menuitem action="wx_approval_record_server_2" id="wx_approval_record_menu_523_1579253514" name="我的待办" parent="menu_wx_approval" sequence="40"/>
+
+    <!--三级菜单-->
+    <menuitem action="wx_approval_action_572" id="wx_approval_menu_1054_1552453316" name="审批配置" parent="enterprise_wechat.menu_ewi_res_config" sequence="50"/>
+</odoo>

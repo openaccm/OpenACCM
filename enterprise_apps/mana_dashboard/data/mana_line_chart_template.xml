@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- simple line -->
+        <record id="mana_dashboard.template_simple_line_chart" model="mana_dashboard.template">
+            <field name="name">Simple Line</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_simple.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+let config = this.get_config()
+
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+let series = []
+for (let i = 0; i < measures.length; i++) {
+  let measure = measures[i]
+  let raw_field = data_source.get_raw_field(measure)
+  series.push({
+    name: measures[i],
+    type: raw_field && raw_field.series_type && raw_field.series_type? raw_field.series_type: 'line',
+    data: data_source.get_col_values(measures[i])
+  })
+}
+
+let option = {
+  title: {
+    text: config.get_title()
+  },
+
+  xAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0])
+  },
+  
+  yAxis: {
+    type: 'value'
+  },
+  
+  series: series
+};
+
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
+    }
+  ]
+};
+this.set_option(option)
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+                <![CDATA[
+                <h3>Simple Line Chart</h3>
+                <p>This is a simple line chart, to use it, you need to select a category and a measure. for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Smoothed Line Chart -->
+        <record id="mana_dashboard.template_smoothed_line" model="mana_dashboard.template">
+            <field name="name">Smoothed Line Chart</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_smoothed.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+let option = {
+
+  xAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0])
+  },
+  
+  yAxis: {
+    type: 'value'
+  },
+  
+  series: [
+    {
+      data: data_source.get_col_values(measures[0]),
+      type: 'line',
+      smooth: true
+    }
+  ]
+};
+
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [820, 932, 901, 934, 1290, 1330, 1320],
+      type: 'line',
+      smooth: true
+    }
+  ]
+};
+this.set_option(option)
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+                <![CDATA[
+                <h3>Smoothed Line Chart</h3>
+                <p>This is a simple line chart, to use it, you need to select a category and a measure.
+                <p>For details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Basic area chart -->
+        <record id="mana_dashboard.template_basic_area_chart" model="mana_dashboard.template">
+            <field name="name">Basic Area Chart</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_area.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+let option = {
+
+  xAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0])
+  },
+  
+  yAxis: {
+    type: 'value'
+  },
+  
+  series: [
+    {
+      data: data_source.get_col_values(measures[0]),
+      type: 'line',
+      areaStyle: {}
+    }
+  ]
+};
+
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [820, 932, 901, 934, 1290, 1330, 1320],
+      type: 'line',
+      areaStyle: {}
+    }
+  ]
+};
+this.set_option(option);
+]]>
+            </field>
+            <field name="help">
+                <![CDATA[
+                <h3>Basic Area Chart</h3>
+                <p>This is a simple area chart, to use it, you need to select a category and a measure. For details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Basic area chart -->
+        <record id="mana_dashboard.template_smooth_area_chart" model="mana_dashboard.template">
+            <field name="name">Smooth Area Chart</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/smooth_area_chart.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+let option = {
+
+  xAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0])
+  },
+  
+  yAxis: {
+    type: 'value'
+  },
+  
+  series: [
+    {
+      data: data_source.get_col_values(measures[0]),
+      type: 'line',
+      smooth: true,
+      areaStyle: {}
+    }
+  ]
+};
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [820, 932, 901, 934, 1290, 1330, 1320],
+      type: 'line',
+      areaStyle: {}
+    }
+  ]
+};
+this.set_option(option);
+]]>
+            </field>
+            <field name="help">
+                <![CDATA[
+                <h3>Smooth Area Chart</h3>
+                <p>This is a simple area chart, to use it, you need to select a category and a measure.for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Stacked Line Chart  -->
+        <record id="mana_dashboard.template_stacked_line_chart" model="mana_dashboard.template">
+            <field name="name">Stacked Line Chart</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_stacked.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/> 
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+// get config
+let config = this.get_config()
+
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+// series datas
+let series_datas = []
+for (let i = 0; i < measures.length; i++) {
+  series_datas.push({
+    name: measures[i],
+    type: 'line',
+    stack: 'Total',
+    data: data_source.get_col_values(measures[i])
+  })
+}
+
+let option = {
+  title: {
+    text: 'Stacked Line'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: measures
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  // remove the comment to show toolbox
+  // toolbox: {
+  //   feature: {
+  //    saveAsImage: {}
+  //  }
+  // },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: data_source.get_col_values(categories[0])
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: series_datas
+};
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  title: {
+    text: 'Stacked Line'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: 'Email',
+      type: 'line',
+      stack: 'Total',
+      data: [120, 132, 101, 134, 90, 230, 210]
+    },
+    {
+      name: 'Union Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [220, 182, 191, 234, 290, 330, 310]
+    },
+    {
+      name: 'Video Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [150, 232, 201, 154, 190, 330, 410]
+    },
+    {
+      name: 'Direct',
+      type: 'line',
+      stack: 'Total',
+      data: [320, 332, 301, 334, 390, 330, 320]
+    },
+    {
+      name: 'Search Engine',
+      type: 'line',
+      stack: 'Total',
+      data: [820, 932, 901, 934, 1290, 1330, 1320]
+    }
+  ]
+};
+this.set_option(option);
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+                <![CDATA[
+                <h3>Stacked Line Chart</h3>
+                <p>To use this template, you need to have at least one category and more than one measure.for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Stacked Area Chart -->
+        <record id="mana_dashboard.template_stacked_area_chart" model="mana_dashboard.template">
+            <field name="name">Stacked Area Chart</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <!-- prevew -->
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_stacked_area.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+// series datas
+let series_datas = []
+for (let i = 0; i < measures.length; i++) {
+  let raw_field = data_source.get_raw_field(measures[i])
+  series_datas.push({
+    name: measures[i],
+    type: raw_field && raw_field.series_type? raw_field.series_type: 'line',
+    stack: 'Total',
+    areaStyle: {},
+    emphasis: {
+      focus: 'series'
+    },
+    data: data_source.get_col_values(measures[i])
+  })
+}
+
+let option = {
+  title: {
+    text: config.get_title()
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: measures
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: data_source.get_col_values(categories[0])
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: series_datas
+};
+this.setOption(option)
+]]>
+            </field>
+            <!-- default_scripts -->
+            <field name="default_scripts">
+<![CDATA[
+option = {
+  title: {
+    text: 'Stacked Line'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: 'Email',
+      type: 'line',
+      stack: 'Total',
+      data: [120, 132, 101, 134, 90, 230, 210]
+    },
+    {
+      name: 'Union Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [220, 182, 191, 234, 290, 330, 310]
+    },
+    {
+      name: 'Video Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [150, 232, 201, 154, 190, 330, 410]
+    },
+    {
+      name: 'Direct',
+      type: 'line',
+      stack: 'Total',
+      data: [320, 332, 301, 334, 390, 330, 320]
+    },
+    {
+      name: 'Search Engine',
+      type: 'line',
+      stack: 'Total',
+      data: [820, 932, 901, 934, 1290, 1330, 1320]
+    }
+  ]
+};
+]]>
+            </field>  
+            <!-- help -->
+            <field name="help">
+                <![CDATA[
+                <h3>Stacked Area Chart</h3>
+                <p>This is a simple area chart, to use it, you need to select a category and a measure.for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Gradient Stacked Area Chart -->
+        <record id="mana_dashboard.template_gradient_stacked_area_chart" model="mana_dashboard.template">
+            <field name="name">Gradient Stacked Area Chart</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <!-- prevew -->
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_gradient_stacked_area.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+let option = {
+  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  title: {
+    text: 'Gradient Stacked Area Chart'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: 'Line 1',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(1, 191, 236)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [140, 232, 101, 264, 90, 340, 250]
+    },
+    {
+      name: 'Line 2',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(0, 221, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(77, 119, 255)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 282, 111, 234, 220, 340, 310]
+    },
+    {
+      name: 'Line 3',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(55, 162, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(116, 21, 219)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [320, 132, 201, 334, 190, 130, 220]
+    },
+    {
+      name: 'Line 4',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 0, 135)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(135, 0, 157)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 402, 231, 134, 190, 230, 120]
+    },
+    {
+      name: 'Line 5',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      label: {
+        show: true,
+        position: 'top'
+      },
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 191, 0)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(224, 62, 76)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 302, 181, 234, 210, 290, 150]
+    }
+  ]
+};
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+option = {
+  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  title: {
+    text: 'Gradient Stacked Area Chart'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: 'Line 1',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(1, 191, 236)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [140, 232, 101, 264, 90, 340, 250]
+    },
+    {
+      name: 'Line 2',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(0, 221, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(77, 119, 255)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 282, 111, 234, 220, 340, 310]
+    },
+    {
+      name: 'Line 3',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(55, 162, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(116, 21, 219)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [320, 132, 201, 334, 190, 130, 220]
+    },
+    {
+      name: 'Line 4',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 0, 135)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(135, 0, 157)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 402, 231, 134, 190, 230, 120]
+    },
+    {
+      name: 'Line 5',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      label: {
+        show: true,
+        position: 'top'
+      },
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 191, 0)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(224, 62, 76)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 302, 181, 234, 210, 290, 150]
+    }
+  ]
+};
+this.set_option(option);
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+<![CDATA[
+<h3>Gradient Stacked Area Chart</h3>
+<p>to use this template, you need to select a category and a measure.for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+]]>
+            </field>
+        </record>
+
+        <!-- Temperature Change in the Coming Week -->
+        <record id="mana_dashboard.template_temperature_change_in_the_coming_week" model="mana_dashboard.template">
+            <field name="name">Temperature Change in the Coming Week</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/temperature_change_in_the_coming_week.png"/>
+            <field name="multi_data_source">True</field>
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+
+            <field name="scripts">
+<![CDATA[
+
+// get config and check exist
+let config = this.get_config()
+if (!config) {
+  return
+}
+
+// get data source and check exist, need at least 2 data sources
+let data_sources = this.get_data_sources()
+if (!data_sources || data_sources.length < 2) {
+  return
+}
+
+// get data source and check exist
+let data_source_one = data_sources[0]
+let data_source_two = data_sources[1]
+
+let measures1 = data_source_one.get_measures()
+let measures2 = data_source_two.get_measures()
+
+// get categories and check exist
+let categories = data_source_one.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+let option = {
+  title: {
+    text: config.get_title()
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {},
+  toolbox: {
+    show: true,
+    feature: {
+      dataZoom: {
+        yAxisIndex: 'none'
+      },
+      dataView: { readOnly: false },
+      magicType: { type: ['line', 'bar'] },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: data_source_one.get_category_values(categories[0])
+  },
+  yAxis: {
+    type: 'value',
+    axisLabel: {
+      formatter: '{value} °C'
+    }
+  },
+  series: [
+    {
+      name: 'Highest',
+      type: 'line',
+      data: data_source_one.get_col_values(measures1[0]),
+      markPoint: {
+        data: [
+          { type: 'max', name: 'Max' },
+          { type: 'min', name: 'Min' }
+        ]
+      },
+      markLine: {
+        data: [{ type: 'average', name: 'Avg' }]
+      }
+    },
+    {
+      name: 'Lowest',
+      type: 'line',
+      data: data_source_two.get_col_values(measures2[0]),
+      markLine: {
+        data: [
+          { type: 'average', name: 'Avg' },
+          [
+            {
+              symbol: 'none',
+              x: '90%',
+              yAxis: 'max'
+            },
+            {
+              symbol: 'circle',
+              label: {
+                position: 'start',
+                formatter: 'Max'
+              },
+              type: 'max',
+              name: 'Highest Point'
+            }
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  title: {
+    text: 'Gradient Stacked Area Chart'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: 'Line 1',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(1, 191, 236)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [140, 232, 101, 264, 90, 340, 250]
+    },
+    {
+      name: 'Line 2',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(0, 221, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(77, 119, 255)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 282, 111, 234, 220, 340, 310]
+    },
+    {
+      name: 'Line 3',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(55, 162, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(116, 21, 219)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [320, 132, 201, 334, 190, 130, 220]
+    },
+    {
+      name: 'Line 4',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 0, 135)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(135, 0, 157)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 402, 231, 134, 190, 230, 120]
+    },
+    {
+      name: 'Line 5',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      label: {
+        show: true,
+        position: 'top'
+      },
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 191, 0)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(224, 62, 76)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 302, 181, 234, 210, 290, 150]
+    }
+  ]
+};
+this.set_option(option);
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+<![CDATA[
+<h3>High And Low Points</h3>
+<p>To use this template, you need to add two data soruce, one for the high and one for the low.for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

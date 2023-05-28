@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- simple pie chart -->
+        <record id="mana_dashboard.template_post_style_one" model="mana_dashboard.template">
+            <field name="name">Post Style One</field>
+            <field name="category">grid &amp; list</field>
+            <field name="type">grid</field>
+            <field name="component_type">qweb_block</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/post_grid/post_style_one.png"/>
+            <field name="scripts">
+<![CDATA[
+    let config = this.get_config()
+    let data_source = this.get_data_source(0)
+    if (!data_source || !data_source.is_valid()) {
+        return
+    }
+    let data = {}
+    this.render_tempalte(data);
+]]>
+            </field>
+            <!-- template -->
+            <field name="template">
+<![CDATA[
+<div class="row">
+    <div class="col-xl-6">
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/1.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">12:25</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">Up unpacked friendly</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                The him father parish looked has sooner. Attachment frequently
+                terminated son hello...
+            </div>
+        </div>
+
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/21.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">47:25</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">It allowance prevailed</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                Alteration literature to or an sympathize mr imprudence. Of is
+                ferrars subject enjoyed...
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/12.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">48:40</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">Case read they must</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                On it differed repeated wandered required in. Then girl neat why yet
+                knew rose spot...
+            </div>
+        </div>
+
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/18.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">22:14</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">Consider now provided</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                Marianne or husbands if at stronger ye. Considered is as middletons
+                uncommonly...
+            </div>
+        </div>
+    </div>
+</div>
+]]>
+            </field>
+            <!-- demo template -->
+            <field name="demo_template" type="xml">
+<![CDATA[
+<div class="row">
+    <div class="col-xl-6">
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/1.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">12:25</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">Up unpacked friendly</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                The him father parish looked has sooner. Attachment frequently
+                terminated son hello...
+            </div>
+        </div>
+
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/21.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">47:25</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">It allowance prevailed</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                Alteration literature to or an sympathize mr imprudence. Of is
+                ferrars subject enjoyed...
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/12.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">48:40</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">Case read they must</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                On it differed repeated wandered required in. Then girl neat why yet
+                knew rose spot...
+            </div>
+        </div>
+
+        <div class="d-sm-flex align-items-sm-start mb-3">
+            <a class="d-inline-block position-relative me-sm-3 mb-3 mb-sm-0"
+                href="#">
+                <img height="100" class="flex-shrink-0 rounded" alt=""
+                    src="/mana_dashboard/static/images/post/18.png" />
+                <div
+                    class="d-inline-flex bg-dark bg-opacity-50 text-white position-absolute start-50 top-50 translate-middle rounded-pill p-2">
+                    <i class="ph-play"></i>
+                </div>
+                <span
+                    class="bg-dark bg-opacity-50 text-white fs-xs lh-1 rounded-1 position-absolute bottom-0 start-0 p-1 ms-2 mb-2">22:14</span>
+            </a>
+
+            <div class="flex-fill">
+                <h6 class="mb-1"><a href="#">Consider now provided</a></h6>
+                <ul class="list-inline list-inline-bullet text-muted mb-2">
+                    <li class="list-inline-item"><a class="text-body" href="#">Video
+                            tutorials</a></li>
+                </ul>
+                Marianne or husbands if at stronger ye. Considered is as middletons
+                uncommonly...
+            </div>
+        </div>
+    </div>
+</div>
+]]>
+            </field>
+            <!-- styles -->
+            <field name="styles" type="xml">
+<![CDATA[
+    ol,
+    ul {
+        padding-left: 2rem;
+    }
+
+    .d-inline-flex {
+        display: -ms-inline-flexbox !important;
+        display: inline-flex !important;
+    }
+
+    .list-inline-bullet {
+        --list-inline-bullet-size: .3125rem;
+    }
+
+    .list-inline-bullet .list-inline-item {
+        position: relative;
+    }
+
+    a.text-body {
+        transition: color ease-in-out var(--transition-base-timer);
+    }
+
+    .top-50 {
+        top: 50% !important;
+    }
+
+    .start-50 {
+        left: 50% !important;
+    }
+
+    .translate-middle {
+        -webkit-transform: translate(-50%, -50%) !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .ms-2 {
+        margin-left: 0.62rem !important;
+    }
+
+    .p-1 {
+        padding: .3125rem !important;
+    }
+
+    .h5,
+    h5 {
+        font-size: 1.12rem;
+    }
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

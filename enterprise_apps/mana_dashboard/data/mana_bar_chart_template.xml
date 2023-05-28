@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- simple bar chart -->
+    <record id="mana_dashboard.template_simple_bar_chart" model="mana_dashboard.template">
+      <field name="name">Simple Bar Chart</field>
+      <field name="category">chart</field>
+      <field name="type">bar chart</field>
+      <field name="component_type">bar_chart</field>
+      <field name="preview" type="base64" file="mana_dashboard/static/previews/bar_chart/bar_chart_simple.png" />
+      <field name="has_styles">False</field>
+      <field name="has_template">False</field>
+      <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+      <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+      <field name="scripts">
+<![CDATA[
+
+// get the datasource
+let data_source = this.get_data_source()
+// get the catorgories
+let categories = data_source.get_categories()
+if (categories.length == 0) {
+  return
+}
+
+// get the measures
+let measures = data_source.get_measures()
+if (measures.length == 0) {
+  return
+}
+
+// generate the series, you can change option here
+//  https://echarts.apache.org/en/option.html#series-bar
+let series = []
+for (let i = 0; i < measures.length; i++) {
+  let measure = measures[i]
+  let raw_field = data_source.get_raw_field(measures[i])
+  series.push({
+      data: data_source.get_col_values(measure),
+      type: raw_field && raw_field.series_type ? raw_field.series_type : 'bar',
+      showBackground: true,
+      name: measure,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)'
+      }
+  })
+}
+
+// generate the option, you can change the title, legend, tooltip, etc.
+let option = {
+  xAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0], (val) => {
+        if (val instanceof Array) {
+            if (val.length == 2) {
+                return {
+                  value: val[1],
+                  origin_value: val
+                }
+            }
+        } 
+        return val
+    })
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: series
+};
+
+this.setOption(option)
+]]>
+      </field>
+      <!-- default script -->
+      <field name="default_scripts">
+        <![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)'
+      }
+    }
+  ]
+};
+this.setOption(option)
+]]>
+      </field>  
+      <!-- default code -->
+      <field name="default_code">
+<![CDATA[
+# use the result var to get the data
+# write your code here, and assign your data to result
+result = [
+    ['product', '2015', '2016', '2017'],
+    ['Matcha Latte', 43.3, 85.8, 93.7],
+    ['Milk Tea', 83.1, 73.4, 55.1],
+    ['Cheese Cocoa', 86.4, 65.2, 82.5],
+    ['Walnut Brownie', 72.4, 53.9, 39.1]
+  ]
+]]>
+        </field>
+        <!-- help -->
+        <field name="help">
+<![CDATA[
+<h3>Bar Chart</h3>
+<p>To create a bar chart, you need to select a data source, and then select the category and measures.</p>
+<p>For example, if you select the data source as <b>Product Sales</b>, and select the category as <b>Product</b>, and select the measure as <b>Sales</b>, you will get a bar chart like this:</p>
+<img src="/mana_dashboard/static/config_demo/bar_chart/bar_chart_simple/1.png" />
+<p>For more information, please refer to the <a href="https://echarts.apache.org/en/option.html#series-bar" target="_blank">Echarts Bar Chart</a>.</p>
+]]>
+        </field>
+    </record>
+
+    <!-- multi group bar chart -->
+    <record id="mana_dashboard.template_multi_group_bar_chart" model="mana_dashboard.template">
+      <field name="name">Multi Group Bar Chart</field>
+      <field name="category">chart</field>
+      <field name="type">bar chart</field>
+      <field name="component_type">bar_chart</field>
+      <field name="preview" type="base64" file="mana_dashboard/static/previews/bar_chart/bar_chart_multi_group.png" />
+      <field name="has_styles">False</field>
+      <field name="has_template">False</field>
+      <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+      <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+      <field name="scripts">
+        <![CDATA[
+// get the datasource
+let data_sources = this.get_data_sources();
+if (data_sources.length == 0) {
+    return;
+}
+
+let legend_data = [];
+let series = [];
+for (let i = 0; i < data_sources.length; i++) {
+
+    let data_source = data_sources[i];
+    let has_multi_group_by = data_source.has_multi_group_by();
+    // get unique __group_by_name values
+    let group_by_values = data_source.get_unique_col_values('__group_by_name');
+    let categories = data_source.get_categories();
+    if (categories.length == 0) {
+        continue
+    }
+    let category = categories[0];
+    let category_values = data_source.get_unique_col_values(category);
+    let measures = data_source.get_measures();
+    if (measures.length == 0) {
+        continue;
+    }
+
+    for (let j = 0; j < measures.length; j++) {
+        let measure = measures[j];
+        let raw_field = data_source.get_raw_field(measures[i])
+        if (has_multi_group_by) {
+            // __group_by_names
+            for (let k = 0; k < group_by_values.length; k++) {
+                let group_by_value = group_by_values[k];
+                let datas = data_source.get_group_by_name_values(group_by_value, measure, category_values, category);
+                let name = '';
+                if (measures.length > 1) {
+                    name = group_by_value + ' - ' + measure;
+                } else {
+                    name = group_by_value;
+                }
+                legend_data.push(name);
+                series.push({
+                    data: datas,
+                    type: raw_field && raw_field.series_type || 'bar',
+                    showBackground: true,
+                    name: name,
+                    backgroundStyle: {
+                        color: 'rgba(180, 180, 180, 0.2)'
+                    }
+                })
+            }
+        } else {
+            series.push({
+                data: data_source.get_col_values(measure),
+                type: 'bar',
+                showBackground: true,
+                name: measure,
+                backgroundStyle: {
+                    color: 'rgba(180, 180, 180, 0.2)'
+                }
+            })
+            if (measures.length > 1) {
+                legend_data.push(measure);
+            }
+        }
+    }
+}
+
+let data_source = data_sources[0];
+let has_multi_group_by = data_source.has_multi_group_by();
+// get the catorgories
+let categories = data_source.get_categories();
+if (categories.length == 0) {
+    return;
+}
+let category = categories[0];
+let option = undefined;
+// generate the option, you can change the title, legend, tooltip, etc.
+if (has_multi_group_by) {
+    option = {
+        xAxis: {
+            type: 'category',
+            data: data_source.get_col_values(categories[0], (val) => {
+                if (val instanceof Array) {
+                    if (val.length == 2) {
+                        return {
+                          value: val[1],
+                          origin_value: val
+                        }
+                    }
+                } 
+                return val
+          }),
+          legend: {
+              data: legend_data
+          },
+          yAxis: {
+              type: 'value'
+          },
+          series: series
+      }
+    }
+} else {
+    option = {
+        xAxis: {
+            type: 'category',
+            data: data_source.get_col_values(categories[0], (val) => {
+                if (val instanceof Array) {
+                    if (val.length == 2) {
+                        return {
+                          value: val[1],
+                          origin_value: val
+                        }
+                    }
+                } 
+                return val
+            }),
+      },
+      legend: {
+          data: legend_data
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: series
+    }
+}
+
+this.setOption(option)
+]]>
+      </field>
+      <!-- default script -->
+      <field name="default_scripts">
+        <![CDATA[
+let option = {
+  legend: {},
+  tooltip: {},
+  dataset: {
+    dimensions: ['product', '2015', '2016', '2017'],
+    source: [
+      { product: 'Matcha Latte', 2015: 43.3, 2016: 85.8, 2017: 93.7 },
+      { product: 'Milk Tea', 2015: 83.1, 2016: 73.4, 2017: 55.1 },
+      { product: 'Cheese Cocoa', 2015: 86.4, 2016: 65.2, 2017: 82.5 },
+      { product: 'Walnut Brownie', 2015: 72.4, 2016: 53.9, 2017: 39.1 }
+    ]
+  },
+  xAxis: { type: 'category' },
+  yAxis: {},
+  // Declare several bar series, each will be mapped
+  // to a column of dataset.source by default.
+  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+};
+this.setOption(option);
+]]>
+      </field>  
+    </record>
+
+    <!-- radial polar bar chart -->
+    <record id="mana_dashboard.template_radial_polar_bar_chart" model="mana_dashboard.template">
+      <field name="name">Radial polar Bar Chart</field>
+      <field name="category">chart</field>
+      <field name="type">bar chart</field>
+      <field name="component_type">bar_chart</field>
+      <field name="preview" type="base64" file="mana_dashboard/static/previews/bar_chart/radial_polar_bar_chart.png"/>
+      <field name="has_styles">False</field>
+      <field name="has_template">False</field>
+      <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+      <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+      <field name="scripts">
+        <![CDATA[
+// config
+let config = this.get_config();
+// get the datasource
+let data_source = this.get_data_source();
+// get the catorgories
+let categories = data_source.get_categories();
+if (categories.length == 0) {
+  return;
+}
+
+// get the measures
+let measures = data_source.get_measures();
+if (measures.length == 0) {
+  return;
+}
+
+// generate the series, you can change option here
+//  https://echarts.apache.org/en/option.html#series-bar
+let series = []
+for (let i = 0; i < measures.length; i++) {
+  let measure = measures[i];
+  let raw_field = data_source.get_raw_field(measure);
+  series.push({
+    type: raw_field && raw_field.series_type || 'bar',
+    data: data_source.get_col_values(measure),
+    coordinateSystem: 'polar',
+    label: {
+      show: true,
+      position: 'middle',
+      formatter: '{b}: {c}',
+    }
+  })
+}
+
+let option = {
+  title: [
+    {
+      text: config.get_title(),
+    }
+  ],
+  polar: {
+    radius: [30, '80%']
+  },
+  radiusAxis: {
+    max: 4
+  },
+  angleAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0], (val) => {
+      if (val instanceof Array) {
+          if (val.length == 2) {
+                return {
+                  value: val[1],
+                  origin_value: val
+                }
+            }
+          } 
+          return val
+      }),
+    startAngle: 75
+  },
+  tooltip: {},
+  series: series,
+  animation: false
+};
+
+this.setOption(option)
+]]>
+      </field>
+      <!-- default code -->
+      <field name="default_scripts">
+        <![CDATA[
+let option = {
+  title: [
+    {
+      text: 'Radial Polar Bar Label Position (middle)'
+    }
+  ],
+  polar: {
+    radius: [30, '80%']
+  },
+  radiusAxis: {
+    max: 4
+  },
+  angleAxis: {
+    type: 'category',
+    data: ['a', 'b', 'c', 'd'],
+    startAngle: 75
+  },
+  tooltip: {},
+  series: {
+    type: 'bar',
+    data: [2, 1.2, 2.4, 3.6],
+    coordinateSystem: 'polar',
+    label: {
+      show: true,
+      position: 'middle',
+      formatter: '{b}: {c}'
+    }
+  },
+  animation: false
+};
+this.setOption(option);
+]]>
+</field>
+    </record>
+
+    <!-- radial polar bar chart -->
+    <record id="mana_dashboard.template_tangential_polar_bar_chart" model="mana_dashboard.template">
+      <field name="name">Tangential polar Bar Chart</field>
+      <field name="category">chart</field>
+      <field name="type">bar chart</field>
+      <field name="component_type">bar_chart</field>
+      <field name="preview" type="base64" file="mana_dashboard/static/previews/bar_chart/tangential_polar_bar_chart.png"/>
+      <field name="has_styles">False</field>
+      <field name="has_template">False</field>
+      <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+      <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+      <field name="scripts">
+        <![CDATA[
+// config
+let config = this.get_config();
+// get the datasource
+let data_source = this.get_data_source();
+// get the catorgories
+let categories = data_source.get_categories();
+if (categories.length == 0) {
+  return;
+}
+
+// get the measures
+let measures = data_source.get_measures()
+if (measures.length == 0) {
+  return;
+}
+
+// generate the series, you can change option here
+//  https://echarts.apache.org/en/option.html#series-bar
+let series = [];
+for (let i = 0; i < measures.length; i++) {
+  let measure = measures[i];
+  let raw_field = data_source.get_raw_field(measure);
+  series.push({
+    type: raw_field && raw_field.series_type || 'bar',
+    data: data_source.get_col_values(measure),
+    coordinateSystem: 'polar',
+    label: {
+      show: true,
+      position: 'middle',
+      formatter: '{b}: {c}'
+    }
+  })
+}
+
+let option = {
+  title: [
+    {
+      text: config.get_title(),
+    }
+  ],
+  polar: {
+    radius: [30, '80%']
+  },
+  radiusAxis: {
+    max: 4
+  },
+  angleAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0], (val) => {
+        if (val instanceof Array) {
+            if (val.length == 2) {
+                return {
+                  value: val[1],
+                  origin_value: val
+                }
+            }
+        } 
+        return val
+      }),
+    startAngle: 75
+  },
+  tooltip: {},
+  series: series,
+  animation: false
+};
+
+this.setOption(option)
+]]>
+      </field>
+      <!-- default script -->
+      <field name="default_scripts">
+        <![CDATA[
+let option = {
+  title: [
+    {
+      text: 'Tangential Polar Bar Label Position (middle)'
+    }
+  ],
+  polar: {
+    radius: [30, '80%']
+  },
+  angleAxis: {
+    max: 4,
+    startAngle: 75
+  },
+  radiusAxis: {
+    type: 'category',
+    data: ['a', 'b', 'c', 'd']
+  },
+  tooltip: {},
+  series: {
+    type: 'bar',
+    data: [2, 1.2, 2.4, 3.6],
+    coordinateSystem: 'polar',
+    label: {
+      show: true,
+      position: 'middle',
+      formatter: '{b}: {c}'
+    }
+  }
+};
+this.setOption(option)
+]]>
+      </field>
+    </record>
+
+    <!-- Horizontal polar bar chart -->
+    <record id="mana_dashboard.template_horizontal_bar_chart" model="mana_dashboard.template">
+      <field name="name">Horizontal Bar Chart</field>
+      <field name="category">chart</field>
+      <field name="type">bar chart</field>
+      <field name="component_type">bar_chart</field>
+      <field name="preview" type="base64" file="mana_dashboard/static/previews/bar_chart/horizontal_bar_chart.png"/>
+      <field name="has_styles">False</field>
+      <field name="has_template">False</field>
+      <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+      <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+      <field name="scripts">
+            <![CDATA[
+// get the data source
+let data_sources = this.get_data_sources();
+if (data_sources.length == 0) {
+    return;
+}
+
+let legend_data = [];
+let series = [];
+for (let i = 0; i < data_sources.length; i++) {
+
+    let data_source = data_sources[i];
+    let has_multi_group_by = data_source.has_multi_group_by();
+    // get unique __group_by_name values
+    let group_by_values = data_source.get_unique_col_values('__group_by_name');
+    let categories = data_source.get_categories();
+    if (categories.length == 0) {
+        continue
+    }
+
+    let category = categories[0];
+    let category_values = data_source.get_unique_col_values(category);
+    let measures = data_source.get_measures();
+    if (measures.length == 0) {
+        continue;
+    }
+
+    for (let j = 0; j < measures.length; j++) {
+        let measure = measures[j];
+        let raw_field = data_source.get_raw_field(measure);
+        if (has_multi_group_by) {
+            // __group_by_names
+            for (let k = 0; k < group_by_values.length; k++) {
+                let group_by_value = group_by_values[k];
+                let datas = data_source.get_group_by_name_values(group_by_value, measure, category_values, category);
+                let name = '';
+                if (measures.length > 1) {
+                    name = group_by_value + ' - ' + measure;
+                } else {
+                    name = group_by_value;
+                }
+                legend_data.push(name);
+                series.push({
+                    data: datas,
+                    type: raw_field && raw_field.series_type || 'bar',
+                    showBackground: true,
+                    name: name,
+                    backgroundStyle: {
+                        color: 'rgba(180, 180, 180, 0.2)'
+                    }
+                })
+            }
+        } else {
+            series.push({
+                data: data_source.get_col_values(measure),
+                type: raw_field && raw_field.series_type || 'bar',
+                showBackground: true,
+                name: measure,
+                backgroundStyle: {
+                    color: 'rgba(180, 180, 180, 0.2)'
+                }
+            })
+            if (measures.length > 1) {
+                legend_data.push(measure);
+            }
+        }
+    }
+}
+
+let data_source = data_sources[0];
+let has_multi_group_by = data_source.has_multi_group_by();
+// get the catorgories
+let categories = data_source.get_categories();
+if (categories.length == 0) {
+    return;
+}
+let category = categories[0];
+let option = undefined;
+// generate the option, you can change the title, legend, tooltip, etc.
+if (has_multi_group_by) {
+    // user can add or change option here
+    option = {
+        xAxis: {
+            type: 'value',
+        },
+        legend: {
+            data: legend_data
+        },
+        yAxis: {
+            type: 'category',
+            data: data_source.get_unique_col_values(categorie, (val) => {
+                if (val instanceof Array) {
+                    if (val.length == 2) {
+                        return {
+                          value: val[1],
+                          origin_value: val
+                        }
+                    }
+                } 
+                return val
+            }),
+        },
+        series: series
+    }
+} else {
+    option = {
+        xAxis: {
+            type: 'value',
+        },
+        legend: {
+            data: legend_data
+        },
+        yAxis: {
+            type: 'category',
+            data: data_source.get_col_values(categories[0], (val) => {
+                if (val instanceof Array) {
+                    if (val.length == 2) {
+                        return {
+                          value: val[1],
+                          origin_value: val
+                        }
+                    }
+                } 
+                return val
+            }),
+        },
+        series: series
+    };
+}
+this.setOption(option)
+]]>
+      </field>
+      <!-- default scripts -->
+      <field name="default_scripts">
+        <![CDATA[
+let option = {
+  title: {
+    text: 'World Population (DEMO)'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value',
+    boundaryGap: [0, 0.01]
+  },
+  yAxis: {
+    type: 'category',
+    data: ['Brazil', 'Indonesia', 'USA', 'India', 'China', 'World']
+  },
+  series: [
+    {
+      name: '2011',
+      type: 'bar',
+      data: [18203, 23489, 29034, 104970, 131744, 630230]
+    },
+    {
+      name: '2012',
+      type: 'bar',
+      data: [19325, 23438, 31000, 121594, 134141, 681807]
+    }
+  ]
+};
+this.setOption(option);
+        ]]>
+      </field>
+    </record>
+    
+  </data>
+</odoo>

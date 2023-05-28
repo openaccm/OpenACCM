@@ -1,0 +1,56 @@
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mana_dashboard.template_block_list">
+            <field name="name">Dashboard Template Block list </field>
+            <field name="model">mana_dashboard.template_block</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="scripts" string="scripts"/>
+                    <field name="name" string="name"/>
+                    <field name="default_scripts" string="default_scripts"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.template_block_form">
+            <field name="name">Dashboard Template Block form </field>
+            <field name="model">mana_dashboard.template_block</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <div class="form-group row">
+                            <label for="scripts" class="col-sm-2 col-form-label">scripts</label>
+                            <div class="col-sm-10">
+                                <field name="scripts" string="scripts"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">name</label>
+                            <div class="col-sm-10">
+                                <field name="name" string="name"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="default_scripts" class="col-sm-2 col-form-label">default_scripts</label>
+                            <div class="col-sm-10">
+                                <field name="default_scripts" string="default_scripts"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="mana_dashboard.template_block_act_window">
+            <field name="name">Dashboard Template Block</field>
+            <field name="res_model">mana_dashboard.template_block</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

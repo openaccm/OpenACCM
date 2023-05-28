@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wx_approval_record_view_tree_1910" model="ir.ui.view">
+            <field name="name">wx.approval.record.view_tree</field>
+            <field name="model">wx.approval.record</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <tree string="详细审批记录">
+                    <field name="approval_obj_id"/>
+                    <field name="apply_user_name"/>
+                    <field name="user_name"/>
+                    <field name="item_status"/>
+                    <field name="speech"/>
+                    <field name="step"/>
+                </tree>
+            </field>
+        </record>
+        <record id="wx_approval_record_view_tree_1911" model="ir.ui.view">
+            <field name="name">wx.approval.record.view_tree</field>
+            <field name="model">wx.approval.record</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <tree string="已处理">
+                    <field name="approval_obj_id"/>
+                    <field name="apply_user_name"/>
+                    <field name="user_name"/>
+                    <field name="item_status"/>
+                    <field name="speech"/>
+                    <field name="step"/>
+                    <field name="detail_link"/>
+                </tree>
+            </field>
+        </record>
+        <record id="wx_approval_record_view_tree_1913" model="ir.ui.view">
+            <field name="name">wx.approval.record.view_tree</field>
+            <field name="model">wx.approval.record</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <tree string="待处理">
+                    <field name="approval_obj_id"/>
+                    <field name="apply_user_name"/>
+                    <field name="user_name"/>
+                    <field name="item_status"/>
+                    <field name="speech"/>
+                    <field name="step"/>
+                    <field name="detail_link"/>
+                </tree>
+            </field>
+        </record>
+        <record id="wx_approval_record_server_1" model="ir.actions.server">
+            <field name="name">审批-已处理</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="base.model_ir_attachment"/>
+            <field name="state">code</field>
+            <field name="code">action = env['wx.approval.record'].user_record(1)</field>
+        </record>
+        <record id="wx_approval_record_server_2" model="ir.actions.server">
+            <field name="name">审批-待处理</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="base.model_ir_attachment"/>
+            <field name="state">code</field>
+            <field name="code">action = env['wx.approval.record'].user_record(2)</field>
+        </record>
+    </data>
+</odoo>

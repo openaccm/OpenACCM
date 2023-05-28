@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mana_dashboard.statistics_card_style1" model="mana_dashboard.template">
+            <field name="name">Statistics Card Style1</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="need_column_aggregation">True</field>
+            <field name="template">
+<![CDATA[
+    <div class="card_count ecom-stat-widget">
+        <div class="row">
+            <div class="col-6">
+                <span class="text-blue font-light count_val">5390</span>
+                <p class="font-12">Order Received</p>
+            </div>
+            <div class="col-6">
+                <span class="pull-right text-white">
+                    <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path d="M512 0c-282.8 0-512 229.2-512 512s229.2 512 512 512c282.768 0 512-229.2 512-512s-229.232-512-512-512v0 0zM512 976c-256.265 0-464-207.735-464-464s207.735-464 464-464c256.265 0 464 207.735 464 464s-207.735 464-464 464v0 0zM833.168 343.735l-381.833 381.863c-6.336 6.265-14.567 9.401-22.8 9.335-8.233 0-16.464-3.072-22.736-9.335l-214.969-215.001c-12.496-12.464-12.496-32.736 0-45.264 12.505-12.464 32.768-12.464 45.232 0l192.464 192.464 359.337-359.335c12.496-12.464 32.8-12.464 45.305 0 12.496 12.535 12.496 32.8 0 45.271v0 0zM833.168 343.735z" fill="#13227a"></path></svg>
+                </span>
+            </div>
+        </div>
+    </div>
+]]>
+            </field>
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+    <div class="card_count ecom-stat-widget">
+        <div class="row">
+            <div class="col-6">
+                <span class="text-blue font-light count_val">5390</span>
+                <p class="font-12">Order Received</p>
+            </div>
+            <div class="col-6">
+                <span class="pull-right text-white">
+                    <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path d="M512 0c-282.8 0-512 229.2-512 512s229.2 512 512 512c282.768 0 512-229.2 512-512s-229.232-512-512-512v0 0zM512 976c-256.265 0-464-207.735-464-464s207.735-464 464-464c256.265 0 464 207.735 464 464s-207.735 464-464 464v0 0zM833.168 343.735l-381.833 381.863c-6.336 6.265-14.567 9.401-22.8 9.335-8.233 0-16.464-3.072-22.736-9.335l-214.969-215.001c-12.496-12.464-12.496-32.736 0-45.264 12.505-12.464 32.768-12.464 45.232 0l192.464 192.464 359.337-359.335c12.496-12.464 32.8-12.464 45.305 0 12.496 12.535 12.496 32.8 0 45.271v0 0zM833.168 343.735z" fill="#13227a"></path></svg>
+                </span>
+            </div>
+        </div>
+    </div>
+]]>
+            </field>
+
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+    // Your script here
+    let data_source = this.get_data_source();
+    if (!data_source || !data_source.is_valid()) return;
+    let value = data_source.get_first_aggregate_column_value();
+    this.$el.find('.count_val').text(value);
+]]>
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+    // Your style here
+]]>
+            </field>
+        </record>
+
+
+        <record id="mana_dashboard.statistics_card_style2" model="mana_dashboard.template">
+            <field name="name">Statistics Card Style2</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="template">
+<![CDATA[
+            <div class="card_style2">
+                <div class="icon">
+<svg class="icon" viewBox="0 0 1251 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path d="M113.777778 170.666667a56.888889 56.888889 0 1 1-113.777778 0 170.666667 170.666667 0 0 1 170.666667-170.666667h910.222222a170.666667 170.666667 0 0 1 170.666667 170.666667v682.666666a170.666667 170.666667 0 0 1-170.666667 170.666667H170.666667a170.666667 170.666667 0 0 1-170.666667-170.666667V398.222222a56.888889 56.888889 0 1 1 113.777778 0v455.111111a56.888889 56.888889 0 0 0 56.888889 56.888889h910.222222a56.888889 56.888889 0 0 0 56.888889-56.888889V170.666667a56.888889 56.888889 0 0 0-56.888889-56.888889H170.666667a56.888889 56.888889 0 0 0-56.888889 56.888889z" fill="#313645" p-id="4986"></path><path d="M796.444444 398.222222a56.888889 56.888889 0 1 0 0-113.777778H512.796444a113.777778 113.777778 0 0 0-113.777777 113.777778v56.888889a113.777778 113.777778 0 0 0 113.777777 113.777778H739.555556v56.888889H455.111111a56.888889 56.888889 0 0 0 0 113.777778h284.444445a113.777778 113.777778 0 0 0 113.777777-113.777778v-56.888889a113.777778 113.777778 0 0 0-113.777777-113.777778H512.796444V398.222222H796.444444z" fill="#313645" p-id="4987"></path><path d="M568.888889 682.666667a56.888889 56.888889 0 0 1 113.777778 0v114.403555a56.888889 56.888889 0 1 1-113.777778 0V682.666667zM568.888889 227.271111a56.888889 56.888889 0 0 1 113.777778 0v114.346667a56.888889 56.888889 0 0 1-113.777778 0v-114.346667z" fill="#313645"></path></svg>
+                </div>
+                <div class="content">
+                    <h1>$<span class="statisticss">307144</span></h1>
+                    <p class="sub_title">Total Purchase Due</p>
+                </div>
+            </div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+            <div class="card_style2">
+                <div class="icon">
+<svg class="icon" viewBox="0 0 1251 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path d="M113.777778 170.666667a56.888889 56.888889 0 1 1-113.777778 0 170.666667 170.666667 0 0 1 170.666667-170.666667h910.222222a170.666667 170.666667 0 0 1 170.666667 170.666667v682.666666a170.666667 170.666667 0 0 1-170.666667 170.666667H170.666667a170.666667 170.666667 0 0 1-170.666667-170.666667V398.222222a56.888889 56.888889 0 1 1 113.777778 0v455.111111a56.888889 56.888889 0 0 0 56.888889 56.888889h910.222222a56.888889 56.888889 0 0 0 56.888889-56.888889V170.666667a56.888889 56.888889 0 0 0-56.888889-56.888889H170.666667a56.888889 56.888889 0 0 0-56.888889 56.888889z" fill="#313645" p-id="4986"></path><path d="M796.444444 398.222222a56.888889 56.888889 0 1 0 0-113.777778H512.796444a113.777778 113.777778 0 0 0-113.777777 113.777778v56.888889a113.777778 113.777778 0 0 0 113.777777 113.777778H739.555556v56.888889H455.111111a56.888889 56.888889 0 0 0 0 113.777778h284.444445a113.777778 113.777778 0 0 0 113.777777-113.777778v-56.888889a113.777778 113.777778 0 0 0-113.777777-113.777778H512.796444V398.222222H796.444444z" fill="#313645" p-id="4987"></path><path d="M568.888889 682.666667a56.888889 56.888889 0 0 1 113.777778 0v114.403555a56.888889 56.888889 0 1 1-113.777778 0V682.666667zM568.888889 227.271111a56.888889 56.888889 0 0 1 113.777778 0v114.346667a56.888889 56.888889 0 0 1-113.777778 0v-114.346667z" fill="#313645"></path></svg>
+                </div>
+                <div class="content">
+                    <h1>$<span class="statisticss">307144</span></h1>
+                    <p class="sub_title">Total Purchase Due</p>
+                </div>
+            </div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+    // Your script here
+    let data_source = this.get_data_source();
+    if (!data_source || !data_source.is_valid()) return;
+    let value = data_source.get_first_aggregate_column_value();
+    this.$el.find('.statisticss').text(value);
+]]>
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+    // Your style here 
+    .card_style2 {
+        display: flex;
+        align-items: center;
+        padding: 25px;
+        height: 100%;
+    }
+
+    .content {
+        margin-left: 20px;
+        flex:  1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .sub_title {
+        font-size: 12px;
+    }
+]]>
+            </field>
+        </record>
+
+
+        <record id="mana_dashboard.statistics_card_style3" model="mana_dashboard.template">
+            <field name="name">Statistics Card Style3</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="template">
+<![CDATA[	
+<div class="card-bx stacked card">
+    <img src="https://zenix.dexignzone.com/laravel/demo/images/card/card1.jpg" alt="" />
+    <div class="card-info">
+        <p class="mb-1 text-white fs-14">Main Balance</p>
+        <div class="d-flex justify-content-between">
+            <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"></path>
+                <path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"></path>
+                <path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"></path>
+            </svg>
+        </div>
+        <div class="d-flex">
+            <div class="me-4 text-white">
+                <p class="fs-12 mb-1 op6">VALID THRU</p>
+                <span>08/21</span>
+            </div>
+            <div class="text-white">
+                <p class="fs-12 mb-1 op6">CARD HOLDER</p>
+                <span>Marquezz Silalahi</span>
+            </div>
+        </div>
+    </div>
+</div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div class="card-bx stacked card">
+    <img src="https://zenix.dexignzone.com/laravel/demo/images/card/card1.jpg" alt="" />
+    <div class="card-info">
+        <p class="mb-1 text-white fs-14">Main Balance</p>
+        <div class="d-flex justify-content-between">
+            <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"></path>
+                <path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"></path>
+                <path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"></path>
+            </svg>
+        </div>
+        <div class="d-flex">
+            <div class="me-4 text-white">
+                <p class="fs-12 mb-1 op6">VALID THRU</p>
+                <span>08/21</span>
+            </div>
+            <div class="text-white">
+                <p class="fs-12 mb-1 op6">CARD HOLDER</p>
+                <span>Marquezz Silalahi</span>
+            </div>
+        </div>
+    </div>
+    </div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+    // Your script here
+    let data_source = this.get_data_source();
+    if (!data_source || !data_source.is_valid()) return;
+    let value = data_source.get_first_aggregate_column_value();
+    this.$el.find('.statisticss').text(value);
+]]>
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+.card-bx img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    border-radius: 0.35rem;
+    object-fit: cover;
+}
+
+.card-bx .card-info {
+    position: relative;
+    padding: 25px 30px;
+}
+
+
+.stacked {
+    position: relative;
+    z-index: 1;
+}
+
+.stacked {
+    position: relative;
+    z-index: 1;
+}
+
+&.card {
+    margin-bottom: 1.875rem;
+    background-color: #fff;
+    transition: all .5s ease-in-out;
+    position: relative;
+    border: 0rem solid transparent;
+    border-radius: 0.35rem;
+    box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(82, 63, 105, 0.05);
+    height: calc(100% - 30px);
+}
+]]>
+            </field>
+        </record>
+
+        <record id="mana_dashboard.statistics_card_style4" model="mana_dashboard.template">
+            <field name="name">Statistics Card Style4</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="template">
+<![CDATA[	
+<div class="card-bx stacked card">
+    <img src="https://zenix.dexignzone.com/laravel/demo/images/card/card3.jpg" alt="" />
+    <div class="card-info">
+        <p class="mb-1 text-white fs-14">Main Balance</p>
+        <div class="d-flex justify-content-between">
+            <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+            <svg width="55" height="34" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"></circle>
+                <circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"></circle>
+            </svg>
+        </div>
+        <div class="d-flex">
+            <div class="me-4 text-white">
+                <p class="fs-12 mb-1 op6">VALID THRU</p>
+                <span>08/21</span>
+            </div>
+            <div class="text-white">
+                <p class="fs-12 mb-1 op6">CARD HOLDER</p>
+                <span>Marquezz Silalahi</span>
+            </div>
+        </div>
+    </div>
+    </div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div class="card-bx stacked card">
+    <img src="https://zenix.dexignzone.com/laravel/demo/images/card/card1.jpg" alt="" />
+    <div class="card-info">
+        <p class="mb-1 text-white fs-14">Main Balance</p>
+        <div class="d-flex justify-content-between">
+            <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"></path>
+                <path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"></path>
+                <path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"></path>
+            </svg>
+        </div>
+        <div class="d-flex">
+            <div class="me-4 text-white">
+                <p class="fs-12 mb-1 op6">VALID THRU</p>
+                <span>08/21</span>
+            </div>
+            <div class="text-white">
+                <p class="fs-12 mb-1 op6">CARD HOLDER</p>
+                <span>Marquezz Silalahi</span>
+            </div>
+        </div>
+    </div>
+    </div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+    // Your script here
+    let data_source = this.get_data_source();
+    if (!data_source || !data_source.is_valid()) return;
+    let value = data_source.get_first_aggregate_column_value();
+    this.$el.find('.statisticss').text(value);
+]]>
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+&.card {
+    margin-bottom: 1.875rem;
+    background-color: #fff;
+    transition: all .5s ease-in-out;
+    position: relative;
+    border: 0rem solid transparent;
+    border-radius: 0.35rem;
+    box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(82, 63, 105, 0.05);
+    height: calc(100% - 30px);
+}
+
+.card-bx img {
+    position: absolute;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    z-index: 0;
+    border-radius: 0.35rem;
+    object-fit: cover;
+}
+
+.card-bx .card-info {
+    position: relative;
+    padding: 25px 30px;
+}
+]]>
+            </field>
+        </record>
+
+
+        <record id="mana_dashboard.statistics_card_style5" model="mana_dashboard.template">
+            <field name="name">Statistics Card Style5</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="template">
+<![CDATA[	
+<div class="card radius-10 overflow-hidden">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div>
+                <p class="mb-0">Total Orders</p>
+                <h2 class="mb-0">867</h2>
+            </div>
+            <div class="ms-auto">
+<svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2823" width="48" height="48"><path d="M354.778212 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C416.48153 848.716858 388.868635 821.104987 354.778212 821.104987L354.778212 821.104987zM786.701432 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C848.40475 848.716858 820.792878 821.104987 786.701432 821.104987L786.701432 821.104987zM847.911516 790.253328l-501.123278 0c-44.457538 0-83.546811-35.171034-88.976474-80.060407l-52.324716-368.368742-29.772071-172.151825c-1.851161-15.025205-15.549138-27.303856-28.939099-27.303856l-39.305191 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l39.305191 0c45.01217 0 84.533278 35.171034 89.994664 80.060407l29.709649 171.504072 52.540633 369.942587c1.727341 14.31503 14.685467 26.377764 27.76639 26.377764l501.123278 0c17.060561 0 30.851659 13.791098 30.851659 30.851659C878.763175 776.462231 864.972077 790.253328 847.911516 790.253328zM385.351532 666.846694c-16.011672 0-29.556153-12.341073-30.727839-28.599362-1.264806-16.999163 11.508102-31.776727 28.476565-33.010835l418.533258-30.851659c15.363919-0.092098 28.322046-12.155854 30.018687-25.88453l48.591695-278.035364c1.234107-10.366092-1.635243-21.719674-7.836479-28.753881-3.979638-4.504594-8.977465-6.78759-14.809287-6.78759l-534.165836 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l534.165836 0c23.570835 0 45.228087 9.779737 60.994166 27.581172 18.017352 20.331048 26.285666 48.992831 22.676465 78.70248l-48.622394 278.066063c-5.244444 43.25413-44.303019 78.425164-88.760556 78.425164l-416.250262 30.759561C386.863978 666.815995 386.092405 666.846694 385.351532 666.846694z" fill="#707070"></path></svg>
+            </div>
+        </div>
+    </div>
+    <div class="chart_container" style="min-height: 35px;">
+    </div>
+</div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div class="card radius-10 overflow-hidden">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div>
+                <p class="mb-0">Total Orders</p>
+                <h2 class="mb-0">867</h2>
+            </div>
+            <div class="ms-auto">
+<svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2823" width="48" height="48"><path d="M354.778212 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C416.48153 848.716858 388.868635 821.104987 354.778212 821.104987L354.778212 821.104987zM786.701432 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C848.40475 848.716858 820.792878 821.104987 786.701432 821.104987L786.701432 821.104987zM847.911516 790.253328l-501.123278 0c-44.457538 0-83.546811-35.171034-88.976474-80.060407l-52.324716-368.368742-29.772071-172.151825c-1.851161-15.025205-15.549138-27.303856-28.939099-27.303856l-39.305191 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l39.305191 0c45.01217 0 84.533278 35.171034 89.994664 80.060407l29.709649 171.504072 52.540633 369.942587c1.727341 14.31503 14.685467 26.377764 27.76639 26.377764l501.123278 0c17.060561 0 30.851659 13.791098 30.851659 30.851659C878.763175 776.462231 864.972077 790.253328 847.911516 790.253328zM385.351532 666.846694c-16.011672 0-29.556153-12.341073-30.727839-28.599362-1.264806-16.999163 11.508102-31.776727 28.476565-33.010835l418.533258-30.851659c15.363919-0.092098 28.322046-12.155854 30.018687-25.88453l48.591695-278.035364c1.234107-10.366092-1.635243-21.719674-7.836479-28.753881-3.979638-4.504594-8.977465-6.78759-14.809287-6.78759l-534.165836 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l534.165836 0c23.570835 0 45.228087 9.779737 60.994166 27.581172 18.017352 20.331048 26.285666 48.992831 22.676465 78.70248l-48.622394 278.066063c-5.244444 43.25413-44.303019 78.425164-88.760556 78.425164l-416.250262 30.759561C386.863978 666.815995 386.092405 666.846694 385.351532 666.846694z" fill="#707070"></path></svg>
+            </div>
+        </div>
+    </div>
+    <div class="chart_container" style="min-height: 35px;">
+    </div>
+</div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+    // Your script here
+    let data_source = this.get_data_source();
+    if (!data_source || !data_source.is_valid()) return;
+    let value = data_source.get_first_aggregate_column_value();
+    this.$el.find('.statisticss').text(value);
+
+// data for the sparklines that appear below header area
+var sparklineData = [47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
+
+// the default colorPalette for this dashboard
+//var colorPalette = ['#01BFD6', '#5564BE', '#F7A600', '#EDCD24', '#F74F58'];
+var colorPalette = ['#00D8B6','#008FFB',  '#FEB019', '#FF4560', '#775DD0']
+
+var spark1 = {
+  chart: {
+    id: 'sparkline1',
+    group: 'sparklines',
+    type: 'area',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+  },
+  stroke: {
+    curve: 'straight'
+  },
+  fill: {
+    opacity: 1,
+  },
+  series: [{
+    name: 'Sales',
+    data: sparklineData
+  }],
+  labels: [...Array(24).keys()].map(n => `2018-09-0${n+1}`),
+  yaxis: {
+    min: 0
+  },
+  xaxis: {
+    type: 'datetime',
+  },
+  colors: ['#DCE6EC'],
+}
+
+new ApexCharts(this.el.querySelector(".chart_container"), spark1).render();
+]]>
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+&.card {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px #dadafda6, 0 2px 6px #ceceee8a;
+    font-size:14px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+.ms-auto {
+    margin-left: auto!important;
+}
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

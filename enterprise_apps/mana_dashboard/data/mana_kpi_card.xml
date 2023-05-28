@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- mana qweb template -->
+        <record id="mana_dashboard.kpi_card_style_one" model="mana_dashboard.template">
+            <field name="name">kpi card style 1</field>
+			<field name="category">statistics</field>
+            <field name="type">kpi_card</field>
+            <field name="component_type">kpi_card</field>
+            <field name="multi_data_source">1</field>
+            
+            <!-- template -->
+            <field name="template">
+<![CDATA[
+    <div class="card-body iconfont text-left">
+        <h6 class="mb-3">Renewed Users</h6>
+        <h2 class="mb-1 text-dark display-4 font-weight-bold"><span class="month_total">19.89K</span><span
+                class="text-success fs-13 ml-2 kpi_percent">(+25%)</span></h2>
+        <p class="mb-3">Overview of Last month</p>
+        <div class="progress h-1 mb-2">
+            <div class="progress-bar bg-primary w-40 " role="progressbar"></div>
+        </div> <small class="mb-0  text-muted">Monthly<span
+                class="float-right text-muted target_finished">40%</span></small>
+    </div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+    <div class="card-body iconfont text-left">
+        <h6 class="mb-3">Renewed Users</h6>
+        <h2 class="mb-1 text-dark display-4 font-weight-bold"><span class="month_total">19.89K</span><span
+                class="text-success fs-13 ml-2 kpi_percent">(+25%)</span></h2>
+        <p class="mb-3">Overview of Last month</p>
+        <div class="progress h-1 mb-2">
+            <div class="progress-bar bg-primary w-40 " role="progressbar"></div>
+        </div> <small class="mb-0  text-muted">Monthly<span
+                class="float-right text-muted target_finished">40%</span></small>
+    </div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+let data_sources = this.get_data_sources()
+if (data_sources.length > 2) {
+
+    // get datas
+	let data_source1 = data_sources[0]
+    let data_source2 = data_sources[1]
+    let data_source3 = data_sources[2]
+
+    if (!data_source1 || !data_source2 || !data_source3) {
+        return
+    }
+
+	let val1 = data_source1.get_first_aggregate_column_value()
+	let val2 = data_source2.get_first_aggregate_column_value()
+    let target = data_source3.get_first_aggregate_column_value()
+	let percent = (val1 / val2) * 100
+    let target_finished = (val1 / target) * 100
+    let kpi_percent = (val1 - val2) / val2 * 100
+
+    // set progress bar
+    let progress_bar = this.$el.find('.progress-bar')
+    progress_bar.attr('aria-valuenow', val1)
+    progress_bar.attr('aria-valuemax', val2)
+    progress_bar.css('width', percent + '%')
+
+    // kpi percent
+    let kpi_percent_el = this.$el.find('.kpi_percent')
+    kpi_percent_el.text('(' + kpi_percent + '%)')
+
+    // month_total
+    this.$el.find('.month_total').text(val1 / 1000 + 'K')
+
+    // target finished
+    this.$el.find('.target_finished').text(target_finished + '%')
+}
+]]>
+            </field>
+			
+			<!-- styles -->
+			<field name="styles">
+				<![CDATA[
+]]>
+			</field>	
+			
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+.mb-3,
+.my-3 {
+    margin-bottom: 0.75rem !important;
+}
+
+h2,
+.h2 {
+    font-size: 1.75rem;
+}
+
+.display-4 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.mb-1,
+.my-1 {
+    margin-bottom: 0.25rem !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.text-dark {
+    color: #182d49 !important;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
+
+.h-1 {
+    height: 0.25rem !important;
+}
+
+.mb-2,
+.my-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: 0.7rem;
+    background-color: #e2e1ea;
+    border-radius: 3px;
+}
+
+.progress {
+    position: relative;
+}
+
+small {
+    font-size: 80%;
+}
+
+small,
+.small {
+    font-size: 87.5%;
+    font-weight: 400;
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0px !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.text-muted {
+    color: #92969a !important;
+}
+
+.card-body> :last-child {
+    margin-bottom: 0px;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    transition: width 0.6s ease;
+}
+
+.bg-primary {
+    background: #564ec1 !important;
+}
+
+.bg-primary {
+    background: #564ec1 !important;
+}
+
+.fs-13 {
+    font-size: 13px !important;
+}
+
+.ml-2,
+.mx-2 {
+    margin-left: 0.5rem !important;
+}
+
+.text-success {
+    color: #21c44c !important;
+}
+]]>
+            </field>
+
+			<!-- help -->
+			<field name="help">
+				<![CDATA[
+<h1>KPI Card</h1>
+<p>This template is used to display KPIs in a card.</p>
+<p>To use this template, you need to config three data sources.</p>
+<p>First data source is used to get the now value.</p>
+<p>Second data source is used to get the previous value.</p>
+<p>Third data source is used to get the target value.</p>
+<p>For example, you want to display the total revenue of this month and the total revenue of last month.</p>
+<p>First data source is used to get the total revenue of this month.</p>
+<p>Second data source is used to get the total revenue of last month.</p>
+<p>Third data source is used to get the target revenue of this month.</p>
+<p>Then you can use the formula to calculate the KPIs.</p>
+]]>
+			</field>
+        </record>
+
+        <!-- style two -->
+        <record id="mana_dashboard.kpi_card_style_two" model="mana_dashboard.template">
+            <field name="name">kpi card style 2</field>
+            <field name="category">statistics</field>
+            <field name="type">kpi_card</field>
+            <field name="multi_data_source">1</field>
+            <field name="template">
+<![CDATA[
+<div>
+    <div class="card-header pt-2 pb-0 border-bottom-0">
+        <h3 class="card-title">Total Revenue</h3>
+        <div class="card-options"> <a class="btn btn-sm btn-primary" href="#"><i
+                    class="fa fa-bar-chart mb-0"></i></a> </div>
+    </div>
+    <div class="card-body pt-0">
+        <h3 class="d-inline-block mb-2">46,789</h3>
+        <div class="progress h-2 mt-2 mb-2">
+            <div class="progress-bar bg-primary w-50" role="progressbar"></div>
+        </div>
+        <div class="float-left">
+            <div class="mt-2"> <i class="fa fa-caret-up text-success"></i> <span>12%
+                    increase</span> </div>
+        </div>
+    </div>
+</div>
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+let data_sources = this.get_data_sources()
+if (data_sources.length > 2) {
+    // get datas
+	let data_source1 = data_sources[0]
+	let data_source2 = data_sources[1]
+    let data_source3 = data_sources[2]
+    if (!data_source1 || !data_source2 || !data_source3) {
+        return
+    }
+	let val1 = data_source1.get_first_aggregate_column_value()
+	let val2 = data_source2.get_first_aggregate_column_value()
+    let target = data_source3.get_first_aggregate_column_value()
+	let percent = (val1 / val2) * 100
+    let target_finished = (val1 / target) * 100
+
+    // set progress bar
+    let progress_bar = this.$el.find('.progress-bar')
+    progress_bar.attr('aria-valuenow', val1)
+    progress_bar.attr('aria-valuemax', val2)
+    progress_bar.css('width', percent + '%')
+
+    // month_total
+    this.$el.find('.month_total').text(val1)
+
+    // target finished
+    this.$el.find('.target_finished').text(target_finished + '%')
+}
+]]>
+            </field>
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+.card-header {
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid #e1e0ea;
+}
+
+.card-header {
+    background: none;
+    padding: 0.5rem 1.5rem;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 3.5rem;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+:first-child.card-header {
+    border-radius: calc(3px - 1px) calc(3px - 1px) 0 0;
+}
+
+.pt-0,
+.py-0 {
+    padding-top: 0px !important;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.5rem;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0px;
+    margin-bottom: 0.66em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-bottom: 0.66em;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+h3,
+.h3 {
+    font-size: 1.2rem;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.mt-2,
+.my-2 {
+    margin-top: 0.5rem !important;
+}
+
+.mb-2,
+.my-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.h-2 {
+    height: 0.5rem !important;
+}
+
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: 0.7rem;
+    background-color: #e2e1ea;
+    border-radius: 3px;
+}
+
+.progress {
+    position: relative;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.card-body> :last-child {
+    margin-bottom: 0px;
+}
+
+.text-success {
+    color: #21c44c !important;
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0px !important;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    transition: width 0.6s ease;
+}
+
+.bg-primary {
+    background: #564ec1 !important;
+}
+
+.bg-primary {
+    background: #564ec1 !important;
+}
+
+.card-title {
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.card-header .card-title {
+    margin-bottom: 0px;
+}
+
+.card-options {
+    margin-left: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-order: 100;
+    order: 100;
+    margin-right: -0.5rem;
+    color: #9aa0ac;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a {
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+button,
+a {
+    outline: 0 !important;
+}
+
+a {
+    color: #564ec1;
+}
+
+a {
+    color: #564ec1;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.93rem;
+    line-height: 1.8461;
+    border-radius: 3px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-sm,
+.btn-group-sm>.btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.87rem;
+    line-height: 1.3333;
+    border-radius: 3px;
+}
+
+.btn {
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-size: 0.81rem;
+    min-width: 2.37rem;
+}
+
+.btn-sm,
+.btn-group-sm>.btn {
+    font-size: 0.75rem;
+    min-width: 1.62rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #564ec1 !important;
+    border-color: #564ec1 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #564ec1 !important;
+    border-color: #564ec1 !important;
+}
+
+:not(:disabled):not(.disabled).btn {
+    cursor: pointer;
+}
+]]>
+            </field>
+
+            <!-- help -->
+			<field name="help">
+				<![CDATA[
+<h1>KPI Card</h1>
+<p>This template is used to display KPIs in a card.</p>
+<p>To use this template, you need to config three data sources.</p>
+<p>First data source is used to get the now value.</p>
+<p>Second data source is used to get the previous value.</p>
+<p>Third data source is used to get the target value.</p>
+<p>For example, you want to display the total revenue of this month and the total revenue of last month.</p>
+<p>First data source is used to get the total revenue of this month.</p>
+<p>Second data source is used to get the total revenue of last month.</p>
+<p>Third data source is used to get the target revenue of this month.</p>
+<p>Then you can use the formula to calculate the KPIs.</p>
+]]>
+			</field>
+        </record>
+
+    </data>
+</odoo>

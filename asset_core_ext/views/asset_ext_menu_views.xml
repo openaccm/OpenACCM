@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--去掉一些系统菜单-->
+	<record id="staff.menu_staff_root" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+    </record>
+    <record id="warehouse.warehouse_root" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+    </record>
+    <record id="buy.menu_buy_root" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+    </record>
+    <record id="sell.sell_menu" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+    </record>
+    <record id="document_knowledge.menu_document_root" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="finance.finance_menu" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="money.menu_money_root" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <!--去掉一些系统菜单，多装了一些莫名其妙的模块。下面先把菜单隐藏掉，再卸载不需要的模块-->
+<!--    <record id="survey.menu_surveys" model="ir.ui.menu">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+<!--    <record id="project.menu_main_pm" model="ir.ui.menu">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+<!--    <record id="mass_mailing.mass_mailing_menu_root" model="ir.ui.menu">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+<!--    <record id="hr.menu_hr_root" model="ir.ui.menu">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+<!--    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+<!--    <record id="contacts.menu_contacts" model="ir.ui.menu">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+</odoo>

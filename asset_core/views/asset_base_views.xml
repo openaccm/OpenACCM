@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--设备标签-->
+    <record id="view_asset_tag_tree" model="ir.ui.view">
+        <field name="name">设备标签</field>
+        <field name="model">asset.tag</field>
+        <field name="arch" type="xml">
+            <tree string="设备标签" editable="bottom">
+                <field name="name"/>
+                <field name="color"/>
+                <field name="active" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_asset_tag" model="ir.actions.act_window">
+        <field name="name">设备标签</field>
+        <field name="res_model">asset.tag</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('view_asset_tag_tree')}),
+                  ]"/>
+    </record>
+
+    <!--工单类-->
+    <record id="view_asset_task_type_tree" model="ir.ui.view">
+        <field name="name">工单类</field>
+        <field name="model">asset.task.type</field>
+        <field name="arch" type="xml">
+            <tree string="工单类" editable="bottom">
+                <field name="name"/>
+                <field name="active" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_asset_task_type" model="ir.actions.act_window">
+        <field name="name">工单类</field>
+        <field name="res_model">asset.task.type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('view_asset_task_type_tree')}),
+                  ]"/>
+    </record>
+</odoo>

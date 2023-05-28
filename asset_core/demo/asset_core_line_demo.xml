@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_1" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_1"/>
+            <field name="ma_roll">alarm</field>
+            <field name="error_detail">高回压预警</field>
+            <field name="alarm_time">2023-03-06 10:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_1"/>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_2" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_2"/>
+            <field name="ma_roll">alarm</field>
+            <field name="error_detail">高回压预警</field>
+            <field name="alarm_time">2023-03-06 11:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_2"/>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_3" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_3"/>
+            <field name="ma_roll">alarm</field>
+            <field name="error_detail">高回压预警</field>
+            <field name="alarm_time">2023-03-05 12:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_3"/>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_4" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_4"/>
+            <field name="ma_roll">abnormal</field>
+            <field name="error_detail">设备异常</field>
+            <field name="alarm_time">2023-03-05 13:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_4"/>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_5" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_5"/>
+            <field name="ma_roll">closed</field>
+            <!-- <field name="error_detail"></field> -->
+            <field name="alarm_time">2023-03-10 12:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_5"/>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_6" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_6"/>
+            <field name="ma_roll">alarm</field>
+            <field name="error_detail">设备电量低</field>
+            <field name="alarm_time">2023-03-07 09:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_6"/>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_line_7" model="asset.core.line">
+            <field name="bill_id" ref="asset_core_7"/>
+            <field name="ma_roll">closed</field>
+            <field name="error_detail">设备关闭</field>
+            <field name="alarm_time">2023-02-05 11:35:30</field>
+            <field name="task_id" ref="asset_core.task_alarm_7"/>
+        </record>
+    </data>
+</odoo>

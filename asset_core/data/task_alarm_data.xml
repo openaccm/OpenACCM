@@ -1,0 +1,8 @@
+<odoo>
+	<data>
+		<record id="task_alarm" model="task">
+			<field name="name">设备告警</field>
+			<field name="project_id" ref='task.project_gooderp'/>
+		</record>
+	</data>
+</odoo>

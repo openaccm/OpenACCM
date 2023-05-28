@@ -1,0 +1,96 @@
+<odoo>
+	<record id="inherit_task_timesheet_form" model="ir.ui.view">
+        <field name="name">今日</field>
+        <field name="model">timesheet</field>
+        <field name="inherit_id" ref="task.timesheet_form"/>
+        <field name="arch" type="xml">
+			<xpath expr="//page[@name='task']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!--去掉任务模块的“今日”菜单-->
+    <record id="task.menu_timesheet" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+    </record>
+    <!--去掉任务模块的“报表”菜单-->
+    <record id="task.menu_task_report" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+    </record>
+
+    <!--在任务模块增加简要的工作记录菜单-->
+    <record model="ir.ui.view" id="timeline_tree_1001">
+        <field name="name">工作记录</field>
+        <field name="model">timeline</field>
+        <field name="arch" type="xml">
+            <tree create='1' edit='1' editable="top" default_order='create_date desc'>
+                <field name='task_id' optional="show"/>
+                <field name='project_id' optional="show"/>
+                <field name='just_done' optional="show"/>
+                <field name='need_help'/>
+                <field name='hours' sum="全天合计" groups='task.group_task_hours' optional="show"/>
+                <field name='set_status' optional="show"/>
+                <field name="create_uid" string='创建人' optional="show"/>
+                <field name="create_date" string='创建时间' optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="timeline_search_1001" model="ir.ui.view">
+        <field name="name">timeline.search.1002</field>
+        <field name="model">timeline</field>
+        <field name="arch" type="xml">
+            <search string="工作记录">
+                <field name="task_id"/>
+                <field name="project_id"/>
+                <field name="create_uid" string='创建人'/>
+                <separator/>
+                <filter string="今日" name="today_timeline"
+                        domain="[('create_date', '&gt;=', time.strftime('%Y-%m-%d 00:00:00')),
+                            ('create_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59'))]"
+                        help="今日工作记录"/>
+                <filter name="group_create_uid" string="创建人" context="{'group_by':'create_uid'}"/>
+                <filter name="group_project_id" string="项目" context="{'group_by':'project_id'}"/>
+                <separator/>
+                <filter string="创建月份" context="{'group_by':'create_date:month'}" name="month"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_timeline_1001_my">
+        <field name="name">我的工作记录</field>
+        <field name="res_model">timeline</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('create_uid', '=', uid)]</field>
+        <field name="context">{'search_default_today_timeline': 1}</field>
+        <field name="search_view_id" ref="timeline_search_1001"/>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('timeline_tree_1001')}),
+               ]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_timeline_1001_all">
+        <field name="name">全部工作记录</field>
+        <field name="res_model">timeline</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_today_timeline': 1}</field>
+        <field name="search_view_id" ref="timeline_search_1001"/>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('timeline_tree_1001')}),
+               ]"/>
+    </record>
+
+    <menuitem name="工作记录"
+            id="sub_menu_timeline_1001"
+            parent="task.menu_task_root" sequence="0"/>
+    <menuitem name="我的工作记录"
+            id="sub_menu_timeline_1001_my"
+            action="action_timeline_1001_my"
+            parent="sub_menu_timeline_1001" sequence="1"/>
+    <menuitem name="全部工作记录"
+            id="sub_menu_timeline_1001_all"
+            action="action_timeline_1001_all"
+            parent="sub_menu_timeline_1001" sequence="5"/>
+</odoo>

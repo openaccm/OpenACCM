@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- sunburst -->
+        <record id="mana_dashboard.template_simple_sunburst" model="mana_dashboard.template">
+            <field name="name">Simple sunburst</field>
+            <field name="category">chart</field>
+            <field name="type">sunburst</field>
+            <field name="component_type">sunburst_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/sunburst_chart/simple_sunburst.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="scripts">
+<![CDATA[
+// this chart just support custom data source
+let data_source = this.get_data_source(0);
+if (!data_source.is_valid()) {
+  return;
+}
+
+let data = data_source.get_raw_datas();
+if (!data) {
+  return;
+}
+
+let option = {
+  series: {
+    type: 'sunburst',
+    // emphasis: {
+    //     focus: 'ancestor'
+    // },
+    data: data,
+    radius: [0, '90%'],
+    label: {
+      rotate: 'radial'
+    }
+  }
+};
+this.setOption(option);
+]]>
+            </field>
+            <!-- supported data source types -->
+            <field name="supported_data_source_types" 
+                eval="[(6, 0, [ref('mana_dashboard_base.data_source_method'), ref('mana_dashboard_base.data_source_json'), ref('mana_dashboard_base.data_source_code')])]"/>
+
+            <!-- supported data source types -->
+            <field name="supported_result_types" 
+                eval="[(6, 0, [ref('mana_dashboard_base.result_type_custom')])]"/>
+
+            <!-- default_code -->
+            <field name="default_code">
+<![CDATA[
+data = """
+[
+  {
+    name: 'Grandpa',
+    children: [
+      {
+        name: 'Uncle Leo',
+        value: 15,
+        children: [
+          {
+            name: 'Cousin Jack',
+            value: 2
+          },
+          {
+            name: 'Cousin Mary',
+            value: 5,
+            children: [
+              {
+                name: 'Jackson',
+                value: 2
+              }
+            ]
+          },
+          {
+            name: 'Cousin Ben',
+            value: 4
+          }
+        ]
+      },
+      {
+        name: 'Father',
+        value: 10,
+        children: [
+          {
+            name: 'Me',
+            value: 5
+          },
+          {
+            name: 'Brother Peter',
+            value: 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Nancy',
+    children: [
+      {
+        name: 'Uncle Nike',
+        children: [
+          {
+            name: 'Cousin Betty',
+            value: 1
+          },
+          {
+            name: 'Cousin Jenny',
+            value: 2
+          }
+        ]
+      }
+    ]
+  }
+]
+"""
+result = json5.loads(data)
+]]>
+            </field>
+            <!-- default_data_source_type -->
+            <field name="default_data_source_type" ref="mana_dashboard_base.data_source_code"/>
+            <!-- default_result_type -->
+            <field name="default_result_type" ref="mana_dashboard_base.result_type_custom"/>
+            <!-- default scripts -->
+            <field name="default_scripts">
+<![CDATA[
+let data = [
+  {
+    name: 'Grandpa',
+    children: [
+      {
+        name: 'Uncle Leo',
+        value: 15,
+        children: [
+          {
+            name: 'Cousin Jack',
+            value: 2
+          },
+          {
+            name: 'Cousin Mary',
+            value: 5,
+            children: [
+              {
+                name: 'Jackson',
+                value: 2
+              }
+            ]
+          },
+          {
+            name: 'Cousin Ben',
+            value: 4
+          }
+        ]
+      },
+      {
+        name: 'Father',
+        value: 10,
+        children: [
+          {
+            name: 'Me',
+            value: 5
+          },
+          {
+            name: 'Brother Peter',
+            value: 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Nancy',
+    children: [
+      {
+        name: 'Uncle Nike',
+        children: [
+          {
+            name: 'Cousin Betty',
+            value: 1
+          },
+          {
+            name: 'Cousin Jenny',
+            value: 2
+          }
+        ]
+      }
+    ]
+  }
+];
+let option = {
+  series: {
+    type: 'sunburst',
+    data: data,
+    radius: [0, '90%'],
+    label: {
+      rotate: 'radial'
+    }
+  }
+};
+this.setOption(option);
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+<![CDATA[
+This chart just support custom data source.
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

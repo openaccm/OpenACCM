@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="view_tree_ewi_interface" model="ir.ui.view">
+        <field name="name">企微接口列表</field>
+        <field name="model">ewi.interface</field>
+        <field name="arch" type="xml">
+            <tree string="企微接口" import="false" default_order="id">
+                <field name="name"/>
+                <field name="description" optional="show"/>
+                <field name="parameter" optional="show"/>
+                <field name="url" optional="show"/>
+                <button name="btn_execute" string="执行此接口" type="object" class="btn-primary"/>
+                <field name="id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_form_ewi_interface" model="ir.ui.view">
+        <field name="name">企微接口列表</field>
+        <field name="model">ewi.interface</field>
+        <field name="arch" type="xml">
+            <form string="企微接口">
+                <header>
+                    <button name="btn_execute" string="执行此接口" type="object" class="btn-primary"/>
+                </header>
+                <sheet string="ewi_interface">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="parameter"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="url"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_tree_ewi_interface" model="ir.actions.act_window">
+        <field name="name">企微接口</field>
+        <field name="res_model">ewi.interface</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

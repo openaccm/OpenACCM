@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wx_approval_view_tree_1456" model="ir.ui.view">
+            <field name="name">wx.approval.view_tree</field>
+            <field name="model">wx.approval</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <tree string="企业微信审批配置">
+                    <field name="name"/>
+                    <field name="model_id" optional="show"/>
+                    <field name="is_external_tpl" optional="show"/>
+                    <field name="template_id" optional="show"/>
+                    <field name="submit_actions_server_id" optional="hide"/>
+                    <field name="accept_actions_server_id" optional="hide"/>
+                    <field name="reject_actions_server_id" optional="hide"/>
+                    <field name="cancel_actions_server_id" optional="hide"/>
+                    <field name="enable" optional="show"/>
+                </tree>
+            </field>
+        </record>
+        <record id="wx_approval_view_form_1457" model="ir.ui.view">
+            <field name="name">wx.approval.view_form</field>
+            <field name="model">wx.approval</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <form string="企业微信审批配置">
+                    <header>
+                        <button string="启用" name="subscribe" type="object" class="oe_highlight" attrs="{'invisible': [('enable', '=', True)]}"/>
+                        <button string="禁用" name="unsubscribe" type="object" attrs="{'invisible': [('enable', '=', False)]}"/>
+                        <button string="同步外部内容模板" name="sync_external_tpl" type="object" attrs="{'invisible': [('is_external_tpl', '=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <div align="right">
+                            <h3>完成“同步外部内容模板”取数后，您需要匹配odoo本地对象数据。</h3>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="model_id"/>
+                            <field name="is_external_tpl"/>
+                            <field name="template_id"/>
+                            <field name="submit_actions_server_id" context="{'default_model_id': model_id}"/>
+                            <field name="accept_actions_server_id" context="{'default_model_id': model_id}"/>
+                            <field name="reject_actions_server_id" context="{'default_model_id': model_id}"/>
+                            <field name="cancel_actions_server_id" context="{'default_model_id': model_id}"/>
+                            <field name="show_link" attrs="{'invisible': [('is_external_tpl', '=', True)]}"/>
+                            <field name="enable" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="对接配置字段" name="gen_control">
+                                <field name="template_fields" attrs="{'invisible': [('is_external_tpl', '=', False)]}">
+                                    <tree editable="bottom" create="0" edit="1" delete="0">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="template_name" readonly="1" optional="show"/>
+                                        <field name="field" optional="show"/>
+                                        <field name="control" optional="show"/>
+                                        <field name="require" readonly="1" optional="show"/>
+                                        <field name="placeholder" readonly="1" optional="show"/>
+                                        <field name="is_in_table" readonly="1" optional="show"/>
+                                        <field name="ext_id" optional="show"/>
+                                        <field name="template_id" readonly="1" optional="hide"/>
+
+                                        <field name="field_model" optional="hide"/>
+                                        <field name="field_id" domain="[('model_id', '=', parent.model_id)]"
+                                               options="{'no_create': True, 'no_open': True}" optional="show"/>
+                                        <field name="field_name" optional="show"/>
+                                        <field name="model_id" optional="hide" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="wx_approval_action_572" model="ir.actions.act_window">
+            <field name="name">审批配置</field>
+            <field name="res_model">wx.approval</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="help" type="html"><p></p></field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('wx_approval_view_tree_1456')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('wx_approval_view_form_1457')}),
+                    ]"/>
+        </record>
+
+    </data>
+</odoo>

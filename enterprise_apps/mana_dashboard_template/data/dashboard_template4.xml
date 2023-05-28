@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <!-- block1 -->
+    <record id="mana_dashboard_template.template4_block1" model="mana_dashboard.template">
+        <field name="name">block1</field>
+        <field name="is_custom">True</field>
+        <field name="type">line_chart</field>
+        <field name="default_scripts">
+<![CDATA[
+let option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            lineStyle: {
+                color: '#57617B'
+            }
+        },
+        formatter: '{b}日	:<br/> 生产情况{c}'
+    },
+
+    grid: {
+        left: '0',
+        right: '20',
+        top: '10',
+        bottom: '0',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        boundaryGap: false,
+        axisLine: {
+            show: false,
+            lineStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        data: ['10.2', '10.3', '10.4', '10.5', '10.6', '10.7']
+    }],
+    yAxis: [{
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        axisLine: {
+            show: false,
+            
+        },
+        splitLine: {
+            lineStyle: {
+                type:'dotted',
+                color: 'rgba(255,255,255,.1)'
+            }
+        }
+    }],
+    series: [{
+        name: '生产情况',
+        type: 'line',
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 5,
+        showSymbol: false,
+        lineStyle: {
+            normal: {
+                width: 2
+            }
+        },
+
+        areaStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(98, 201, 141, 0.5)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(98, 201, 141, 0.1)'
+                }], false),
+                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                shadowBlur: 10
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: '#4cb9cf',
+                borderColor: 'rgba(98, 201, 141,0.27)',
+                borderWidth: 12
+            }
+        },
+        data: [91, 60, 70, 54, 80, 40]
+    }]
+};
+this.setOption(option)
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+let option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            lineStyle: {
+                color: '#57617B'
+            }
+        },
+        formatter: '{b}日	:<br/> 生产情况{c}'
+    },
+
+    grid: {
+        left: '0',
+        right: '20',
+        top: '10',
+        bottom: '0',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        boundaryGap: false,
+        axisLine: {
+            show: false,
+            lineStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        data: ['10.2', '10.3', '10.4', '10.5', '10.6', '10.7']
+    }],
+    yAxis: [{
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        axisLine: {
+            show: false,
+        },
+        splitLine: {
+            lineStyle: {
+                type:'dotted',
+                color: 'rgba(255,255,255,.1)'
+            }
+        }
+    }],
+    series: [{
+        name: '生产情况',
+        type: 'line',
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 5,
+        showSymbol: false,
+        lineStyle: {
+            normal: {
+                width: 2
+            }
+        },
+
+        areaStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(98, 201, 141, 0.5)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(98, 201, 141, 0.1)'
+                }], false),
+                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                shadowBlur: 10
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: '#4cb9cf',
+                borderColor: 'rgba(98, 201, 141,0.27)',
+                borderWidth: 12
+            }
+        },
+        data: [91, 60, 70, 54, 80, 40]
+    }]
+};
+this.setOption(option)
+]]>
+            </field>
+    </record>
+
+    <!-- rada chart -->
+    <record id="mana_dashboard_template.template4_block2" model="mana_dashboard.template">
+            <field name="name">block2</field>
+            <field name="is_custom">True</field>
+            <field name="type">radar_chart</field>
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    radar: {
+        indicator: [{
+            name: '开料',
+            max: 100,
+            num:60,
+        }, {
+            name: '仓库',
+            max: 100,
+            num:33,
+        }, {
+            name: '包装',
+            max: 100,
+            num:10,
+        }, {
+            name: '分拣',
+            max: 100,
+            num:50,
+        }, {
+            name: '排钻',
+            max: 100,
+            num:100,
+        }, {
+            name: '封边',
+            max: 100,
+            num:100,
+        }],
+        splitNumber: 4,
+            nameGap: 0,
+        axisLine: { //指向外圈文本的分隔线样式
+            lineStyle: {
+                color: '#2c353d'
+            }
+        },
+        splitLine: {
+            lineStyle: {
+                color: ['#2c353d'],
+                width: 1
+            }
+        },
+        splitArea: {
+            areaStyle: {
+                color: ['transparent']
+            }
+        },
+        name: {
+            color: 'rgba(255,255,255,.8)',
+        },
+    },
+    series: [{
+        type: 'radar',
+        tooltip: {
+            trigger: 'item'
+        },
+        symbol: 'none',
+        itemStyle: {
+            normal: {
+                color: '#096e32',
+                borderColor: '#46ff91'
+            }
+        },
+        areaStyle:{
+            color:['#096e32'],
+            opacity:0.4
+        },
+        data: [{
+            value: [60, 33, 10, 50, 80, 100],
+        }]
+    }]
+};
+this.setOption(option)
+]]>
+            </field>
+            <field name="scripts">
+<![CDATA[
+let option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    radar: {
+        indicator: [{
+            name: '开料',
+            max: 100,
+            num:60,
+        }, {
+            name: '仓库',
+            max: 100,
+            num:33,
+        }, {
+            name: '包装',
+            max: 100,
+            num:10,
+        }, {
+            name: '分拣',
+            max: 100,
+            num:50,
+        }, {
+            name: '排钻',
+            max: 100,
+            num:100,
+        }, {
+            name: '封边',
+            max: 100,
+            num:100,
+        }],
+        splitNumber: 4,
+        nameGap: 0,
+        axisLine: { //指向外圈文本的分隔线样式
+            lineStyle: {
+                color: '#2c353d'
+            }
+        },
+        splitLine: {
+            lineStyle: {
+                color: ['#2c353d'],
+                width: 1
+            }
+        },
+        splitArea: {
+            areaStyle: {
+                color: ['transparent']
+            }
+        },
+        name: {
+            color: 'rgba(255,255,255,.8)',
+        },
+    },
+    series: [{
+        type: 'radar',
+        tooltip: {
+            trigger: 'item'
+        },
+        symbol: 'none',
+        itemStyle: {
+            normal: {
+                color: '#096e32',
+                borderColor: '#46ff91'
+            }
+        },
+        areaStyle:{
+            color:['#096e32'],
+            opacity:0.4
+        },
+        data: [{
+            value: [60, 33, 10, 50, 80, 100],
+        }]
+    }]
+};
+this.setOption(option)
+]]>
+            </field>
+    </record>
+
+    <!-- counter -->
+    <record id="mana_dashboard_template.template4_block3" model="mana_dashboard.template">
+            <field name="name">counter</field>
+            <field name="is_custom">True</field>
+            <field name="type">statistics_card</field>
+            <field name="scripts">
+<![CDATA[
+this.$el.find('.counter').countUp();
+]]>
+            </field>
+            <field name="default_scripts">
+<![CDATA[ 
+this.$el.find('.counter').countUp();
+]]>
+            </field>
+            <!-- template -->
+            <field name="template">
+<![CDATA[
+<div>
+    <div class="tit01">模块标题</div>
+    <div class="boxnav nav01" style="display: flex; align-items: center;">
+        <p class="p2"><span class="counter">19</span>/<span class="counter">25</span></p>
+    </div>
+    <div class="boxfoot"></div>
+</div>
+]]>
+            </field>
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div>
+    <div class="tit01">模块标题</div>
+    <div class="boxnav nav01" style="display: flex; align-items: center;">
+        <p class="p2"><span class="counter">19</span>/<span class="counter">25</span></p>
+    </div>
+    <div class="boxfoot"></div>
+</div>
+]]>
+            </field>
+    </record>
+
+    <!-- block4 -->
+    <record id="mana_dashboard_template.template4_block4" model="mana_dashboard.template">
+            <field name="name">product_stastics</field>
+            <field name="is_custom">True</field>
+            <field name="type">line_chart</field>
+            <field name="scripts">
+<![CDATA[
+let option = {
+    tooltip: {
+
+        trigger: 'axis',
+        axisPointer: {
+            lineStyle: {
+                color: '#57617B'
+            }
+        },
+        formatter: '{b}:<br/> 产量统计{c}'
+    },
+
+    grid: {
+        left: '0',
+        right: '20',
+        top: '10',
+        bottom: '0',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        boundaryGap: false,
+        axisLine: {
+            show: false,
+            lineStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        data: ['1月', '2月', '3月', '4月', '5月', '6月']
+    }],
+    yAxis: [{
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        axisLine: {
+            show: false,
+            
+        },
+        splitLine: {
+            lineStyle: {
+                type:'dotted',
+                color: 'rgba(255,255,255,.1)'
+            }
+        }
+    }],
+    series: [{
+        name: '产量统计',
+        type: 'line',
+        //smooth: true,
+        symbol: 'circle',
+        symbolSize: 5,
+        //showSymbol: false,
+        lineStyle: {
+            normal: {
+                width: 2
+            }
+        },
+
+        areaStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(98, 201, 141, 0.5)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(98, 201, 141, 0.1)'
+                }], false),
+                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                shadowBlur: 10
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: '#4cb9cf',
+                borderColor: 'rgba(98, 201, 141,0.27)',
+                borderWidth: 12
+            }
+        },
+        data: [33, 80, 20, 60, 10, 91]
+    }]
+};
+this.setOption(option);
+]]>
+            </field>
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            lineStyle: {
+                color: '#57617B'
+            }
+        },
+        formatter: '{b}:<br/> 产量统计{c}'
+    },
+
+    grid: {
+        left: '0',
+        right: '20',
+        top: '10',
+        bottom: '0',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        boundaryGap: false,
+        axisLine: {
+            show: false,
+            lineStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        data: ['1月', '2月', '3月', '4月', '5月', '6月']
+    }],
+    yAxis: [{
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: 'rgba(255,255,255,.6)'
+            }
+        },
+        axisLine: {
+            show: false,
+            
+        },
+        splitLine: {
+            lineStyle: {
+                type:'dotted',
+                color: 'rgba(255,255,255,.1)'
+            }
+        }
+    }],
+    series: [{
+        name: '产量统计',
+        type: 'line',
+        //smooth: true,
+        symbol: 'circle',
+        symbolSize: 5,
+        //showSymbol: false,
+        lineStyle: {
+            normal: {
+                width: 2
+            }
+        },
+
+        areaStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(98, 201, 141, 0.5)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(98, 201, 141, 0.1)'
+                }], false),
+                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                shadowBlur: 10
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: '#4cb9cf',
+                borderColor: 'rgba(98, 201, 141,0.27)',
+                borderWidth: 12
+            }
+        },
+        data: [33, 80, 20, 60, 10, 91]
+    }]
+};
+this.setOption(option);
+]]>
+            </field>
+    </record>
+
+    <!-- block5 -->
+    <record id="mana_dashboard_template.template4_block5" model="mana_dashboard.template">
+            <field name="name">table1</field>
+            <field name="is_custom">True</field>
+            <field name="type">qweb_template</field>
+            <field name="has_scripts">True</field>
+            <field name="scripts">
+                <![CDATA[
+                $(this.$el.find('.scrollDiv')).liMarquee({
+                    direction: 'up',//身上滚动 
+                    runshort: false,//内容不足时不滚动
+                    scrollamount: 20//速度
+                });
+]]>
+            </field>
+
+            <field name="default_scripts">
+                <![CDATA[
+                $(this.$el.find('.scrollDiv')).liMarquee({
+                    direction: 'up',//身上滚动 
+                    runshort: false,//内容不足时不滚动
+                    scrollamount: 20//速度
+                });
+]]>
+            </field>
+
+            <!-- template -->
+            <field name="template">
+                <![CDATA[
+<div>
+    <div class="tit03">模块标题</div>
+    <div class="boxnav nav03">
+        <div class="listhead listhead1">
+            <span>字段1</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+        </div>
+        <div class="listnav listnav1 scrollDiv">
+            <ul>
+                <li> <span>201910-01</span> <span>2658/2658</span> <span>2658/2658</span>
+                    <span>2658/2658</span> <span>2658/2658</span> <span class="text-green">100%</span>
+                </li>
+                <li><span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span>70%</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxfoot"></div>
+</div>
+]]>
+            </field>
+            <!-- demo template -->
+            <field name="demo_template">
+                <![CDATA[
+<div>
+    <div class="tit03">模块标题</div>
+    <div class="boxnav nav03">
+        <div class="listhead listhead1">
+            <span>字段1</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+        </div>
+        <div class="listnav listnav1 scrollDiv">
+            <ul>
+                <li> <span>201910-01</span> <span>2658/2658</span> <span>2658/2658</span>
+                    <span>2658/2658</span> <span>2658/2658</span> <span class="text-green">100%</span>
+                </li>
+                <li><span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span class="text-green">100%</span>
+                </li>
+                <li> <span>201910-02</span> <span>2334/2334</span> <span>2334/2334</span>
+                    <span>2334/2334</span> <span>2334/2334</span> <span>70%</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxfoot"></div>
+</div>
+]]>
+            </field>
+    </record>
+
+    <!-- block6 -->
+    <record id="mana_dashboard_template.template4_block6" model="mana_dashboard.template">
+        <field name="name">table2</field>
+        <field name="is_custom">True</field>
+        <field name="type">qweb_template</field>
+        <!-- has scripts -->
+        <field name="has_scripts">True</field>
+        <field name="scripts">
+            <![CDATA[
+                $(this.$el.find('.scrollDiv')).liMarquee({
+                    direction: 'up',//身上滚动 
+                    runshort: false,//内容不足时不滚动
+                    scrollamount: 20//速度
+                });
+            ]]>
+        </field>
+        <!-- default scripts -->
+        <field name="default_scripts">
+            <![CDATA[
+                $(this.$el.find('.scrollDiv')).liMarquee({
+                    direction: 'up',//身上滚动 
+                    runshort: false,//内容不足时不滚动
+                    scrollamount: 20//速度
+                });
+            ]]>
+        </field>
+        <!-- template -->
+        <field name="template">
+            <![CDATA[
+<div>
+    <div class="tit04">模块标题</div>
+    <div class="boxnav nav04">
+
+        <div class="listhead listhead2">
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+        </div>
+
+        <div class="listnav listnav2 scrollDiv">
+
+            <ul class="smjl">
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-red">异常</span>
+                    <span><span> <input type="hidden" name="countDown" value="2019/10/30 3:23:00" />
+                            <span></span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:9" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:11" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:13" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:14" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:15" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:16" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:22" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:42" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:19" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17" />
+                        <span></span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxfoot"></div>
+</div>
+            ]]>
+        </field>
+        <!-- demo template -->
+        <field name="demo_template">
+            <![CDATA[
+<div>
+    <div class="tit04">模块标题</div>
+    <div class="boxnav nav04">
+
+        <div class="listhead listhead2">
+            <span>字段名称</span>
+            <span>字段名称</span>
+            <span>字段名称</span>
+        </div>
+
+        <div class="listnav listnav2 scrollDiv">
+
+            <ul class="smjl">
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-red">异常</span>
+                    <span><span> <input type="hidden" name="countDown" value="2019/10/30 3:23:00" />
+                            <span></span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:9" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:11" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:13" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:14" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:15" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:16" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:22" />
+                        <span></span></span>
+                </li>
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:42" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:19" />
+                        <span></span></span>
+                </li>
+
+                <li>
+                    <span>设备名称</span>
+                    <span class="text-green">正常</span>
+                    <span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17" />
+                        <span></span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxfoot"></div>
+</div>
+            ]]>
+        </field>
+    </record>
+
+    <!-- block7 -->
+    <record id="mana_dashboard_template.template3_block7" model="mana_dashboard.template">
+            <field name="name">block7</field>
+            <field name="is_custom">True</field>
+            <field name="type">qweb_template</field>
+            <field name="default_scripts">
+<![CDATA[
+]]>
+            </field>
+            <field name="scripts">
+<![CDATA[
+]]>
+            </field>
+            <!-- template -->
+            <field name="template">
+<![CDATA[
+<div>
+    <p class="p1">完成/计划</p>
+    <p class="p2">
+        <span class="counter">15633</span>/<span class="counter">68000</span>
+    </p>
+    <p class="p3">
+        <span>
+            <i class="dot dot1"></i>未完成：52367
+        </span>
+        <span>
+            <i class="dot dot2"></i>完成率：22.9%
+        </span>
+    </p>
+</div>
+]]>
+            </field>
+            <!-- template -->
+            <field name="demo_template">
+<![CDATA[
+<div>
+    <p class="p1">完成/计划</p>
+    <p class="p2">
+        <span class="counter">15633</span>/<span class="counter">68000</span>
+    </p>
+    <p class="p3">
+        <span>
+            <i class="dot dot1"></i>未完成：52367
+        </span>
+        <span>
+            <i class="dot dot2"></i>完成率：22.9%
+        </span>
+    </p>
+</div>
+]]>
+            </field>
+    </record>
+
+    <!-- template4 -->
+    <record id="mana_dashboard_template.template4" model="mana_dashboard.dashboard_template">
+        <field name="name">template 4</field>
+        <field name="template">
+<![CDATA[
+<div class="mana_dashboard" style="height:1080px">
+	<div class="head">
+		<h1>大数据可视化通用素材</h1>
+	</div>
+	<div class="mainbox">
+		<ul class="clearfix">
+			<li>
+				<div class="boxall" style="height:calc(33.3333% - 1.8rem)">
+					<div class="tit01">模块标题</div>
+					<div class="boxnav nav01 mana_chart line_chart" template="block1"></div>
+					<div class="boxfoot"></div>
+				</div>
+				<div style="height:calc(33.3333% - 1.8rem); margin-bottom: 1.8rem;">
+					<div class="boxall" style="height: 100%; width:calc(50% - 0.59rem); float: left;">
+						<div class="tit01">模块标题</div>
+						<div class="boxnav nav01 mana_chart radar_chart" template="block2"></div>
+						<div class="boxfoot"></div>
+					</div>
+					<div class="boxall qweb_template" template="block3" style="height: 
+100%; width:calc(50% - 0.59rem); float: right;">
+					</div>
+				</div>
+				<div class="boxall" style="height:calc(33.3333% - 1.8rem)">
+					<div class="tit01">模块标题</div>
+					<div class="boxnav nav01 mana_chart line_chart" template="block4"></div>
+					<div class="boxfoot"></div>
+				</div>
+			</li>
+			<li>
+				<div class="boxall" style="height:calc(33.33333% - 1.8rem)">
+					<div class="tit02">本月计划</div>
+					<div class="boxnav nav02 qweb_template" tempalte="block7">
+					</div>
+					<div class="boxfoot"></div>
+				</div>
+				<div class="boxall qweb_template" template="table1" style="height:calc(66.666666% - 1.8rem)" tempalte="block5">
+				</div>
+			</li>
+			<li>
+				<div class="boxall qweb_template" template="table2" style="height:calc(100% - 1.8rem); padding: 0;">
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+]]>
+            </field>
+
+            <!-- js js_files, json content -->
+            <field name="js_files"  eval="[(5, 0, 0), (0, 0, {'public': True, 'name': 'china', 'type': 'url', 'url': '/mana_dashboard_template/static/templates/template4/js/countDown.js'}),
+            (0, 0, {'public': True, 'name': 'waypoints', 'type': 'url', 'url': '/mana_dashboard_template/static/templates/template4/js/jquery.waypoints.min.js'}), (0, 0, {'public': True, 'name': 'count_up', 'type': 'url', 'url': '/mana_dashboard_template/static/templates/template4/js/jquery.countup.min.js'}), (0, 0, {'public': True, 'name': 'liMarquee', 'type': 'url', 'url': '/mana_dashboard_template/static/templates/template4/js/jquery.liMarquee.js'})]"/>
+
+            <!-- image files -->
+            <field name="image_files" eval="[(5, 0, 0), (0, 0, {'public': True, 'name': 'border', 'type': 'url', 'url': '/mana_dashboard_template/static/templates/template4/images/head_bg.png'})]"/>
+
+            <!-- style style_files -->
+            <field name="style_files" eval="[(5, 0, 0), (0, 0, {'public': True, 'name': 'index.css', 'type': 'url', 'url': '/mana_dashboard_template/static/templates/template4/css/index.css'})]"/>
+
+            <!-- template blocks -->
+            <field name="block_template_ids" eval="[(6, 0, [ref('mana_dashboard_template.template4_block1'), ref('mana_dashboard_template.template4_block2'), ref('mana_dashboard_template.template4_block3'), ref('mana_dashboard_template.template4_block4'), ref('mana_dashboard_template.template4_block5'), ref('mana_dashboard_template.template4_block6')])]" />
+  
+        </record>
+
+    </data>
+</odoo>

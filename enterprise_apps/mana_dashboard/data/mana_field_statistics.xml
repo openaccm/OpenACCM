@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- mana field_statistics template -->
+        <record id="mana_dashboard.field_statistics_style_1" model="mana_dashboard.template">
+            <field name="name">field statistics style 1</field>
+			<field name="category">field_statistics</field>
+            <field name="type">field_statistics</field>
+            <field name="component_type">field_statistics</field>
+            <field name="need_column_aggregation">True</field>
+            <field name="disable_children">True</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_simple.png" />
+            <field name="template">
+                <![CDATA[
+<span>1000</span>
+]]>
+            </field>
+            <!-- demo template -->
+            <field name="demo_template">
+                <![CDATA[
+                <span>1000</span>
+]]>
+            </field>
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) {
+    return;
+}
+let value = data_source.get_first_aggregate_column_value();
+this.$el.find('span').text(value);
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+                <![CDATA[
+let value = 999;
+this.$el.find('span').text(value);
+]]>
+            </field>
+            <field name="help">
+                <![CDATA[
+                <p>field_statistics block is used to show the field_statistics of two measures.</p>
+                <p>For example, if you want to show the field_statistics of the number of customers and the number of orders, you can use this block.</p>
+                <p>First, you need to add two measures to the block, and then you can see the field_statistics of the two measures.</p>
+                <p>For example, if you have 100 customers and 200 orders, the field_statistics will be 50%.</p>
+]]>
+            </field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/field_statistics/field_statistics_style_1.png" />
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- simple pie chart -->
+        <record id="mana_dashboard.template_simple_pie_chart" model="mana_dashboard.template">
+            <field name="name">Simple Pie Chart</field>
+            <field name="category">chart</field>
+            <field name="type">pie chart</field>
+            <field name="component_type">pie_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/pie_chart/simple_pie_chart.png"/>
+            <field name="scripts">
+<![CDATA[
+
+let config = this.get_config()
+let data_source = this.get_data_source(0)
+if (!data_source || !data_source.is_valid()) {
+  return
+}
+
+// set the record position
+let option = {
+  title: {
+    text: config.get_title(), // set the title here
+    // subtext: 'Fake Data', // remove the slash to show the subtext
+    left: 'center' // set the title position, left, right, center
+  },
+  tooltip: {
+    trigger: 'item' // set the tooltip trigger, item, axis, none
+  },
+  legend: {
+    orient: 'vertical', // set the legend orientation, horizontal, vertical
+    left: 'left' // set the legend position, left, right, center
+  },
+  series: []
+};
+
+let series = []
+let categories = data_source.get_categories()
+let measures = data_source.get_measures()
+let records_count = data_source.get_records_count()
+
+function format_name(name) {
+  if (!name) {
+    return ''
+  }
+
+  if (Array.isArray(name)) {
+    if (name.length == 2) {
+      if (Number.isInteger(name[0]) && typeof name[1] === 'string') {
+        return name[1];
+      }
+    }
+    return name.join(',');
+  }
+
+  return name;
+}
+
+for (let i = 0; i < categories.length; i++) {
+
+  let category = categories[i]
+  for (let j = 0; j < measures.length; j++) {
+    let series_item = {
+      name: category,
+      type: 'pie',
+      radius: '50%',
+      data: [],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+    let measure = measures[j]
+    for (let k = 0; k < records_count; k++) {
+      let record = data_source.get_record(k)
+      series_item.data.push({
+        value: record.get_value(measure),
+        name: format_name(record.get_value(category)),
+        origin_value: record.get_value(category)
+      })
+    }
+    series.push(series_item)
+  }
+}
+
+option.series = series
+this.setOption(option)
+]]>
+            </field>
+        </record>
+
+        <!-- circle pie chart -->
+        <record id="mana_dashboard.template_circle_pie_chart" model="mana_dashboard.template">
+            <field name="name">Circle Pie Chart</field>
+            <field name="category">chart</field>
+            <field name="type">pie chart</field>
+            <field name="component_type">pie_chart</field>
+            <!-- preview -->
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/pie_chart/circle_pie_chart.png"/>
+            <field name="scripts">
+<![CDATA[
+
+let config = this.get_config()
+let data_source = this.get_data_source(0)
+if (!data_source) {
+  return
+}
+
+let option = {
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '5%',
+    left: 'center'
+  },
+  series: []
+};
+
+let series = []
+let categories = data_source.get_categories()
+let measures = data_source.get_measures()
+let records_count = data_source.get_records_count()
+
+for (let i = 0; i < categories.length; i++) {
+
+  let category = categories[i]
+  for (let j = 0; j < measures.length; j++) {
+    let series_item = {
+      name: config.get_title(),
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 40,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: []
+    }
+
+    let measure = measures[j]
+    for (let k = 0; k < records_count; k++) {
+      let record = data_source.get_record(k)
+      series_item.data.push({
+        value: record.get_value(measure),
+        name: record.get_value(category)
+      })
+    }
+    series.push(series_item)
+  }
+}
+
+option.series = series
+this.setOption(option)
+]]>
+            </field>
+        </record>
+
+        <!-- nightingale pie chart -->
+        <record id="mana_dashboard.template_nightingale_pie_chart" model="mana_dashboard.template">
+            <field name="name">Nightingale Pie Chart</field>
+            <field name="category">chart</field>
+            <field name="type">pie chart</field>
+            <field name="component_type">pie_chart</field>
+            <!-- preview -->
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/pie_chart/nightingale_pie_chart.png"/>
+            <field name="scripts">
+<![CDATA[
+
+let config = this.get_config()
+let data_source = this.get_data_source(0)
+if (!data_source || !data_source.is_valid()) {
+  return
+}
+
+let option = {
+  legend: {
+    top: 'bottom'
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: false },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  series: []
+};
+
+let series = []
+let categories = data_source.get_categories()
+let measures = data_source.get_measures()
+let records_count = data_source.get_records_count()
+
+for (let i = 0; i < categories.length; i++) {
+
+  let category = categories[i]
+  for (let j = 0; j < measures.length; j++) {
+    let series_item = {
+      name: config.get_title(),
+      type: 'pie',
+      radius: [50, 250],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 8
+      },
+      data: []
+    }
+
+    let measure = measures[j]
+    for (let k = 0; k < records_count; k++) {
+      let record = data_source.get_record(k)
+      series_item.data.push({
+        value: record.get_value(measure),
+        name: record.get_value(category)
+      })
+    }
+    series.push(series_item)
+  }
+}
+
+option.series = series
+this.setOption(option)
+]]>
+            </field>
+        </record>
+
+        <!-- simple pie chart -->
+        <record id="mana_dashboard.templte_nest_pie_chart" model="mana_dashboard.template">
+            <field name="name">nest Pie Chart</field>
+            <field name="category">chart</field>
+            <field name="type">pie chart</field>
+            <field name="component_type">pie_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/pie_chart/nest.png"/>
+            <field name="multi_data_source">1</field>
+            <field name="scripts">
+<![CDATA[
+let option = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b}: {c} ({d}%)'
+  },
+  legend: {
+    data: [
+      'Direct',
+      'Marketing',
+      'Search Engine',
+      'Email',
+      'Union Ads',
+      'Video Ads',
+      'Baidu',
+      'Google',
+      'Bing',
+      'Others'
+    ]
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      selectedMode: 'single',
+      radius: [0, '30%'],
+      label: {
+        position: 'inner',
+        fontSize: 14
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 1548, name: 'Search Engine' },
+        { value: 775, name: 'Direct' },
+        { value: 679, name: 'Marketing', selected: true }
+      ]
+    },
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['45%', '60%'],
+      labelLine: {
+        length: 30
+      },
+      label: {
+        formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+        backgroundColor: '#F6F8FC',
+        borderColor: '#8C8D8E',
+        borderWidth: 1,
+        borderRadius: 4,
+        rich: {
+          a: {
+            color: '#6E7079',
+            lineHeight: 22,
+            align: 'center'
+          },
+          hr: {
+            borderColor: '#8C8D8E',
+            width: '100%',
+            borderWidth: 1,
+            height: 0
+          },
+          b: {
+            color: '#4C5058',
+            fontSize: 14,
+            fontWeight: 'bold',
+            lineHeight: 33
+          },
+          per: {
+            color: '#fff',
+            backgroundColor: '#4C5058',
+            padding: [3, 4],
+            borderRadius: 4
+          }
+        }
+      },
+      data: [
+        { value: 1048, name: 'Baidu' },
+        { value: 335, name: 'Direct' },
+        { value: 310, name: 'Email' },
+        { value: 251, name: 'Google' },
+        { value: 234, name: 'Union Ads' },
+        { value: 147, name: 'Bing' },
+        { value: 135, name: 'Video Ads' },
+        { value: 102, name: 'Others' }
+      ]
+    }
+  ]
+};
+this.setOption(option);
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b}: {c} ({d}%)'
+  },
+  legend: {
+    data: [
+      'Direct',
+      'Marketing',
+      'Search Engine',
+      'Email',
+      'Union Ads',
+      'Video Ads',
+      'Baidu',
+      'Google',
+      'Bing',
+      'Others'
+    ]
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      selectedMode: 'single',
+      radius: [0, '30%'],
+      label: {
+        position: 'inner',
+        fontSize: 14
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 1548, name: 'Search Engine' },
+        { value: 775, name: 'Direct' },
+        { value: 679, name: 'Marketing', selected: true }
+      ]
+    },
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['45%', '60%'],
+      labelLine: {
+        length: 30
+      },
+      label: {
+        formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+        backgroundColor: '#F6F8FC',
+        borderColor: '#8C8D8E',
+        borderWidth: 1,
+        borderRadius: 4,
+        rich: {
+          a: {
+            color: '#6E7079',
+            lineHeight: 22,
+            align: 'center'
+          },
+          hr: {
+            borderColor: '#8C8D8E',
+            width: '100%',
+            borderWidth: 1,
+            height: 0
+          },
+          b: {
+            color: '#4C5058',
+            fontSize: 14,
+            fontWeight: 'bold',
+            lineHeight: 33
+          },
+          per: {
+            color: '#fff',
+            backgroundColor: '#4C5058',
+            padding: [3, 4],
+            borderRadius: 4
+          }
+        }
+      },
+      data: [
+        { value: 1048, name: 'Baidu' },
+        { value: 335, name: 'Direct' },
+        { value: 310, name: 'Email' },
+        { value: 251, name: 'Google' },
+        { value: 234, name: 'Union Ads' },
+        { value: 147, name: 'Bing' },
+        { value: 135, name: 'Video Ads' },
+        { value: 102, name: 'Others' }
+      ]
+    }
+  ]
+};
+this.setOption(option);
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

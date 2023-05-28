@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- mana qweb template -->
+        <record id="mana_dashboard.progress_bar_style_one" model="mana_dashboard.template">
+            <field name="name">progress bar style 1</field>
+			<field name="category">statistics</field>
+            <field name="type">progress_bar</field>
+			<field name="component_type">progress_bar</field>
+            <field name="template">
+                <![CDATA[
+	<div class="progress progress-round-primary">
+		<div class="progress-bar" role="progressbar"
+			aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+			style="width: 60%"></div>
+	</div>
+]]>
+            </field>
+
+			<!-- demo -->
+			<field name="demo_template">
+				<![CDATA[
+	<div class="progress progress-round-primary">
+		<div class="progress-bar" role="progressbar"
+			aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+			style="width: 60%"></div>
+	</div>
+]]>
+			</field>
+
+			<!-- scripts -->
+			<field name="scripts">
+				<![CDATA[
+let data_sources = this.get_data_source()
+if (data_sources.size() > 1) {
+	let data_source1 = data_sources.get_data_source(0)
+	let data_source2 = data_sources.get_data_source(1)
+	let val1 = data_source1.get_first_aggregate_column_value()
+	let val2 = data_source2.get_first_aggregate_column_value()
+	let percent = (val1 / val2) * 100
+	this.$el.find('.progress-bar').attr('aria-valuenow', val1)
+	this.$el.find('.progress-bar').attr('aria-valuemax', val2)
+	// set width
+	this.$el.find('.progress-bar').css('width', percent + '%')
+}
+]]>
+			</field>	
+			
+			<!-- styles -->
+			<field name="styles">
+				<![CDATA[
+let data_source1 = this.get_data_sources(0)
+let data_source2 = this.get_data_sources(1)
+]]>
+			</field>	
+			
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+.progress-bar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	background-color: #0d6efd;
+	-webkit-transition: width 0.6s ease;
+	transition: width 0.6s ease;
+}
+
+.progress-round-primary .progress-bar {
+	background-color: #6362e7;
+	border-radius: 50px;
+}
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+]]>
+            </field>
+
+			<!-- help -->
+			<field name="help">
+				<![CDATA[
+This template is used to show progress bar.
+]]>
+			</field>
+        </record>
+
+    </data>
+</odoo>

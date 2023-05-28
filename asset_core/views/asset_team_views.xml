@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="asset_team_view_tree" model="ir.ui.view">
+        <field name="name">团队.tree</field>
+        <field name="model">asset.team</field>
+        <field name="arch" type="xml">
+            <tree string="设备管理团队" editable="bottom">
+                <field name="name"/>
+                <field name="member_ids" widget="many2many_tags"
+                       options="{'color_field': 'color', 'no_create': True}" domain="[('share', '=', False)]"/>
+                <field name="equipment_ids" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_asset_team_00" model="ir.actions.act_window">
+        <field name="name">团队</field>
+        <field name="res_model">asset.team</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('asset_team_view_tree')}),
+                  ]"/>
+    </record>
+
+    <record id="view_asset_team_kanban" model="ir.ui.view">
+        <field name="name">团队.kanban</field>
+        <field name="model">asset.team</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey o_kanban_dashboard o_maintenance_team_kanban" create="0">
+                <field name="color"/>
+                <field name="todo_asset_count"/>
+                <field name="todo_count_normal"/>
+                <field name="todo_count_alarm"/>
+                <field name="todo_count_abnormal"/>
+                <field name="todo_count_disconnect"/>
+                <field name="todo_count_closed"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''}">
+                            <div t-attf-class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title">
+                                    <div class="o_primary">
+                                        <a type="object" name="action_asset_team_field">
+                                            <field name="name"/>
+                                        </a>
+                                    </div>
+                                    <div class="o_kanban_manage_button_section">
+                                        <a class="o_kanban_manage_toggle_button" href="#"><i class="fa fa-ellipsis-v" role="img" aria-label="Manage" title="Manage"/></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container o_kanban_card_content">
+                                <div class="row">
+                                    <div class="col-6 o_kanban_primary_left">
+                                        <button class="btn btn-primary" name="action_asset_team_field" type="object">
+                                            <span><t t-esc="record.todo_asset_count.value"/> 设备台套</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-6 o_kanban_primary_right">
+                                        <span t-if="record.todo_count_normal.raw_value > 0">
+                                            <a name="action_asset_team_field" type="object" context="{'search_default_normal': 1}">
+                                                <t t-esc="record.todo_count_normal.value"/>
+                                                正常
+                                            </a> /
+                                        </span>
+                                        <span t-if="record.todo_count_alarm.raw_value > 0">
+                                            <a name="action_asset_team_field" type="object" context="{'search_default_alarm': 1}">
+                                                <t t-esc="record.todo_count_alarm.value"/>
+                                                告警
+                                            </a> /
+                                        </span>
+                                        <span t-if="record.todo_count_abnormal.raw_value > 0">
+                                            <a name="action_asset_team_field" type="object" context="{'search_default_abnormal': 1}">
+                                                <t t-esc="record.todo_count_abnormal.value"/>
+                                                异常
+                                            </a> /
+                                        </span>
+                                        <span t-if="record.todo_count_disconnect.raw_value > 0">
+                                            <a name="action_asset_team_field" type="object" context="{'search_default_disconnect': 1}">
+                                                <t t-esc="record.todo_count_disconnect.value"/>
+                                                离线
+                                            </a> /
+                                        </span>
+                                        <span t-if="record.todo_count_closed.raw_value > 0">
+                                            <a name="action_asset_team_field" type="object" context="{'search_default_closed': 1}">
+                                                <t t-esc="record.todo_count_closed.value"/>
+                                                关闭
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                        <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
+                                            <div class="col-4" role="menuitem" aria-haspopup="true">
+                                                <ul role="menu" class="oe_kanban_colorpicker" data-field="color"/>
+                                            </div>
+                                            <div role="menuitem" class="col-4">
+                                                <div role="menuitem">
+                                                    <a name="action_asset_core_line_field" type="object">
+                                                    日志管理
+                                                    </a>
+                                                </div>
+                                                <div role="menuitem">
+                                                    <a name="action_work_sheet_management_field" type="object">
+                                                    工单管理
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_asset_team" model="ir.actions.act_window">
+        <field name="name">团队</field>
+        <field name="res_model">asset.team</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_asset_team_kanban')}),
+                  ]"/>
+    </record>
+</odoo>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--自定义按钮动作-,批量设备正常 OK-->
+    <!-- 执行服务端python代码 -->
+    <record model="ir.actions.server" id="action_batch_ok_asset">
+        <field name="name">批量确认</field>
+        <field name="state">code</field>
+        <field name="binding_type">action</field>
+        <field name="binding_view_types">list</field>
+        <field name="model_id" ref="asset_core.model_asset_core_line"/>
+        <field name="binding_model_id" ref="asset_core.model_asset_core_line"/>
+        <field name="code">action=records.btn_ok_batch()</field>
+    </record>
+
+	<!--设备运行日志模块-->
+    <record id="view_asset_core_line_tree" model="ir.ui.view">
+        <field name="name">设备运行日志.tree</field>
+        <field name="model">asset.core.line</field>
+        <field name="arch" type="xml">
+            <tree string="设备运行日志" editable="top" delete="0"
+                  expand="context.get('expand', False)" multi_edit="1" default_order="alarm_time desc">
+                <field name="alarm_time" optional="show"/>
+                <field name="bill_id" optional="show"/>
+                <field name="ma_roll"
+                    decoration-info="ma_roll == 'normal'"
+                    decoration-warning="ma_roll == 'alarm'"
+                    decoration-danger="ma_roll == 'abnormal'"
+                    decoration-success="ma_roll == 'disconnect'"
+                    decoration-muted="ma_roll == 'closed'"
+                    widget="badge" optional="show" class="text-dark"/>
+                <field name="status"/>
+                <field name="path_route" optional="show"/>
+                <field name="measure_point" optional="show"/>
+                <field name="head_line" optional="show"/>
+                <field name="numerical_value" optional="show"/>
+                <field name="percentage" optional="show"/>
+                <field name="error_detail" optional="show"/>
+                <field name="verification_date" optional="show"/>
+                <field name="confirmed_description" optional="show"/>
+                <field name="confirmed_by" optional="show"/>
+                <field name="send" optional="show"/>
+                <button name="btn_ok_batch" type="object" class="text-dark" icon="fa-building" string="确认"/>
+                <field name="task_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_asset_core_line_search" model="ir.ui.view">
+        <field name="name">设备运行日志.search</field>
+        <field name="model">asset.core.line</field>
+        <field name="arch" type="xml">
+            <search string="设备运行日志">
+                <filter name="act_false" string="已归档" domain="[('active','=',False)]"/>
+                <filter name="act_all" string="所有单据" domain="['|',('active','=',True),('active','=',False)]"/>
+                <separator/>
+                <filter string="今日数据" name="today" domain="[('alarm_time', '&gt;', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="本月数据" name="month" domain="[('alarm_time','&gt;=', time.strftime('%Y-%m-01')),('alarm_time','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="上月数据" name="month2" domain="[('alarm_time','&lt;', time.strftime('%Y-%m-01')),('alarm_time','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="本年数据" name="year" domain="[('alarm_time','&lt;=', time.strftime('%Y-12-31')),('alarm_time','&gt;=', time.strftime('%Y-01-01'))]"/>
+                <separator/>
+                <field name="ma_roll"/>
+                <field name="bill_id"/>
+                <separator/>
+                <group expand="1" string="分组">
+                    <filter string="设备" name="group_bill_id" context="{'group_by':'bill_id'}" />
+                    <filter string="日期/时间" name="group_alarm_time" context="{'group_by':'alarm_time'}" />
+                    <filter string="状态" name="group_ma_roll" context="{'group_by':'ma_roll'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_asset_core_line_pivot" model="ir.ui.view">
+        <field name="name">设备运行日志.pivot</field>
+        <field name="model">asset.core.line</field>
+        <field name="arch" type="xml">
+            <pivot string="设备运行日志" default_order="name asc">
+                <field name="bill_id" type="row"/>
+                <field name="alarm_time" type="row"/>
+                <field name="ma_roll" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_asset_core_line_graph" model="ir.ui.view">
+        <field name="name">设备运行日志.graph</field>
+        <field name="model">asset.core.line</field>
+        <field name="arch" type="xml">
+            <graph string="设备运行日志" type="pie" order="name asc">     <!--bar (default), pie , line-->
+                <field name="bill_id" type="row"/>
+                <field name="alarm_time" type="row"/>
+                <field name="ma_roll" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_asset_core_line_calendar">
+        <field name="name">设备运行日志.calendar</field>
+        <field name="model">asset.core.line</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar string="Calendar View" date_start="alarm_time" event_limit="5" mode="month">
+                <field name="bill_id"/>
+                <field name="alarm_time"/>
+                <field name="ma_roll"/>
+                <field name="error_detail"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="action_asset_core_line" model="ir.actions.act_window">
+        <field name="name">设备运行日志</field>
+        <field name="res_model">asset.core.line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,graph,pivot,calendar</field>
+        <!--默认分组 -->
+<!--        <field name="context">{-->
+<!--            'search_default_group_name': 1,-->
+<!--            'expand': 1}-->
+<!--        </field>-->
+        <field name="search_view_id" ref="view_asset_core_line_search"/>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_asset_core_line_tree')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_asset_core_line_pivot')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('view_asset_core_line_graph')}),
+                (0, 0, {'view_mode': 'calendar', 'view_id': ref('view_asset_core_line_calendar')}),
+               ]"/>
+    </record>
+</odoo>

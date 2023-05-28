@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mana_dashboard.custom_list_style_one" model="mana_dashboard.template">
+            <field name="name">custom list</field>
+			<field name="category">list</field>
+            <field name="type">custom list</field>
+			<field name="component_type">custom_list</field>
+            <field name="default_data_source_type" ref="mana_dashboard_base.data_source_json"/>   
+            <field name="demo_template">
+                <![CDATA[
+<div class="table-responsive" style="padding:10px">
+    <!--begin::Table-->
+    <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+        <!--begin::Table head-->
+        <thead>
+            <tr class="fs-7 fw-bold text-gray-400 border-bottom-0">
+                <th class="p-0 pb-3 min-w-175px text-start">ITEM</th>
+                <th class="p-0 pb-3 min-w-100px text-end">BUDGET</th>
+                <th class="p-0 pb-3 min-w-100px text-end">PROGRESS</th>
+                <th class="p-0 pb-3 min-w-175px text-end pe-12">STATUS</th>
+                <th class="p-0 pb-3 w-125px text-end pe-7">CHART</th>
+                <th class="p-0 pb-3 w-50px text-end">VIEW</th>
+            </tr>
+        </thead>
+        <!--end::Table head-->
+
+        <!--begin::Table body-->
+        <tbody>
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-3">
+                            <img alt=""
+                                src="/mana_dashboard/static/images/img-01.jpg" />
+                        </div>
+
+                        <div
+                            class="d-flex justify-content-start flex-column">
+                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+                                href="#">Mivy App</a>
+                            <span
+                                class="text-gray-400 fw-semibold d-block fs-7">Jane
+                                Cooper</span>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="text-end pe-0">
+                    <span
+                        class="text-gray-600 fw-bold fs-6">$32,400</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <!--begin::Label-->
+                    <span class="badge badge-light-success fs-base">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <rect opacity="0.5" fill="currentColor"
+                                    transform="rotate(90 13 6)" x="13"
+                                    y="6" width="13" height="2"
+                                    rx="1" />
+                                <path fill="currentColor"
+                                    d="M 12.5657 8.56569 L 16.75 12.75 C 17.1642 13.1642 17.8358 13.1642 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 L 12.7071 5.70711 C 12.3166 5.31658 11.6834 5.31658 11.2929 5.70711 L 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 C 6.16421 13.1642 6.83579 13.1642 7.25 12.75 L 11.4343 8.56569 C 11.7467 8.25327 12.2533 8.25327 12.5657 8.56569 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        9.2%
+                    </span>
+                    <!--end::Label-->
+                </td>
+
+                <td class="text-end pe-12">
+                    <span
+                        class="badge py-3 px-4 fs-7 badge-light-primary">In
+                        Process</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <div class="h-50px mt-n8 pe-7"
+                        id="kt_table_widget_14_chart_1"
+                        data-kt-chart-color="success"></div>
+                </td>
+
+                <td class="text-end">
+                    <a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+                        href="#">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <path fill="currentColor"
+                                    d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+                                <path opacity="0.3" fill="currentColor"
+                                    d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon--> </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-3">
+                            <img alt=""
+                                src="/mana_dashboard/static/images/img-02.jpg" />
+                        </div>
+                        <div
+                            class="d-flex justify-content-start flex-column">
+                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+                                href="#">Avionica</a>
+                            <span
+                                class="text-gray-400 fw-semibold d-block fs-7">Esther
+                                Howard</span>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="text-end pe-0">
+                    <span
+                        class="text-gray-600 fw-bold fs-6">$256,910</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <!--begin::Label-->
+                    <span class="badge badge-light-danger fs-base">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr065.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-danger ms-n1"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <rect opacity="0.5" fill="currentColor"
+                                    transform="rotate(-90 11 18)" x="11"
+                                    y="18" width="13" height="2"
+                                    rx="1" />
+                                <path fill="currentColor"
+                                    d="M 11.4343 15.4343 L 7.25 11.25 C 6.83579 10.8358 6.16421 10.8358 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 L 11.2929 18.2929 C 11.6834 18.6834 12.3166 18.6834 12.7071 18.2929 L 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 C 17.8358 10.8358 17.1642 10.8358 16.75 11.25 L 12.5657 15.4343 C 12.2533 15.7467 11.7467 15.7467 11.4343 15.4343 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        0.4%
+                    </span>
+                    <!--end::Label-->
+                </td>
+
+                <td class="text-end pe-12">
+                    <span
+                        class="badge py-3 px-4 fs-7 badge-light-warning">On
+                        Hold</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <div class="h-50px mt-n8 pe-7"
+                        id="kt_table_widget_14_chart_2"
+                        data-kt-chart-color="danger"></div>
+                </td>
+
+                <td class="text-end">
+                    <a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+                        href="#">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <path fill="currentColor"
+                                    d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+                                <path opacity="0.3" fill="currentColor"
+                                    d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon--> </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-3">
+                            <img alt=""
+                                src="/mana_dashboard/static/images/img-03.jpg" />
+                        </div>
+
+                        <div
+                            class="d-flex justify-content-start flex-column">
+                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+                                href="#">Charto CRM</a>
+                            <span
+                                class="text-gray-400 fw-semibold d-block fs-7">Jenny
+                                Wilson</span>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="text-end pe-0">
+                    <span
+                        class="text-gray-600 fw-bold fs-6">$8,220</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <!--begin::Label-->
+                    <span class="badge badge-light-success fs-base">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <rect opacity="0.5" fill="currentColor"
+                                    transform="rotate(90 13 6)" x="13"
+                                    y="6" width="13" height="2"
+                                    rx="1" />
+                                <path fill="currentColor"
+                                    d="M 12.5657 8.56569 L 16.75 12.75 C 17.1642 13.1642 17.8358 13.1642 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 L 12.7071 5.70711 C 12.3166 5.31658 11.6834 5.31658 11.2929 5.70711 L 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 C 6.16421 13.1642 6.83579 13.1642 7.25 12.75 L 11.4343 8.56569 C 11.7467 8.25327 12.2533 8.25327 12.5657 8.56569 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        9.2%
+                    </span>
+                    <!--end::Label-->
+                </td>
+
+                <td class="text-end pe-12">
+                    <span
+                        class="badge py-3 px-4 fs-7 badge-light-primary">In
+                        Process</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <div class="h-50px mt-n8 pe-7"
+                        id="kt_table_widget_14_chart_3"
+                        data-kt-chart-color="success"></div>
+                </td>
+
+                <td class="text-end">
+                    <a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+                        href="#">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <path fill="currentColor"
+                                    d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+                                <path opacity="0.3" fill="currentColor"
+                                    d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon--> 
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-3">
+                            <img alt=""
+                                src="/mana_dashboard/static/images/img-04.jpg" />
+                        </div>
+
+                        <div
+                            class="d-flex justify-content-start flex-column">
+                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+                                href="#">Tower Hill</a>
+                            <span
+                                class="text-gray-400 fw-semibold d-block fs-7">Cody
+                                Fisher</span>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="text-end pe-0">
+                    <span
+                        class="text-gray-600 fw-bold fs-6">$74,000</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <!--begin::Label-->
+                    <span class="badge badge-light-success fs-base">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <rect opacity="0.5" fill="currentColor"
+                                    transform="rotate(90 13 6)" x="13"
+                                    y="6" width="13" height="2"
+                                    rx="1" />
+                                <path fill="currentColor"
+                                    d="M 12.5657 8.56569 L 16.75 12.75 C 17.1642 13.1642 17.8358 13.1642 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 L 12.7071 5.70711 C 12.3166 5.31658 11.6834 5.31658 11.2929 5.70711 L 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 C 6.16421 13.1642 6.83579 13.1642 7.25 12.75 L 11.4343 8.56569 C 11.7467 8.25327 12.2533 8.25327 12.5657 8.56569 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        9.2%
+                    </span>
+                    <!--end::Label-->
+
+                </td>
+
+                <td class="text-end pe-12">
+                    <span
+                        class="badge py-3 px-4 fs-7 badge-light-success">Complated</span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <div class="h-50px mt-n8 pe-7"
+                        id="kt_table_widget_14_chart_4"
+                        data-kt-chart-color="success"></div>
+                </td>
+
+                <td class="text-end">
+                    <a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+                        href="#">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+                        <span
+                            class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <path fill="currentColor"
+                                    d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+                                <path opacity="0.3" fill="currentColor"
+                                    d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon--> </a>
+                </td>
+            </tr>
+        </tbody>
+        <!--end::Table body-->
+    </table>
+</div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="template">
+                <![CDATA[
+    <!--begin::Table-->
+    <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+        <!--begin::Table head-->
+        <thead>
+            <tr class="fs-7 fw-bold text-gray-400 border-bottom-0">
+                <th class="p-0 pb-3 min-w-175px text-start">ITEM</th>
+                <th class="p-0 pb-3 min-w-100px text-end">BUDGET</th>
+                <th class="p-0 pb-3 min-w-100px text-end">PROGRESS</th>
+                <th class="p-0 pb-3 min-w-175px text-end pe-12">STATUS</th>
+                <th class="p-0 pb-3 w-125px text-end pe-7">CHART</th>
+                <th class="p-0 pb-3 w-50px text-end">VIEW</th>
+            </tr>
+        </thead>
+        <!--end::Table head-->
+
+        <!--begin::Table body-->
+        <tbody>
+            <t t-set="data_source" t-value="config.get_data_source(0)" />
+            <t t-set="records" t-value="data_source &amp;&amp; data_source.datas || []" />
+
+            <tr t-foreach="records" t-as="record">
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-3">
+                            <img alt="" t-att-src="record.image" />
+                        </div>
+
+                        <div
+                            class="d-flex justify-content-start flex-column">
+                            <a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+                                href="#"><t t-esc="record.name" /></a>
+                            <span class="text-gray-400 fw-semibold d-block fs-7"><t t-esc="record.author" /></span>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="text-end pe-0">
+                    <span class="text-gray-600 fw-bold fs-6">$<t t-esc="record.price" /></span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <!--begin::Label-->
+                    <span class="badge badge-light-danger fs-base">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr065.svg-->
+                        <span class="svg-icon svg-icon-5 svg-icon-danger ms-n1">
+                            <svg t-if="record.increase"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <rect opacity="0.5" fill="currentColor"
+                                    transform="rotate(-90 11 18)" x="11"
+                                    y="18" width="13" height="2"
+                                    rx="1" />
+                                <path fill="currentColor"
+                                    d="M 11.4343 15.4343 L 7.25 11.25 C 6.83579 10.8358 6.16421 10.8358 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 L 11.2929 18.2929 C 11.6834 18.6834 12.3166 18.6834 12.7071 18.2929 L 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 C 17.8358 10.8358 17.1642 10.8358 16.75 11.25 L 12.5657 15.4343 C 12.2533 15.7467 11.7467 15.7467 11.4343 15.4343 Z" />
+                            </svg>
+                            <svg t-else="" data-gjs-type="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><rect id="iiamst" data-gjs-type="svg-in" opacity="0.5" fill="currentColor" transform="rotate(-90 11 18)" x="11" y="18" width="13" height="2" rx="1"></rect><path id="iyk15x" data-gjs-type="svg-in" fill="currentColor" d="M 11.4343 15.4343 L 7.25 11.25 C 6.83579 10.8358 6.16421 10.8358 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 L 11.2929 18.2929 C 11.6834 18.6834 12.3166 18.6834 12.7071 18.2929 L 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 C 17.8358 10.8358 17.1642 10.8358 16.75 11.25 L 12.5657 15.4343 C 12.2533 15.7467 11.7467 15.7467 11.4343 15.4343 Z"></path></svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        <t t-esc="record.progress" />%
+                    </span>
+                    <!--end::Label-->
+                </td>
+
+                <td class="text-end pe-12">
+                    <span class="badge py-3 px-4 fs-7 badge-light-primary"><t t-esc="record.status" /></span>
+                </td>
+
+                <td class="text-end pe-0">
+                    <div class="h-50px mt-n8 pe-7" data-kt-chart-color="danger"></div>
+                </td>
+
+                <td class="text-end">
+                    <a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+                        href="#">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+                        <span class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <path fill="currentColor"
+                                    d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+                                <path opacity="0.3" fill="currentColor"
+                                    d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon--> 
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <!--end::Table body-->
+    </table>
+]]>
+            </field>
+			
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+table {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000000;
+    --bs-white: #ffffff;
+    --bs-gray: #7E8299;
+    --bs-gray-dark: #3F4254;
+    --bs-gray-100: #F9F9F9;
+    --bs-gray-200: #F4F4F4;
+    --bs-gray-300: #E1E3EA;
+    --bs-gray-400: #B5B5C3;
+    --bs-gray-500: #A1A5B7;
+    --bs-gray-600: #7E8299;
+    --bs-gray-700: #5E6278;
+    --bs-gray-800: #3F4254;
+    --bs-gray-900: #181C32;
+    --bs-white: #ffffff;
+    --bs-light: #F9F9F9;
+    --bs-primary: #009ef7;
+    --bs-secondary: #E1E3EA;
+    --bs-success: #50cd89;
+    --bs-info: #7239ea;
+    --bs-warning: #ffc700;
+    --bs-danger: #f1416c;
+    --bs-dark: #181C32;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-light-rgb: 249, 249, 249;
+    --bs-primary-rgb: 0, 158, 247;
+    --bs-secondary-rgb: 225, 227, 234;
+    --bs-success-rgb: 80, 205, 137;
+    --bs-info-rgb: 114, 57, 234;
+    --bs-warning-rgb: 255, 199, 0;
+    --bs-danger-rgb: 241, 65, 108;
+    --bs-dark-rgb: 24, 28, 50;
+    --bs-primary-text: #0a58ca;
+    --bs-secondary-text: #7E8299;
+    --bs-success-text: #146c43;
+    --bs-info-text: #087990;
+    --bs-warning-text: #997404;
+    --bs-danger-text: #b02a37;
+    --bs-light-text: #7E8299;
+    --bs-dark-text: #5E6278;
+    --bs-primary-bg-subtle: #cfe2ff;
+    --bs-secondary-bg-subtle: #F9F9F9;
+    --bs-success-bg-subtle: #d1e7dd;
+    --bs-info-bg-subtle: #cff4fc;
+    --bs-warning-bg-subtle: #fff3cd;
+    --bs-danger-bg-subtle: #f8d7da;
+    --bs-light-bg-subtle: #fcfcfc;
+    --bs-dark-bg-subtle: #B5B5C3;
+    --bs-primary-border-subtle: #9ec5fe;
+    --bs-secondary-border-subtle: #F4F4F4;
+    --bs-success-border-subtle: #a3cfbb;
+    --bs-info-border-subtle: #9eeaf9;
+    --bs-warning-border-subtle: #ffe69c;
+    --bs-danger-border-subtle: #f1aeb5;
+    --bs-light-border-subtle: #F4F4F4;
+    --bs-dark-border-subtle: #A1A5B7;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 24, 28, 50;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-font-sans-serif: Inter, Helvetica, "sans-serif";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #181C32;
+    --bs-emphasis-color: #000000;
+    --bs-emphasis-color-rgb: 0, 0, 0;
+    --bs-secondary-color: rgba(24, 28, 50, 0.75);
+    --bs-secondary-color-rgb: 24, 28, 50;
+    --bs-secondary-bg: #F4F4F4;
+    --bs-secondary-bg-rgb: 244, 244, 244;
+    --bs-tertiary-color: rgba(24, 28, 50, 0.5);
+    --bs-tertiary-color-rgb: 24, 28, 50;
+    --bs-tertiary-bg: #F9F9F9;
+    --bs-tertiary-bg-rgb: 249, 249, 249;
+    --bs-body-bg: #ffffff;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-heading-color: #181C32;
+    --bs-link-color: #009ef7;
+    --bs-link-color-rgb: 0, 158, 247;
+    --bs-link-decoration: none;
+    --bs-link-hover-color: #0095e8;
+    --bs-link-hover-color-rgb: 0, 149, 232;
+    --bs-link-hover-decoration: none;
+    --bs-code-color: #b93993;
+    --bs-highlight-bg: #fff3cd;
+    --bs-border-width: 1px;
+    --bs-border-style: solid;
+    --bs-border-color: #F4F4F4;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-border-radius: 0.475rem;
+    --bs-border-radius-sm: 0.425rem;
+    --bs-border-radius-lg: 0.625rem;
+    --bs-border-radius-xl: 1rem;
+    --bs-border-radius-2xl: 2rem;
+    --bs-border-radius-pill: 50rem;
+    --bs-box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+    --bs-box-shadow-sm: 0 0.1rem 1rem 0.25rem rgba(0, 0, 0, 0.05);
+    --bs-box-shadow-lg: 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+    --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --bs-emphasis-color: #000000;
+    --bs-form-control-bg: var(--bs-body-bg);
+    --bs-form-control-disabled-bg: var(--bs-secondary-bg);
+    --bs-highlight-bg: #fff3cd;
+}
+		
+table {
+--bs-text-muted: #A1A5B7;
+--bs-gray-100: #F9F9F9;
+--bs-gray-100-rgb: 249, 249, 249;
+--bs-gray-200: #F4F4F4;
+--bs-gray-200-rgb: 244, 244, 244;
+--bs-gray-300: #E1E3EA;
+--bs-gray-300-rgb: 225, 227, 234;
+--bs-gray-400: #B5B5C3;
+--bs-gray-400-rgb: 181, 181, 195;
+--bs-gray-500: #A1A5B7;
+--bs-gray-500-rgb: 161, 165, 183;
+--bs-gray-600: #7E8299;
+--bs-gray-600-rgb: 126, 130, 153;
+--bs-gray-700: #5E6278;
+--bs-gray-700-rgb: 94, 98, 120;
+--bs-gray-800: #3F4254;
+--bs-gray-800-rgb: 63, 66, 84;
+--bs-gray-900: #181C32;
+--bs-gray-900-rgb: 24, 28, 50;
+--bs-white: #ffffff;
+--bs-light: #F9F9F9;
+--bs-primary: #009ef7;
+--bs-secondary: #E1E3EA;
+--bs-success: #50cd89;
+--bs-info: #7239ea;
+--bs-warning: #ffc700;
+--bs-danger: #f1416c;
+--bs-dark: #181C32;
+--bs-primary-active: #0095e8;
+--bs-secondary-active: #B5B5C3;
+--bs-light-active: #F4F4F4;
+--bs-success-active: #47be7d;
+--bs-info-active: #5014d0;
+--bs-warning-active: #f1bc00;
+--bs-danger-active: #d9214e;
+--bs-dark-active: #131628;
+--bs-primary-light: #f1faff;
+--bs-secondary-light: #F9F9F9;
+--bs-success-light: #e8fff3;
+--bs-info-light: #f8f5ff;
+--bs-warning-light: #fff8dd;
+--bs-danger-light: #fff5f8;
+--bs-dark-light: #F4F4F4;
+--bs-primary-inverse: #ffffff;
+--bs-secondary-inverse: #3F4254;
+--bs-light-inverse: #7E8299;
+--bs-success-inverse: #ffffff;
+--bs-info-inverse: #ffffff;
+--bs-warning-inverse: #ffffff;
+--bs-danger-inverse: #ffffff;
+--bs-dark-inverse: #ffffff;
+--bs-white-rgb: 255, 255, 255;
+--bs-light-rgb: 249, 249, 249;
+--bs-primary-rgb: 0, 158, 247;
+--bs-secondary-rgb: 225, 227, 234;
+--bs-success-rgb: 80, 205, 137;
+--bs-info-rgb: 114, 57, 234;
+--bs-warning-rgb: 255, 199, 0;
+--bs-danger-rgb: 241, 65, 108;
+--bs-dark-rgb: 24, 28, 50;
+--bs-text-white: #ffffff;
+--bs-text-primary: #009ef7;
+--bs-text-secondary: #E1E3EA;
+--bs-text-light: #F9F9F9;
+--bs-text-success: #50cd89;
+--bs-text-info: #7239ea;
+--bs-text-warning: #ffc700;
+--bs-text-danger: #f1416c;
+--bs-text-dark: #181C32;
+--bs-text-muted: #A1A5B7;
+--bs-text-gray-100: #F9F9F9;
+--bs-text-gray-200: #F4F4F4;
+--bs-text-gray-300: #E1E3EA;
+--bs-text-gray-400: #B5B5C3;
+--bs-text-gray-500: #A1A5B7;
+--bs-text-gray-600: #7E8299;
+--bs-text-gray-700: #5E6278;
+--bs-text-gray-800: #3F4254;
+--bs-text-gray-900: #181C32;
+--bs-border-color: #F4F4F4;
+--bs-border-dashed-color: #E1E3EA;
+}
+
+.text-gray-400 {
+    color: var(--bs-text-gray-400) !important;
+}
+
+.text-end {
+    text-align: right !important;
+}
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+.g-3,
+.gy-3 {
+    --bs-gutter-y: 0.75rem;
+}
+
+.table {
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-body-color);
+    --bs-table-striped-bg: rgba(var(--bs-gray-100-rgb), 0.75);
+    --bs-table-active-color: var(--bs-body-color);
+    --bs-table-active-bg: var(--bs-gray-100);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: var(--bs-gray-100);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--bs-table-color);
+    vertical-align: top;
+    border-color: var(--bs-table-border-color);
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+.my-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+.table>thead {
+    vertical-align: bottom;
+}
+
+.table>tbody {
+    vertical-align: inherit;
+}
+
+:not(.table-bordered).table> :not(:first-child) {
+    border-color: transparent;
+    border-width: 0;
+    border-style: none;
+}
+
+.pe-0 {
+    padding-right: 0px !important;
+}
+
+.w-125px {
+    width: 125px !important;
+}
+
+.w-50px {
+    width: 50px !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.pe-12 {
+    padding-right: 3rem !important;
+}
+
+.pe-7 {
+    padding-right: 1.75rem !important;
+}
+
+.pb-3 {
+    padding-bottom: 0.75rem !important;
+}
+
+.text-end {
+    text-align: right !important;
+}
+
+.min-w-175px {
+    min-width: 175px !important;
+}
+
+.min-w-100px {
+    min-width: 100px !important;
+}
+
+.table> :not(caption)>*>* {
+    padding: 0.75rem 0.75rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+.text-gray-400 {
+    color: var(--bs-text-gray-400) !important;
+}
+
+:not(.table-bordered).table tr,
+:not(.table-bordered).table th,
+:not(.table-bordered).table td {
+    border-color: inherit;
+    border-width: inherit;
+    border-style: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    height: inherit;
+    min-height: inherit;
+}
+
+.table.gy-3 th,
+.table.gy-3 td {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+:not(.table-bordered).table tr:first-child,
+:not(.table-bordered).table th:first-child,
+:not(.table-bordered).table td:first-child {
+    padding-left: 0px;
+}
+
+:not(.table-bordered).table tr:last-child,
+:not(.table-bordered).table th:last-child,
+:not(.table-bordered).table td:last-child {
+    padding-right: 0px;
+}
+
+:not(.table-bordered).table.table-row-dashed tr {
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: var(--bs-border-color);
+}
+
+:not(.table-bordered).table tfoot tr:last-child,
+:not(.table-bordered).table tbody tr:last-child {
+    border-bottom: 0 !important;
+}
+
+.table.gs-0 th:first-child,
+.table.gs-0 td:first-child {
+    padding-left: 0rem;
+}
+
+.table.gs-0 th:last-child,
+.table.gs-0 td:last-child {
+    padding-right: 0rem;
+}
+
+:not(.table-bordered).table tfoot tr:last-child th,
+:not(.table-bordered).table tfoot tr:last-child td,
+:not(.table-bordered).table tbody tr:last-child th,
+:not(.table-bordered).table tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+a {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: none;
+}
+
+a {
+    transition: color 0.2s ease;
+}
+
+
+.btn {
+    --bs-btn-color: var(--bs-body-color);
+    outline: none !important;
+}
+
+.btn.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: calc(1.5em + 2px + 1.55rem);
+    width: calc(1.5em + 2px + 1.55rem);
+}
+
+.btn.btn-bg-light {
+    border-color: var(--bs-light);
+    background-color: var(--bs-light);
+}
+
+.btn.btn-icon.btn-sm,
+.btn-group-sm>.btn.btn-icon {
+    height: calc(1.5em + 2px + 1.1rem);
+    width: calc(1.5em + 2px + 1.1rem);
+}
+
+:not(.btn-shadow):not(.shadow-xs):not(.shadow-lg):not(.shadow-sm):not(.shadow).btn {
+    box-shadow: none;
+}
+
+:not(.btn-outline):not(.btn-flush):not(.border-active):not(.border-hover):not(.btn-dashed).btn.btn-icon {
+    border: 0;
+}
+
+.ms-n1 {
+    margin-left: -0.25rem !important;
+}
+
+.svg-icon {
+    line-height: 1;
+    color: var(--bs-text-muted);
+}
+
+.btn .svg-icon {
+    flex-shrink: 0;
+    line-height: 0;
+    margin-right: 0.5rem;
+}
+
+.svg-icon.svg-icon-gray-700 {
+    color: var(--bs-text-gray-700);
+}
+
+.btn.btn-icon i,
+.btn.btn-icon .svg-icon {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+.svg-icon svg {
+    height: 1.15rem;
+    width: 1.15rem;
+}
+
+.svg-icon.svg-icon-5 svg {
+    height: 1.15rem !important;
+    width: 1.15rem !important;
+}
+
+.h-50px {
+    height: 50px !important;
+}
+
+.mt-n8 {
+    margin-top: -2rem !important;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.325rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--bs-badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.425rem;
+}
+
+.px-4 {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+}
+
+.py-3 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.border-bottom-0 {
+    border-bottom: 0 !important;
+}
+
+.fs-7 {
+    font-size: 0.95rem !important;
+}
+
+.fs-base {
+    font-size: 1rem !important;
+}
+
+.badge {
+    --bs-badge-color: var(--bs-badge-color);
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-light-primary {
+    color: var(--bs-primary);
+    background-color: var(--bs-primary-light);
+}
+
+.badge-light-danger {
+    color: var(--bs-danger);
+    background-color: var(--bs-danger-light);
+}
+
+.svg-icon.svg-icon-danger {
+    color: var(--bs-text-danger);
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem !important;
+}
+
+.fs-6 {
+    font-size: 1.07rem !important;
+}
+
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+.text-gray-600 {
+    color: var(--bs-text-gray-600) !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.me-3 {
+    margin-right: 0.75rem !important;
+}
+
+.symbol {
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 0.475rem;
+}
+
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+
+.text-hover-primary {
+    transition: color 0.2s ease;
+}
+
+.text-gray-800 {
+    color: var(--bs-text-gray-800) !important;
+}
+
+.fw-semibold {
+    font-weight: 500 !important;
+}
+
+.border-bottom-0 {
+    border-bottom-width: 0px !important;
+}
+
+.symbol>img {
+    width: 100%;
+    flex-shrink: 0;
+    display: inline-block;
+    border-radius: 0.475rem;
+}
+
+.symbol>img {
+    width: 50px;
+    height: 50px;
+}
+
+.symbol.symbol-50px>img {
+    width: 50px;
+    height: 50px;
+}
+
+.badge-light-success {
+    color: var(--bs-success);
+    background-color: var(--bs-success-light);
+}
+
+.svg-icon.svg-icon-success {
+    color: var(--bs-text-success);
+}
+
+.badge-light-warning {
+    color: var(--bs-warning);
+    background-color: var(--bs-warning-light);
+}
+
+.text-start {
+    text-align: left !important;
+}
+
+:not(.table-bordered).table> :not(:last-child)> :last-child>* {
+    border-bottom-color: inherit;
+}
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+]]>
+            </field>
+            <field name="default_code">
+                <![CDATA[
+# use the result var to get the data
+# write your code here, and assign your data to result
+result = []
+                ]]>
+            </field>
+            <!-- default json -->
+            <field name="default_json">
+                <![CDATA[
+[
+    {
+        "id": 1,
+        "name": "Mivy App",
+        "author": "Mivy",
+        "image": "/mana_dashboard/static/images/img-01.jpg",
+        "price": 32.400,
+        "progress": 80,
+        "increase": true,
+        "status": "In Progress"
+    },
+    {
+        "id": 2,
+        "name": "Mivy App",
+        "author": "Mivy",
+        "image": "/mana_dashboard/static/images/img-02.jpg",
+        "price": 32.400,
+        "progress": 80,
+        "increase": true,
+        "status": "In Progress"
+    },
+    {
+        "id": 3,
+        "name": "Mivy App",
+        "author": "Mivy",
+        "image": "/mana_dashboard/static/images/img-03.jpg",
+        "price": 32.400,
+        "progress": 80,
+        "increase": true,
+        "status": "In Progress"
+    },
+    {
+        "id": 4,
+        "name": "Mivy App",
+        "author": "Mivy",
+        "image": "/mana_dashboard/static/images/img-04.jpg",
+        "price": 32.400,
+        "progress": 80,
+        "increase": true,
+        "status": "In Progress"
+    }
+]
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

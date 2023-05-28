@@ -1,0 +1,25 @@
+<odoo>
+	<data>
+		<record id="task_alarm_1" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_1').name"/>
+		</record>
+		<record id="task_alarm_2" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_2').name"/>
+		</record>
+		<record id="task_alarm_3" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_3').name"/>
+		</record>
+		<record id="task_alarm_4" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_4').name"/>
+		</record>
+		<record id="task_alarm_5" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_5').name"/>
+		</record>
+		<record id="task_alarm_6" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_6').name"/>
+		</record>
+		<record id="task_alarm_7" model="task">
+			<field name="name" model="asset.core" eval="obj().env.ref('asset_core.asset_core_7').name"/>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,275 @@
+@charset "UTF-8";
+.dashboard_container {
+  width: 100%;
+  min-height: 1080px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(11, 18, 46);
+  color: rgb(255, 255, 255);
+  position: relative;
+  font-family: 微软雅黑;
+}
+.dashboard_container * {
+  box-sizing: content-box;
+}
+.dashboard_container table {
+  border-collapse: collapse;
+}
+.dashboard_container img {
+  vertical-align: middle;
+}
+.dashboard_container ul {
+  margin: 0;
+  padding: 0;
+}
+.dashboard_container .clearfix:before,
+.dashboard_container .clearfix:after {
+  content: "";
+  display: table;
+}
+.dashboard_container .clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+.dashboard_container .clearfix {
+  *zoom: 1;
+}
+.dashboard_container header {
+  width: 100%;
+  height: 90px;
+  background: url(../images/bg_top.png) center no-repeat;
+  text-align: center;
+  font-size: 36px;
+  color: #00f6ff;
+  line-height: 90px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.dashboard_container .content {
+  width: 100%;
+  margin: 20px auto 0 auto;
+}
+.dashboard_container .content_left .dtuplc {
+  height: 180px;
+  padding: 15px 15px 0 15px;
+  background: url(../images/zuoyi.png) top no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+  margin: 20px 20px 0 20px;
+}
+.dashboard_container .dtu {
+  width: 177px;
+  height: 180px;
+}
+.dashboard_container .plc {
+  width: 177px;
+  height: 180px;
+}
+.dashboard_container .content_left .online {
+  height: 330px;
+  background: url(../images/zuo2.png) no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px 0 20px;
+}
+.dashboard_container .content_left .online .online_con {
+  height: 240px;
+}
+.dashboard_container .content_left .title {
+  height: 70px;
+  float: left;
+  color: #00f6ff;
+  font-size: 20px;
+  line-height: 70px;
+  background: url(../images/bottom_line.png) bottom no-repeat;
+  text-align: center;
+}
+.dashboard_container .content_left .title img {
+  vertical-align: middle;
+}
+.dashboard_container .content_left .industry {
+  height: 400px;
+  background: url(../images/hangye.png) no-repeat;
+  margin-top: 20px;
+  background-position: center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 0 20px;
+}
+.dashboard_container .content_left .industry .industry_con {
+  height: 335px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.dashboard_container .content .content_center {
+  margin-left: 20px;
+}
+.dashboard_container .content_center .center_top {
+  height: 625px;
+  background: url(../images/center01.png) no-repeat;
+  background-size: 100% 100%;
+}
+.dashboard_container .content_center .title {
+  height: 70px;
+  color: #00f6ff;
+  font-size: 20px;
+  line-height: 70px;
+  background: url(../images/bottom_line.png) bottom center no-repeat;
+  text-align: center;
+}
+.dashboard_container .content_center .title img {
+  vertical-align: middle;
+}
+.dashboard_container .content_center .center_top_con {
+  height: 550px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.dashboard_container .panel-table {
+  text-align: left;
+  color: #ccc;
+  margin: 0 auto !important;
+  width: 96%;
+  margin-top: 20px !important;
+  padding: 0.5rem 0 !important;
+  font-size: 1.2rem;
+}
+.dashboard_container .content_center .center_bot {
+  height: 280px;
+  float: left;
+  background: url(../images/center02.png) no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+.dashboard_container tr.aaa:hover {
+  background: #1d3152;
+  cursor: pointer;
+}
+.dashboard_container .b1 {
+  width: 70px;
+  height: 25px;
+  background: #FF0000;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+}
+.dashboard_container .b2 {
+  width: 70px;
+  height: 25px;
+  background: #2897c4;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+}
+.dashboard_container .b3 {
+  width: 70px;
+  height: 25px;
+  background: #36791a;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+}
+.dashboard_container .content_right .report {
+  height: 145px;
+  line-height: 20px;
+  background: url(../images/zuoyi.png) top no-repeat;
+  padding: 35px 30px 0 30px;
+  display: flex;
+  justify-content: center;
+}
+.dashboard_container .report1 {
+  width: 134px;
+  height: 110px;
+  background: url(../images/report01.png) center no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  text-align: center;
+  padding-top: 24px;
+}
+.dashboard_container .report2 {
+  width: 134px;
+  height: 110px;
+  background: url(../images/report02.png) center no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  text-align: center;
+  padding-top: 24px;
+}
+.dashboard_container .report p {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ff0000;
+  padding-top: 20px;
+}
+.dashboard_container .report small {
+  font-size: 24px;
+}
+.dashboard_container .content_right .news_report {
+  height: 330px;
+  margin: 20px 20px 0 20px;
+  background: url(../images/bg_report.png) no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard_container .content_right .title {
+  height: 70px;
+  float: left;
+  color: #00f6ff;
+  font-size: 20px;
+  line-height: 70px;
+  background: url(../images/bottom_line.png) bottom no-repeat;
+  text-align: center;
+}
+.dashboard_container .content_right .title img {
+  vertical-align: middle;
+}
+.dashboard_container .news_list {
+  height: 240px;
+  padding: 10px;
+  font-size: 16px;
+  float: left;
+  overflow: hidden;
+}
+.dashboard_container .news_list ul {
+  list-style: none;
+}
+.dashboard_container .news_list ul li {
+  width: 100%;
+  height: 38px;
+  float: left;
+  line-height: 38px;
+  padding-left: 15px;
+}
+.dashboard_container .li01 {
+  background: url(../images/new_list01.png) left center no-repeat;
+}
+.dashboard_container .li02 {
+  background: url(../images/new_list02.png) left center no-repeat;
+  color: #FF0000;
+}
+.dashboard_container .content_right .data_box {
+  height: 400px;
+  margin: 20px 20px 0px 20px;
+  background: url(../images/bg_data.png) no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard_container .data_con {
+  height: 330px;
+  float: left;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style2.css.map */

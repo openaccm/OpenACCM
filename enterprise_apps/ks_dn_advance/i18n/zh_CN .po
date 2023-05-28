@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ks_dn_advance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-21 11:59+0000\n"
+"PO-Revision-Date: 2023-02-21 11:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,help:ks_dn_advance.field_ks_dashboard_ninja_item__ks_is_date_ranges
+msgid ""
+" Checkbox to apply default date range filter. The date filter applied will "
+"also reflect on the main page."
+msgstr "应用默认日期范围筛选器的复选框。应用的日期筛选器也将反映在主页上"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,help:ks_dn_advance.field_ks_dashboard_ninja_item__ks_custom_query
+msgid " Fetch, combine, and compare data by generating SQL query on your own."
+msgstr "通过自己生成SQL查询来获取、组合和比较数据"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__60000
+msgid "1 minute"
+msgstr "1分钟"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__10000
+msgid "10 Seconds"
+msgstr "10秒"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__15000
+msgid "15 Seconds"
+msgstr "15秒"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__3000
+msgid "3 Seconds"
+msgstr "3秒"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__30000
+msgid "30 Seconds"
+msgstr "30秒"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__45000
+msgid "45 Seconds"
+msgstr "45秒"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_board__ks_croessel_speed__5000
+msgid "5 Seconds"
+msgstr "5秒"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_custom_query
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_item__ks_data_calculation_type__query
+msgid "Custom Query"
+msgstr "自定义查询"
+
+#. module: ks_dn_advance
+#: model:ir.model,name:ks_dn_advance.model_ks_dashboard_ninja_board
+msgid "Dashboard Ninja"
+msgstr "仪表板Ninja"
+
+#. module: ks_dn_advance
+#: model:ir.model,name:ks_dn_advance.model_ks_dashboard_ninja_item
+msgid "Dashboard Ninja items"
+msgstr "仪表板Ninja项目"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_data_calculation_type
+msgid "Data Calculation Type"
+msgstr "数据计算类型"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,help:ks_dn_advance.field_ks_dashboard_ninja_item__ks_model_id
+msgid ""
+"Data source to fetch and read the data for the creation of dashboard items. "
+msgstr "用于获取和读取数据以创建仪表板项的数据源"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_is_date_ranges
+msgid "Date Ranges"
+msgstr "日期范围"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_item__ks_data_calculation_type__custom
+msgid "Default Query"
+msgstr "默认查询"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_item__ks_list_view_layout__layout_1
+msgid "Default layout"
+msgstr "默认布局"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_form_inherit
+msgid "End Date"
+msgstr "结束日期"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_quick_edit_form_inherit
+msgid "Fields to show in list"
+msgstr "要在列表中显示的字段"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_quick_edit_form_inherit
+msgid "Group By"
+msgstr "分组"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_quick_edit_form_inherit
+msgid "Group By Date"
+msgstr "按日期分组"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_query_end_date
+msgid "Ks Query End Date"
+msgstr "Ks查询结束日期"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_query_start_date
+msgid "Ks Query Start Date"
+msgstr "Ks查询开始日期"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_item__ks_list_view_layout__layout_2
+msgid "Layout 1"
+msgstr "布局1"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_item__ks_list_view_layout__layout_3
+msgid "Layout 2"
+msgstr "布局2"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields.selection,name:ks_dn_advance.selection__ks_dashboard_ninja_item__ks_list_view_layout__layout_4
+msgid "Layout 3"
+msgstr "布局3"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_quick_edit_form_inherit
+msgid "Line Measure"
+msgstr "线路测量值"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_list_view_layout
+msgid "List View Layout"
+msgstr "列表视图布局"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_quick_edit_form_inherit
+msgid "Measures"
+msgstr "措施"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_model_id
+msgid "Model"
+msgstr "模型"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_form_inherit
+msgid "Query"
+msgstr "查询"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_query_result
+msgid "Result"
+msgstr "结果"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,help:ks_dn_advance.field_ks_dashboard_ninja_item__ks_data_calculation_type
+msgid "Select the type of calculation you want to perform on the data."
+msgstr "选择要对数据执行的计算类型"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_board__ks_croessel_speed
+msgid "Slide Interval"
+msgstr "幻灯片间隔"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_form_inherit
+msgid "Start Date"
+msgstr "开始日期"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_form_inherit
+msgid "X-Label"
+msgstr "X-标签"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_xlabels
+msgid "X-Labels"
+msgstr "X-标签"
+
+#. module: ks_dn_advance
+#: model_terms:ir.ui.view,arch_db:ks_dn_advance.item_form_inherit
+msgid "Y-Axis"
+msgstr "Y-轴"
+
+#. module: ks_dn_advance
+#: model:ir.model.fields,field_description:ks_dn_advance.field_ks_dashboard_ninja_item__ks_ylabels
+msgid "Y-轴"
+msgstr ""

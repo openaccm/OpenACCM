@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!--继承视图-->
+        <record id="view_staff_department_form_inherit" model="ir.ui.view">
+            <field name="name">staff.department.form.inherit</field>
+            <field name="model">staff.department</field>
+            <field name='inherit_id' ref='staff.view_staff_department_form' />
+            <field name="arch" type="xml">
+                 <page name='member_depart_ids' position="after">
+                    <page string="部门设备">
+                        <group>
+                            <field colspan="2" name="department_equipment_ids" nolabel="1">
+                                <tree create="false" edit="false" delete="false">
+                                    <field name="name" optional="show"/>
+                                    <field name="state" optional="show"/>
+                                    <field name="asset_tag_ids" optional="hide"/>
+                                    <field name="barcode" optional="hide"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <!--继承视图-->
+        <record id="view_staff_department_tree_inherit" model="ir.ui.view">
+            <field name="name">staff.department.tree.inherit</field>
+            <field name="model">staff.department</field>
+            <field name='inherit_id' ref='staff.view_staff_department_tree'/>
+            <field name="arch" type="xml">
+                 <field name='jobs_ids' position="after">
+                    <field name="department_equipment_ids" optional="show"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

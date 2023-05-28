@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mana_dashboard.counter_style_one" model="mana_dashboard.template">
+            <field name="name">Count</field>
+            <field name="category">Counter &amp; Timer</field>
+            <field name="type">counter</field>
+            <field name="component_type">counter</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/counter/counter.png" />
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="need_column_aggregation">True</field>
+            <field name="template">
+                <![CDATA[
+<div class="counter-box">
+    <h2><span class="count">0</span></h2>
+</div>
+]]>
+            </field>
+            <field name="demo_template">
+                <![CDATA[
+<div class="counter-box">
+    <h2><span class="count">0</span></h2>
+</div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+let data_source = this.get_data_source();
+if (!data_source) {
+  return;
+}
+let val = data_source.get_first_aggregate_column_value();
+this.$el.find(".count").each(function () {
+  $(this)
+    .prop("Counter", 0)
+    .animate(
+      {
+        Counter: val,
+      },
+      {
+        duration: 4000,
+        easing: "swing",
+        step: function (now) {
+          now = Number(Math.ceil(now)).toLocaleString('en');
+          $(this).text(now);
+        }
+      }
+    );
+});
+]]>
+            </field>
+
+            <!-- default script -->
+            <field name="default_scripts">
+                <![CDATA[
+let val = 500;
+this.$el.find(".count").each(function () {
+  $(this)
+    .prop("Counter", 0)
+    .animate(
+      {
+        Counter: val,
+      },
+      {
+        duration: 4000,
+        easing: "swing",
+        step: function (now) {
+          now = Number(Math.ceil(now)).toLocaleString('en');
+          $(this).text(now);
+        }
+      }
+    );
+});
+]]>
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+  .counter-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+  }
+
+  .counter-box {
+    width: 350px;
+  }
+
+  .counter-box h2 {
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Inter';
+    margin: 0;
+  }
+
+  .counter-box p {
+    text-align: center;
+    font-family: arial;
+  }
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+                <![CDATA[
+<h3>Counter</h3>
+<p>Counter is a widget that displays a number and counts up to that number.</p>
+<p>It is useful for displaying a number that is constantly increasing.</p>
+<p>For example, you can use it to display the number of customers who have visited your website.</p>
+<p>It is also useful for displaying the number of sales you have made.</p>
+<p>To use the Counter widget, you need to select a field and choose the column aggregation.</p>
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

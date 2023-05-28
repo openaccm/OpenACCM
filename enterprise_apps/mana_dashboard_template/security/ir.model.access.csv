@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mana_dashboard_template_mana_dashboard_template,mana_dashboard_template.mana_dashboard_template,model_mana_dashboard_template_mana_dashboard_template,base.group_user,1,1,1,1
+access_mana_dashboard_dashboard_template,mana_dashboard.dashboard_template,model_mana_dashboard_dashboard_template,base.group_user,1,1,1,1

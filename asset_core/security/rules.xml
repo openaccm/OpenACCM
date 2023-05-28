@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--定义数据隔离规则-->
+        <!--个人只能看本人数据；部门负责人看部门内数据；管理员不限制-->
+        <record id="group_asset_owner_self_rule" model="ir.rule">
+            <field name="name">设备负责人管理自己数据</field>
+            <field name="model_id" ref="model_asset_core"/>
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('asset_core.group_asset_owner'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <!--部门负责人管理部门数据，数据隔离规则：按部门上下级层级关系进行隔离-->
+        <record id="group_asset_head_self_rule" model="ir.rule">
+            <field name="name">部门负责人管理本部门及子部门数据</field>
+            <field name="model_id" ref="model_asset_core"/>
+            <field name="domain_force">[('depart_id','child_of', user.staff_id.department_id.id)]</field>
+            <field name="groups" eval="[(4, ref('asset_core.group_asset_head'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <!--平台管理员管理平台数据-->
+        <record id="group_asset_admin_self_rule" model="ir.rule">
+            <field name="name">平台管理员管理平台数据</field>
+            <field name="model_id" ref="model_asset_core"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('asset_core.group_asset_admin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+
+        <!--定义数据隔离规则-->
+        <!--个人只能看本人数据；部门负责人看部门内数据；管理员不限制-->
+        <record id="group_work_sheet_owner_self_rule" model="ir.rule">
+            <field name="name">工单负责人管理自己数据</field>
+            <field name="model_id" ref="model_work_sheet_management"/>
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('asset_core.group_asset_owner'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <!--部门负责人管理部门数据，数据隔离规则：按部门上下级层级关系进行隔离-->
+        <record id="group_work_sheet_head_self_rule" model="ir.rule">
+            <field name="name">部门负责人管理本部门及子部门数据</field>
+            <field name="model_id" ref="model_work_sheet_management"/>
+            <field name="domain_force">[('depart_id','child_of', user.staff_id.department_id.id)]</field>
+            <field name="groups" eval="[(4, ref('asset_core.group_asset_head'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <!--平台管理员管理平台数据-->
+        <record id="group_work_sheet_admin_self_rule" model="ir.rule">
+            <field name="name">平台管理员管理平台数据</field>
+            <field name="model_id" ref="model_work_sheet_management"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('asset_core.group_asset_admin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+    </data>
+</odoo>

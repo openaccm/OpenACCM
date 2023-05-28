@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--任务分派工单模块-->
+    <record id="view_work_sheet_management_tree" model="ir.ui.view">
+        <field name="name">我的工单.tree</field>
+        <field name="model">work.sheet.management</field>
+        <field name="arch" type="xml">
+            <tree string="我的工单" expand="context.get('expand', False)" multi_edit="1">
+                <field name="create_date" string="创建时间" optional="show"/>
+                <field name="name"/>
+                <field name="ma_roll"
+                    decoration-info="ma_roll == 'normal'"
+                    decoration-warning="ma_roll == 'alarm'"
+                    decoration-danger="ma_roll == 'abnormal'"
+                    decoration-success="ma_roll == 'disconnect'"
+                    decoration-muted="ma_roll == 'closed'"
+                    widget="badge" optional="show" class="text-dark"/>
+                <field name="status"/>
+                <field name="asset_task_type"/>
+                <field name="error_detail" optional="show"/>
+                <field name="department_id" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="user_id" optional="show"/>
+                <field name="depart_id" optional="show"/>
+                <field name="active" optional="hide"/>
+                <field name="create_uid" string="创建人" optional="hide"/>
+                <field name="write_uid" string="修改人" optional="hide"/>
+                <field name="write_date" string="修改时间" optional="hide"/>
+                <field name="task_id" string="任务" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_work_sheet_management_form" model="ir.ui.view">
+        <field name="name">我的工单.form</field>
+        <field name="model">work.sheet.management</field>
+        <field name="arch" type="xml">
+            <form string="我的工单">
+                <header>
+                    <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                    <field name="active" invisible="1"/>
+                    <field name="id" invisible="1"/>
+                    <field name="is_manager" invisible="1"/>
+                </header>
+                <sheet name="equipment_form">
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="image_128" widget="image" class="oe_avatar" readonly="1"/>
+                    <div class="oe_title">
+                        <label for="name" string="设备序列号"/>
+                        <h1>
+                            <div class="d-flex">
+                                <field class="text-break" name="name"
+                                        attrs="{'readonly':[('is_manager', '=', True)]}"
+                                       placeholder="可填写设备序列号、设备编号、设备名称等，全局唯一" readonly="1"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <style>
+                        div[name="options"] .o_field_boolean > div {
+                            margin-left: 10px;
+                            margin-right: 0px;
+                        }
+                    </style>
+                    <group string="工单处理结果">
+                            <field colspan="2" name="description"
+                                   nolabel="1" placeholder="填写工单处理结果。"/>
+                        </group>
+                    <notebook>
+                        <page string="设备信息" name="equipment_information">
+                            <group>
+                                <group>
+                                    <field name="department_id" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="ma_roll" widget="radio"
+                                           attrs="{'readonly':[('is_manager', '=', True)]}"
+                                           options='{"no_create": True, "no_open": True, "horizontal": true}'/>
+                                    <field name="active_time" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="error_detail" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                </group>
+                                <group>
+                                    <field name="asset_task_type" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="installation_position" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="user_id" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="job_id" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="depart_id" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                    <field name="task_id" attrs="{'readonly':[('is_manager', '=', True)]}"/>
+                                </group>
+                            </group>
+                            <group string="流程说明">
+                                <group>
+                                    <field name="create_uid" string="创建人"/>
+                                    <field name="create_date" string="创建时间"/>
+                                </group>
+                                <group>
+                                    <field name="write_uid" string="修改人"/>
+                                    <field name="write_date" string="修改时间"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_work_sheet_management_search" model="ir.ui.view">
+        <field name="name">我的工单.search</field>
+        <field name="model">work.sheet.management</field>
+        <field name="arch" type="xml">
+            <search string="我的工单">
+                <filter name="act_false" string="已归档" domain="[('active','=',False)]"/>
+                <filter name="act_all" string="所有单据" domain="['|',('active','=',True),('active','=',False)]"/>
+                <separator/>
+                <filter string="今日数据" name="today" domain="[('create_date','=', current_date)]"/>
+                <filter string="本月数据" name="month" domain="[('create_date','&gt;=', time.strftime('%Y-%m-01')),('create_date','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="上月数据" name="month2" domain="[('create_date','&lt;', time.strftime('%Y-%m-01')),('create_date','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="本年数据" name="year" domain="[('create_date','&lt;=', time.strftime('%Y-12-31')),('create_date','&gt;=', time.strftime('%Y-01-01'))]"/>
+                <field name="create_date" string="创建时间"/>
+                <separator/>
+                <field name="name"/>
+                <field name="ma_roll"/>
+                <separator/>
+                <group expand="1" string="分组">
+                    <filter string="状态" name="group_ma_roll" context="{'group_by':'ma_roll'}" />
+                    <filter string="任务阶段" name="group_status" context="{'group_by':'status'}" />
+                    <filter string="工单分类" name="group_asset_task_type" context="{'group_by':'asset_task_type'}" />
+                    <filter string="负责人" name="group_user_id" context="{'group_by':'user_id'}" />
+                </group>
+                <!--增加设备视图左侧树状菜单-->
+                <searchpanel>
+                    <field name="company_id" expand="1" groups="base.group_multi_company" icon="fa-building" enable_counters="1"/>
+                    <field name="depart_id" limit="1000" expand="1" icon="fa-users" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_work_sheet_management_kanban" model="ir.ui.view">
+        <field name="name">我的工单.kanban</field>
+        <field name="model">work.sheet.management</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" create="0" delete="0">
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="installation_position"/>
+                <field name="active_time"/>
+                <field name="task_id"/>
+                <field name="asset_task_type"/>
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <t>
+                                    <field name="image_128" widget="image" class="oe_avatar"/>
+                                </t>
+                                <p>
+                                    <t t-esc="record.user_id.value"/>
+                                </p>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"><span>设备名: <t t-esc="record.task_id.value"/><br/></span></strong>
+                                <p>
+                                    位置: <t t-esc="record.installation_position.value"/><br/>
+                                    工单类: <t t-esc="record.asset_task_type.value"/><br/>
+                                    活跃时间: <t t-esc="record.active_time.value"/><br/>
+                                </p>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_work_sheet_management_pivot" model="ir.ui.view">
+        <field name="name">我的工单.pivot</field>
+        <field name="model">work.sheet.management</field>
+        <field name="arch" type="xml">
+            <pivot string="我的工单">
+                <field name="ma_roll" type="row"/>
+                <field name="department_id" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_work_sheet_management_graph" model="ir.ui.view">
+        <field name="name">我的工单.graph</field>
+        <field name="model">work.sheet.management</field>
+        <field name="arch" type="xml">
+            <graph string="我的工单">
+                <field name="ma_roll" type="row"/>
+                <field name="department_id" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_work_sheet_management_calendar">
+        <field name="name">我的工单.calendar</field>
+        <field name="model">work.sheet.management</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar string="我的工单" date_start="create_date" event_limit="5" mode="month" delete="false">
+                <field name="asset_task_type"/>
+                <field name="name"/>
+                <field name="ma_roll"/>
+                <field name="error_detail"/>
+                <field name="installation_position"/>
+                <field name="department_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="action_work_sheet_management" model="ir.actions.act_window">
+        <field name="name">我的工单</field>
+        <field name="res_model">work.sheet.management</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form,kanban,pivot,graph,calendar</field>
+        <!--默认分组-->
+<!--        <field name="context">{-->
+<!--            'search_default_group_status': 1,-->
+<!--            'expand': 0}-->
+<!--        </field>-->
+        <field name="search_view_id" ref="view_work_sheet_management_search"/>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('view_work_sheet_management_tree')}),
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('view_work_sheet_management_form')}),
+                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_work_sheet_management_kanban')}),
+                  (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_work_sheet_management_pivot')}),
+                  (0, 0, {'view_mode': 'graph', 'view_id': ref('view_work_sheet_management_graph')}),
+                  (0, 0, {'view_mode': 'calendar', 'view_id': ref('view_work_sheet_management_calendar')}),
+                  ]"/>
+    </record>
+</odoo>

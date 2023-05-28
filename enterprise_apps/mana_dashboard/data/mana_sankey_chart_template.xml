@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- sankey -->
+        <record id="mana_dashboard.template_simple_sankey" model="mana_dashboard.template">
+            <field name="name">Simple Sankey</field>
+            <field name="category">chart</field>
+            <field name="type">sankey</field>
+            <field name="component_type">sankey_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/sankey_chart/simple_sankey.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_custom')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+// this chart just support custom data source
+let data_source = this.get_data_source(0);
+if (!data_source.is_valid()) {
+  return;
+}
+
+let option = data_source.get_raw_datas();
+if (!option) {
+  return;
+}
+
+this.setOption(option);
+]]>
+            </field>
+            <!-- supported data source types -->
+            <field name="supported_data_source_types" 
+                eval="[(6, 0, [ref('mana_dashboard_base.data_source_method'), ref('mana_dashboard_base.data_source_json'), ref('mana_dashboard_base.data_source_code')])]"/>
+
+            <!-- supported data source types -->
+            <field name="supported_result_types" 
+                eval="[(6, 0, [ref('mana_dashboard_base.result_type_custom')])]"/>
+
+            <!-- default_code -->
+            <field name="default_code">
+<![CDATA[
+option = """{
+  series: {
+    type: 'sankey',
+    layout: 'none',
+    emphasis: {
+      focus: 'adjacency'
+    },
+    data: [
+      {
+        name: 'a'
+      },
+      {
+        name: 'b'
+      },
+      {
+        name: 'a1'
+      },
+      {
+        name: 'a2'
+      },
+      {
+        name: 'b1'
+      },
+      {
+        name: 'c'
+      }
+    ],
+    links: [
+      {
+        source: 'a',
+        target: 'a1',
+        value: 5
+      },
+      {
+        source: 'a',
+        target: 'a2',
+        value: 3
+      },
+      {
+        source: 'b',
+        target: 'b1',
+        value: 8
+      },
+      {
+        source: 'a',
+        target: 'b1',
+        value: 3
+      },
+      {
+        source: 'b1',
+        target: 'a1',
+        value: 1
+      },
+      {
+        source: 'b1',
+        target: 'c',
+        value: 2
+      }
+    ]
+  }
+}
+"""
+result = json5.loads(option)
+]]>
+            </field>
+            <!-- default_data_source_type -->
+            <field name="default_data_source_type" ref="mana_dashboard_base.data_source_code"/>
+            <!-- default_result_type -->
+            <field name="default_result_type" ref="mana_dashboard_base.result_type_custom"/>
+            <!-- default scripts -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  series: {
+    type: 'sankey',
+    layout: 'none',
+    emphasis: {
+      focus: 'adjacency'
+    },
+    data: [
+      {
+        name: 'a'
+      },
+      {
+        name: 'b'
+      },
+      {
+        name: 'a1'
+      },
+      {
+        name: 'a2'
+      },
+      {
+        name: 'b1'
+      },
+      {
+        name: 'c'
+      }
+    ],
+    links: [
+      {
+        source: 'a',
+        target: 'a1',
+        value: 5
+      },
+      {
+        source: 'a',
+        target: 'a2',
+        value: 3
+      },
+      {
+        source: 'b',
+        target: 'b1',
+        value: 8
+      },
+      {
+        source: 'a',
+        target: 'b1',
+        value: 3
+      },
+      {
+        source: 'b1',
+        target: 'a1',
+        value: 1
+      },
+      {
+        source: 'b1',
+        target: 'c',
+        value: 2
+      }
+    ]
+  }
+};
+this.setOption(option);
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+<![CDATA[
+This chart just support custom data source.
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

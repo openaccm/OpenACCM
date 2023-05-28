@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 增加工单分类数据 -->
+        <record id="asset_task_type_1" model="asset.task.type">
+            <field name="name">非计划维护</field>
+        </record>
+        <record id="asset_task_type_2" model="asset.task.type">
+            <field name="name">计划内维护</field>
+        </record>
+        <!-- 增加设备管理团队数据 -->
+        <record id="asset_team_1" model="asset.team">
+            <field name="name">设备一组</field>
+        </record>
+        <record id="asset_team_2" model="asset.team">
+            <field name="name">设备二组</field>
+        </record>
+        <!-- 产品设备管理 -->
+        <record id="asset_core_1" model="asset.core">
+            <field name="name">865974054710629</field>
+            <field name="ma_roll">normal</field>
+            <!--<field name="error_detail">-</field>-->
+            <field name="installation_position">机尾滚轮电机侧</field>
+            <field name="active_time">2023-03-06 03:06:21</field>
+            <field name="department_id" ref='staff.department_4'/>
+            <field name="depart_id" ref='staff.department_4'/>
+            <field name="user_id" ref='core.user_cgf'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_1'/>
+        </record>
+        <record id="asset_core_2" model="asset.core">
+            <field name="name">865974054711346</field>
+            <field name="ma_roll">alarm</field>
+            <field name="error_detail">内部错误</field>
+            <field name="installation_position">机头滚轮非电机侧</field>
+            <field name="active_time">2023-03-06 03:06:21</field>
+            <field name="department_id" ref='staff.department_4'/>
+            <field name="depart_id" ref='staff.department_4'/>
+            <field name="user_id" ref='core.user_lb'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_1'/>
+        </record>
+        <record id="asset_core_3" model="asset.core">
+            <field name="name">865974054754734</field>
+            <field name="ma_roll">alarm</field>
+            <field name="error_detail">润滑剂排空</field>
+            <field name="installation_position">电机后侧</field>
+            <field name="active_time">2023-03-06 03:06:21</field>
+            <field name="department_id" ref='staff.department_4'/>
+            <field name="depart_id" ref='staff.department_4'/>
+            <field name="user_id" ref='core.user_wcg'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_1'/>
+        </record>
+        <record id="asset_core_4" model="asset.core">
+            <field name="name">865974054751250</field>
+            <field name="ma_roll">normal</field>
+            <field name="installation_position">非电机侧</field>
+            <field name="active_time">2023-03-06 09:06:21</field>
+            <field name="department_id" ref='staff.department_5'/>
+            <field name="depart_id" ref='staff.department_5'/>
+            <field name="user_id" ref='core.user_wll'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_2'/>
+        </record>
+        <record id="asset_core_5" model="asset.core">
+            <field name="name">865974054744057</field>
+            <field name="ma_roll">disconnect</field>
+            <field name="error_detail">设备离线</field>
+            <field name="installation_position">非电机侧坠头</field>
+            <field name="active_time">2023-03-06 10:06:21</field>
+            <field name="department_id" ref='staff.department_5'/>
+            <field name="depart_id" ref='staff.department_5'/>
+            <field name="user_id" ref='core.user_ly'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_2'/>
+        </record>
+        <record id="asset_core_6" model="asset.core">
+            <field name="name">865974054705850</field>
+            <field name="ma_roll">closed</field>
+            <field name="error_detail">设备关闭</field>
+            <field name="installation_position">非电机侧坠头</field>
+            <field name="active_time">2023-03-06 10:06:21</field>
+            <field name="department_id" ref='staff.department_2'/>
+            <field name="depart_id" ref='staff.department_2'/>
+            <field name="user_id" ref='core.user_ly'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_2'/>
+        </record>
+        <record id="asset_core_7" model="asset.core">
+            <field name="name">865974054716022</field>
+            <field name="ma_roll">disconnect</field>
+            <field name="error_detail">设备离线</field>
+            <field name="installation_position">非电机侧坠头</field>
+            <field name="active_time">2023-03-06 12:06:21</field>
+            <field name="department_id" ref='staff.department_3'/>
+            <field name="depart_id" ref='staff.department_3'/>
+            <field name="user_id" ref='core.user_ly'/>
+            <field name="active">True</field>
+            <field name="image_128" type="base64" file="asset_core/static/description/icon.png"/>
+            <field name="maintenance_team_id" ref='asset_team_2'/>
+        </record>
+    </data>
+</odoo>

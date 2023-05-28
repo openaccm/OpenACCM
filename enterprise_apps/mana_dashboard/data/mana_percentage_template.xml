@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- mana percentage template -->
+        <record id="mana_dashboard.percentage_style_1" model="mana_dashboard.template">
+            <field name="name">Percentage style 1</field>
+			<field name="category">percentage</field>
+            <field name="type">percentage</field>
+            <field name="component_type">percentage</field>
+            <field name="multi_data_source">1</field>
+            <field name="template">
+                <![CDATA[
+<h3 class="percent"><t t-esc="data.percentage" /></h3>
+]]>
+            </field>
+            <!-- demo template -->
+            <field name="demo_template">
+                <![CDATA[
+<h3 class="percent">50%</h3>
+]]>
+</field>
+			
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+let data_sources = this.get_data_sources();
+if (data_sources.length < 2) {
+    return;
+}
+let data_source_1 = data_sources[0];
+let data_source_2 = data_sources[1];
+let va1 = data_source_1.get_first_aggregate_column_value()
+let va2 = data_source_2.get_first_aggregate_column_value()
+let percentage = 0;
+if (va2 != 0) {
+    percentage = va1 / va2 * 100;
+}
+this.$el.find('.percent').text(percentage.toFixed(2) + '%');
+]]>
+            </field>
+            <field name="help">
+                <![CDATA[
+                <p>Percentage block is used to show the percentage of two measures.</p>
+                <p>For example, if you want to show the percentage of the number of customers and the number of orders, you can use this block.</p>
+                <p>This block needs two data sources, and the first data source is the numerator, and the second data source is the denominator.</p>
+                <p>For example, if you have 100 customers and 50 customers have placed orders, the percentage will be 50%.</p>
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

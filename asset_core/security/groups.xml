@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 创建类别 -->
+        <!-- 以下为功能模块相关，给每个主菜单设置一个组便于理解 -->
+        <record model="ir.module.category" id="module_category_asset">
+            <field name="name">设备资产综合管控</field>
+            <field name="sequence">998</field>
+        </record>
+        <!-- 创建基于类别的权限组 -->
+        <record id="group_asset_admin" model="res.groups">
+            <field name="name">平台管理员</field>
+            <field name="category_id" ref="asset_core.module_category_asset"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">用于管理设备资产综合管控平台全部设备</field>
+        </record>
+        <!-- 创建基于类别的权限组 -->
+        <record id="group_asset_head" model="res.groups">
+            <field name="name">部门负责人</field>
+            <field name="category_id" ref="asset_core.module_category_asset"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">用于管理本部门及子部门设备</field>
+        </record>
+        <!-- 创建基于类别的权限组 -->
+        <record id="group_asset_owner" model="res.groups">
+            <field name="name">设备负责人</field>
+            <field name="category_id" ref="asset_core.module_category_asset"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">用于管理本人设备</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--任务派工模块-->
+    <record id="work_sheet_wizard_form" model="ir.ui.view">
+        <field name="name">根据设备档案生成工单向导</field>
+        <field name="model">work.sheet.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div>
+                    <h2>使用说明：</h2>
+                    <h5>1. 工单任务分为：非计划维修、预防性维护两类;</h5>
+                    <h5>2. 请按工单任务分类进行派工单安排;</h5>
+                    <br></br>
+                </div>
+                <group>
+                    <group>
+                        <field name="asset_task_type" options='{"no_create": True, "no_open": True}'/>
+                        <field name="owner" options='{"no_create": True, "no_open": True}'/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="btn_new_task" string="派工单" type="object" class="btn-primary"/>
+                    <button string="取消" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="work_sheet_wizard_action" model="ir.actions.act_window">
+        <field name="name">根据设备档案生成工单向导</field>
+        <field name="res_model">work.sheet.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

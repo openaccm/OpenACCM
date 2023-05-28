@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_core_admin,access.asset_core_admin,model_asset_core,group_asset_admin,1,1,1,1
+access_asset_core_line_admin,access.asset_core_line_admin,model_asset_core_line,group_asset_admin,1,1,1,1
+access_asset_core_head,access.asset_core,model_asset_core,group_asset_head,1,1,1,1
+access_asset_core_line_head,access.asset_core_line,model_asset_core_line,group_asset_head,1,1,1,1
+access_asset_core_owner,access.asset_core_owner,model_asset_core,group_asset_owner,1,1,1,1
+access_asset_core_line_owner,access.asset_core_line_owner,model_asset_core_line,group_asset_owner,1,1,1,1
+
+access_asset_tag_admin,access.asset_tag_admin,model_asset_tag,group_asset_admin,1,1,1,1
+access_work_sheet_wizard_admin,access.work_sheet_wizard_admin,model_work_sheet_wizard,group_asset_admin,1,1,1,1
+access_asset_task_type_admin,access.asset_task_type_admin,model_asset_task_type,group_asset_admin,1,1,1,1
+access_asset_team_admin,access.asset_team_admin,model_asset_team,group_asset_admin,1,1,1,1
+
+access_work_sheet_management_admin,access.work_sheet_management_admin,model_work_sheet_management,group_asset_admin,1,1,1,1
+access_work_sheet_management_head,access.work_sheet_management_head,model_work_sheet_management,group_asset_head,1,1,1,1
+access_work_sheet_management_owner,access.work_sheet_management_owner,model_work_sheet_management,group_asset_owner,1,1,1,1

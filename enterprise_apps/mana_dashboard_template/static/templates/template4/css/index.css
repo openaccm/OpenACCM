@@ -1,0 +1,393 @@
+
+@charset "UTF-8";
+.mana_dashboard {
+  padding: 0px;
+  margin: 0px;
+  font-family: "微软雅黑";
+  background: linear-gradient(25deg, #0f2249, #1e3259 20%, #0f2249 40%, #182e5a 60%, #0f2249 80%, #182e5a 100%);
+  color: #fff;
+  font-size: 0.74rem;
+  /*谷哥滚动条样式*/
+  /***/
+  /*Plugin CSS*/
+}
+.mana_dashboard li {
+  list-style-type: none;
+}
+.mana_dashboard i {
+  margin: 0px;
+  padding: 0px;
+  text-indent: 0px;
+}
+.mana_dashboard img {
+  border: none;
+  max-width: 100%;
+}
+.mana_dashboard a {
+  text-decoration: none;
+  color: #399bff;
+}
+.mana_dashboard a.active,
+.mana_dashboard a:focus {
+  outline: none !important;
+  text-decoration: none;
+}
+.mana_dashboard ol,
+.mana_dashboard ul,
+.mana_dashboard p,
+.mana_dashboard h1,
+.mana_dashboard h2,
+.mana_dashboard h3,
+.mana_dashboard h4,
+.mana_dashboard h5,
+.mana_dashboard h6 {
+  padding: 0;
+  margin: 0;
+}
+.mana_dashboard a:hover {
+  color: #06c;
+  text-decoration: none !important;
+}
+.mana_dashboard i,
+.mana_dashboard em {
+  font-style: normal;
+}
+.mana_dashboard .clearfix:after,
+.mana_dashboard .clearfix:before {
+  display: table;
+  content: " ";
+}
+.mana_dashboard .clearfix:after {
+  clear: both;
+}
+.mana_dashboard .pulll_left {
+  float: left;
+}
+.mana_dashboard .pulll_right {
+  float: right;
+}
+.mana_dashboard ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+}
+.mana_dashboard ::-webkit-scrollbar-thumb {
+  background-color: #5bc0de;
+}
+.mana_dashboard ::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+.mana_dashboard .loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 2.2rem;
+  z-index: 100000000;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1c;
+  text-align: center;
+}
+.mana_dashboard .loadbox {
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  color: #324e93;
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -75px;
+}
+.mana_dashboard .loadbox img {
+  margin: 10px auto;
+  display: block;
+  width: 40px;
+}
+.mana_dashboard .head {
+  height: 7.7rem;
+  background: url(../images/head_bg.png) no-repeat center center;
+  background-size: 100% 100%;
+  position: relative;
+}
+.mana_dashboard .head h1 {
+  color: #bde4ff;
+  text-align: center;
+  font-size: 2.9rem;
+  line-height: 7.7rem;
+  letter-spacing: 0.44rem;
+}
+.mana_dashboard .head h1 img {
+  width: 1.1e+01rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1.5rem;
+}
+.mana_dashboard html,
+.mana_dashboard body {
+  height: 100%;
+}
+.mana_dashboard .mainbox {
+  padding: 2.9rem 0.0rem 0.0rem 0.0rem;
+  height: calc(100% - 7.7rem);
+}
+.mana_dashboard .mainbox > ul {
+  margin-left: 0.74rem;
+  margin-right: 0.74rem;
+  height: 100%;
+}
+.mana_dashboard .mainbox > ul > li {
+  float: left;
+  padding: 0 0.96rem;
+  height: 100%;
+}
+.mana_dashboard .mainbox > ul > li {
+  width: 25%;
+}
+.mana_dashboard .mainbox > ul > li:nth-child(2) {
+  width: 50%;
+}
+.mana_dashboard .boxall {
+  border: 1px solid #3486da;
+  background: rgba(0, 70, 190, 0.1);
+  padding: 1.1rem;
+  position: relative;
+  margin-bottom: 1.8rem;
+  z-index: 10;
+}
+.mana_dashboard .boxall:before,
+.mana_dashboard .boxall:after {
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  content: "";
+  border-top: 3px solid #3486da;
+  top: -2px;
+}
+.mana_dashboard .boxall:before,
+.mana_dashboard .boxfoot:before {
+  border-left: 3px solid #3486da;
+  left: -2px;
+}
+.mana_dashboard .boxall:after,
+.mana_dashboard .boxfoot:after {
+  border-right: 3px solid #3486da;
+  right: -2px;
+}
+.mana_dashboard .boxfoot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.mana_dashboard .boxfoot:before,
+.mana_dashboard .boxfoot:after {
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  content: "";
+  border-bottom: 3px solid #3486da;
+  bottom: -2px;
+}
+.mana_dashboard .tit01 {
+  background: linear-gradient(to right, rgb(48, 82, 174), rgba(48, 82, 174, 0));
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0.22rem 0.74rem;
+}
+.mana_dashboard .tit02 {
+  background: #3aafe8;
+  color: #021132;
+  position: absolute;
+  font-size: 1.8rem;
+  padding: 0.15rem 0;
+  text-align: center;
+  width: 1.8e+01rem;
+  left: 50%;
+  margin-left: -8.8rem;
+  margin-top: -2.6rem;
+  letter-spacing: 0.37rem;
+}
+.mana_dashboard .tit03 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 3.7rem;
+  letter-spacing: 0.37rem;
+}
+.mana_dashboard .tit04 {
+  text-align: center;
+  background: #0c2854;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+  letter-spacing: 0.37rem;
+}
+.mana_dashboard .wrap {
+  height: 1.9e+01rem;
+  overflow: hidden;
+}
+.mana_dashboard .wrap li {
+  line-height: 3.1rem;
+  height: 3.1rem;
+  font-size: 1.3rem;
+  text-indent: 1.8rem;
+  margin-bottom: 0.74rem;
+}
+.mana_dashboard .wrap li p {
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  color: rgba(255, 255, 255, 0.6);
+}
+.mana_dashboard .nav01 {
+  height: calc(100% - 2.2rem);
+  padding-top: 1.5rem;
+}
+.mana_dashboard .nav02 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.mana_dashboard .nav03 {
+  height: calc(100% - 3.5rem);
+  padding-top: 1.5rem;
+}
+.mana_dashboard .nav04 {
+  height: calc(100% - 5.2rem);
+}
+.mana_dashboard .nav02 > div {
+  width: 100%;
+}
+.mana_dashboard .nav02 p {
+  text-align: center;
+  color: #fff;
+}
+.mana_dashboard .nav02 .p1 {
+  font-size: 2.2rem;
+  letter-spacing: 0.15rem;
+}
+.mana_dashboard .p2 {
+  font-size: 4.4rem;
+  letter-spacing: 0.37rem;
+  padding: 0.74rem 0;
+  width: 100%;
+  text-align: center;
+}
+.mana_dashboard .nav02 .p3 span {
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  width: 45%;
+  font-size: 2.2rem;
+}
+.mana_dashboard .dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  border-radius: 7.4rem;
+  position: relative;
+  top: 0.29rem;
+  margin-right: 0.74rem;
+}
+.mana_dashboard .dot1 {
+  background: #ff0006;
+}
+.mana_dashboard .dot2 {
+  background: #00ea37;
+}
+.mana_dashboard .text-green {
+  color: #00ea37;
+}
+.mana_dashboard .text-red {
+  color: #ff0006;
+}
+.mana_dashboard .listhead {
+  height: 4.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.mana_dashboard .listnav {
+  height: calc(100% - 4.1rem);
+}
+.mana_dashboard .listnav ul li {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.mana_dashboard .listhead span,
+.mana_dashboard .listnav li span {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 4.1rem;
+}
+.mana_dashboard .listhead1 span,
+.mana_dashboard .listnav1 li span {
+  border: 1px solid #3486da;
+}
+.mana_dashboard .listnav ul li span {
+  font-size: 1.3rem;
+}
+.mana_dashboard .listnav2 ul li:nth-child(odd) {
+  background: #0c2854;
+}
+.mana_dashboard .listhead1 span {
+  background: #0c2854;
+  font-size: 1.5rem;
+  color: #3486da;
+  font-weight: bold;
+}
+.mana_dashboard .listhead2 span {
+  font-size: 1.5rem;
+  color: #3486da;
+  border-bottom: 1px solid #0c2854;
+  font-weight: bold;
+}
+.mana_dashboard .str_wrap {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.mana_dashboard .str_move {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: move;
+}
+.mana_dashboard .str_move_clone {
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.mana_dashboard .str_vertical .str_move_clone {
+  left: 0;
+  top: 100%;
+}
+.mana_dashboard .str_down .str_move_clone {
+  left: 0;
+  bottom: 100%;
+}
+.mana_dashboard .str_vertical .str_move,
+.mana_dashboard .str_down .str_move {
+  white-space: normal;
+  width: 100%;
+}
+.mana_dashboard .str_static .str_move,
+.mana_dashboard .no_drag .str_move,
+.mana_dashboard .noStop .str_move {
+  cursor: inherit;
+}
+.mana_dashboard .str_wrap img {
+  max-width: none !important;
+}
+.mana_dashboard .payment-time {
+  padding-right: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */

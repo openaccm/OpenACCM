@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+         <!-- 本模块的以下数据表可以清空 -->
+        <record id="remove_asset_core" model="business.data.table">
+            <field name="name">asset.core</field>
+        </record>
+        <record id="remove_asset_core_line" model="business.data.table">
+            <field name="name">asset.core.line</field>
+        </record>
+        <record id="remove_asset_stock_request" model="business.data.table">
+            <field name="name">asset.stock.request</field>
+        </record>
+    </data>
+</odoo>

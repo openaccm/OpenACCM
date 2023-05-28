@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="ewi_inherit_view_company_tree" model="ir.ui.view">
+        <field name="name">企业微信配置</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_tree"/>
+        <field name="arch" type="xml">
+            <field name='partner_id' position='after'>
+                <field name="corp_id" optional="show"/>
+                <field name="department_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="ewi_staff_company_form_inherit" model="ir.ui.view">
+        <field name="name">企业微信配置</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+           <xpath expr="//notebook/page[3]" position="after">
+                <page name="sec" string="企业微信配置">
+                    <group string="企业ID">
+                        <field name="corp_id"/>
+                    </group>
+                    <group string="通讯录对接配置">
+                        <field name="token_url"/>
+                        <field name="corp_secret"/>
+                        <field name="department_id"/>
+                        <field name="access_token"/>
+                    </group>
+                    <group string="审批应用对接配置">
+                        <field name="sp_AgentId"/>
+                        <field name="sp_Secret"/>
+                        <field name="sp_URL"/>
+                        <field name="sp_access_token"/>
+                        <field name="sp_EncodingAESKey"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_ewi_inherit_view_company" model="ir.actions.act_window">
+        <field name="name">企业微信配置</field>
+        <field name="res_model">res.company</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('ewi_inherit_view_company_tree')}),
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('ewi_staff_company_form_inherit')}),
+                  ]"/>
+    </record>
+</odoo>

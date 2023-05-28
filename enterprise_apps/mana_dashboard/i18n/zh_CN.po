@@ -1,0 +1,3350 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mana_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-28 15:55+0000\n"
+"PO-Revision-Date: 2023-03-28 15:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mana_dashboard
+#. odoo-javascript
+#: code:addons/mana_dashboard/static/src/send_to_dashboard/send_to_dashboard.js:0
+#, python-format
+msgid "\"%s\" added to dashboard"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.list_style2
+msgid "1. Select a measure and a category"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.ui.menu,name:mana_dashboard.action_blocks_menu
+msgid "Action Blocks"
+msgstr "区块"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__action_id
+msgid "Action Id"
+msgstr "动作ID"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__active
+msgid "Active"
+msgstr "活动"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__affect_by_global
+msgid "Affect By Global"
+msgstr "受全局搜索影响"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__aggregate_by_count
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__aggregate_by_count
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__aggregate_by_count
+msgid "Aggregate By Count"
+msgstr "统计总数"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__aggregation_domain_ids
+msgid "Aggregation Domain Ids"
+msgstr "统计值域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__alias
+msgid "Alias"
+msgstr "别名"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__any_config_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__any_config_id
+msgid "Any Config"
+msgstr "任意配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__column_arggregation__avg
+msgid "Average"
+msgstr "均值"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_bar_chart
+msgid "Bar Chart"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Basic"
+msgstr "基础"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_basic_area_chart
+msgid "Basic Area Chart"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__binary
+msgid "Binary"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+msgid "Bind"
+msgstr "绑定"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_list
+msgid "Bind Menu"
+msgstr "与菜单绑定"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_bind_menu_wizard
+msgid "Bind Menu Wizard"
+msgstr "菜单绑定向导"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__binded_menu_ids
+msgid "Binded Menu"
+msgstr "已绑定菜单"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__binded_menu_count
+msgid "Binded Menu Count"
+msgstr "已绑定菜单总数"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.template_act_window
+msgid "Block Template"
+msgstr "区块模板"
+
+#. module: mana_dashboard
+#: model:ir.ui.menu,name:mana_dashboard.block_template_menu
+msgid "Block Templates"
+msgstr "区块模板"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "Board Config"
+msgstr "看板配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__boolean
+msgid "Boolean"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__category
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__category
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__category
+msgid "Category"
+msgstr "分类"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__category
+msgid "Category (X axis)"
+msgstr "分类(x轴)"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__category_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__category_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__category_field
+msgid "Category Field"
+msgstr "分类字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__char
+msgid "Char"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Chart Preview"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Code"
+msgstr "代码"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__column_agregation
+msgid "Column Aggregation"
+msgstr "统计列"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__column_arggregation
+msgid "Column Arggregation"
+msgstr "统计列"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__component_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__component_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__component_type
+msgid "Component Type"
+msgstr "组件类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__ref_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__config_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__config_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Config"
+msgstr "配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__any_config_id
+msgid "Config Id"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__config_ids
+msgid "Config Infos"
+msgstr "配置信息"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__config_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__config_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__config_name
+msgid "Config Name"
+msgstr "配置名称"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid "Configuration"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__content
+msgid "Content"
+msgstr "内容"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.content_editor_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_content_editor
+msgid "Content Editor"
+msgstr "内容编辑器"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__context
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__context
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__context
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__context
+msgid "Context"
+msgstr "上下文"
+
+#. module: mana_dashboard
+#. odoo-javascript
+#: code:addons/mana_dashboard/static/src/send_to_dashboard/send_to_dashboard.js:0
+#, python-format
+msgid "Could not send to dashboard !"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__column_arggregation__count
+msgid "Count"
+msgstr "总数"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.counter_style_one
+msgid "Counter"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.counter_style_one
+msgid ""
+"Counter is a widget that displays a number and counts up to that number."
+msgstr "计数器是一个以渐变动化显示数值的组件"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__create_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__create_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__create_date
+msgid "Created on"
+msgstr "创建日期"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_domain_type__custom
+msgid "Custom"
+msgstr "个性化"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.config_act_window
+msgid "Custom Config"
+msgstr "个性化配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__custom_end_time
+msgid "Custom End"
+msgstr "自定义结束时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__custom_props
+msgid "Custom Props"
+msgstr "自定义属性"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__custom_start_time
+msgid "Custom Start"
+msgstr "开始时间"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.dashboard_manage_act_window
+#: model:ir.actions.server,name:mana_dashboard.jump_dashboard_server_action
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__dashboard_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__dashboard_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__dashboard_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__dashboard_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__dashboard_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__dashboard_id
+#: model:ir.ui.menu,name:mana_dashboard.root_menu
+msgid "Dashboard"
+msgstr "玛拉看板"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_any_config
+msgid "Dashboard Any Config"
+msgstr "看板配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__custom_css
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__dashboard_css
+msgid "Dashboard CSS"
+msgstr "看板样式"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__dashboard_html
+msgid "Dashboard HTML"
+msgstr "看板HTML"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__dashboard_id
+msgid "Dashboard Id"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__dashboard_js
+msgid "Dashboard JS"
+msgstr "看板JS"
+
+#. module: mana_dashboard
+#: model:ir.ui.menu,name:mana_dashboard.dashboard_menu
+msgid "Dashboard Manage"
+msgstr "看板管理"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__name
+msgid "Dashboard Name"
+msgstr "看板名称"
+
+#. module: mana_dashboard
+#: model:ir.ui.menu,name:mana_dashboard.dashboard_resource_menu
+msgid "Dashboard Resource"
+msgstr "看板资源"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__dashboard_template_id
+msgid "Dashboard Template"
+msgstr "看板模板"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.template_block_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_template_block
+msgid "Dashboard Template Block"
+msgstr "看板模板区块"
+
+#. module: mana_dashboard
+#: model:ir.ui.menu,name:mana_dashboard.dashboard_template_menu
+msgid "Dashboard Templates"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.any_config_act_window
+msgid "Dashboard config info"
+msgstr "看板配置信息"
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_dashboard_name_uniq
+msgid "Dashboard name already exists !"
+msgstr "看板名称已经存在"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__data
+msgid "Data"
+msgstr "数据"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Data Preview"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__data_source_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__data_source_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__data_source_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__data_source_mixin
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_list
+msgid "Data Source"
+msgstr "数据源"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid "Data Source 1"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid "Data Source 2"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__data_source_mixin_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__data_source_mixin_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__data_source_mixin_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__data_source_mixin
+msgid "Data Source Mixin"
+msgstr "数据源Mixin"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__data_source_type_domain_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__data_source_type_domain_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__data_source_type_domain_ids
+msgid "Data Source Type Domain"
+msgstr "数据源类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__data_source_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__data_source_ids
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Data Sources"
+msgstr "数据类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__data_validate
+msgid "Data Validate"
+msgstr "数据验证"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__data_source_mixin
+msgid "Data source mixin"
+msgstr "数据mixin"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__date
+msgid "Date"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__datetime
+msgid "Datetime"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__datetime_range
+msgid "Datetime Range"
+msgstr "时间范围"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__default_code
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__default_code
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__default_code
+msgid "Default Code"
+msgstr "默认代码"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__default_data_source_type
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__default_data_source_type
+msgid "Default Data Source Type"
+msgstr "默认数据源类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__default_json
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__default_json
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__default_json
+msgid "Default JSON"
+msgstr "默认JSON"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__default_result_type
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__default_result_type
+msgid "Default Result Type"
+msgstr "结认结果数据类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__default_sql
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__default_sql
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__default_sql
+msgid "Default SQL"
+msgstr "默认SQL"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__default_scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__default_scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__default_scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__default_scripts
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Default Scripts"
+msgstr "默认脚本"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__default_scripts
+msgid "Default Scripts, script when no data source is set"
+msgstr "默认脚本，当没有数据源时使用"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__default_template_info
+msgid "Default Template Info"
+msgstr "默认模板信息"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__default_value
+msgid "Default Value"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__demo_data
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__demo_data
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__demo_data
+msgid "Demo Data"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__demo_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__demo_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__demo_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__demo_template
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__demo_template
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template_base__demo_template
+msgid "Demo Template"
+msgstr "演示模板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__description
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__description
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__description
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__description
+msgid "Description"
+msgstr "描述"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__json_data_format__dimensions_datas
+msgid "Dimensions & Datas"
+msgstr "维度及数据"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__disable_children
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__disable_children
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__disable_children
+msgid "Disable Children"
+msgstr "禁止子项编辑"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__disable_first_child
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__disable_first_child
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__disable_first_child
+msgid "Disable First Child"
+msgstr "禁止第一个子项编辑"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__display_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__domain
+msgid "Domain"
+msgstr "值域"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Domain&Context"
+msgstr "值域&上下文"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__drill_domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__drill_domain
+msgid "Drill Domain"
+msgstr "值域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_domain_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__drill_domain_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__drill_domain_type
+msgid "Drill Domain Type"
+msgstr "值域类型"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Drill Down"
+msgstr "下钻"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__drill_down_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_down_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__drill_down_config
+msgid "Drill Down Config"
+msgstr "下钻配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_extra_domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__drill_extra_domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__drill_extra_domain
+msgid "Drill Extra Domain"
+msgstr "附加值域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__drill_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__drill_field
+msgid "Drill Field"
+msgstr "下钻字段"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_data_source_mixin.py:0
+#, python-format
+msgid "Drill Field %s not found"
+msgstr "下钻查询字段没有找到"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_operator
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__drill_operator
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__drill_operator
+msgid "Drill Operator"
+msgstr "操作符"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__drill_up_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__drill_up_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__drill_up_config
+msgid "Drill Up Config"
+msgstr "配置"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_bar_chart
+msgid "Echarts Bar Chart"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_list
+msgid "Edit Board"
+msgstr "编辑看板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__end_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__end_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__end_time
+msgid "End Time"
+msgstr "结束时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__default_code
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__default_code
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__default_code
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__default_code
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__default_code
+msgid "Example Code"
+msgstr "示例代码"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__default_json
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__default_json
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__default_json
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__default_json
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__default_json
+msgid "Example Json"
+msgstr "示例Json"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__default_sql
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__default_sql
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__default_sql
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__default_sql
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__default_sql
+msgid "Example Sql"
+msgstr "示例Sql"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_list
+msgid "Export"
+msgstr "导出"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_url,name:mana_dashboard.export_dashboard_act_url
+msgid "Export Dashboard"
+msgstr "导出看板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__fake_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__fake_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__fake_field
+msgid "Fake Field"
+msgstr "辅助字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__field
+msgid "Field"
+msgstr "字段"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_field_info.py:0
+#: code:addons/mana_dashboard/models/mana_order_by_info.py:0
+#, python-format
+msgid "Field %s not found"
+msgstr "字段 %s 没有找到!"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__field_description
+msgid "Field Description"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__field_name
+msgid "Field Name"
+msgstr "字段名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__field_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__type
+msgid "Field Type"
+msgstr "字段类型"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Fields"
+msgstr "字段"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Fields Manage"
+msgstr "字段管理"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__file_urls
+msgid "File Urls"
+msgstr "文件地址"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "First data source is used to get the now value."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "First data source is used to get the total revenue of this month."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.field_statistics_style_1
+msgid ""
+"First, you need to add two measures to the block, and then you can see the "
+"field_statistics of the two measures."
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__float
+msgid "Float"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.field_statistics_style_1
+msgid ""
+"For example, if you have 100 customers and 200 orders, the field_statistics "
+"will be 50%."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.percentage_style_1
+msgid ""
+"For example, if you have 100 customers and 50 customers have placed orders, "
+"the percentage will be 50%."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_bar_chart
+msgid ""
+"For example, if you select the data source as <b>Product Sales</b>, and "
+"select the category as <b>Product</b>, and select the measure as "
+"<b>Sales</b>, you will get a bar chart like this:"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid ""
+"For example, if you want to display the percentage of the number of orders "
+"to the total number of customers, you can select the number of orders as the"
+" current value, and the total number of customers as the total value."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.field_statistics_style_1
+msgid ""
+"For example, if you want to show the field_statistics of the number of "
+"customers and the number of orders, you can use this block."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.percentage_style_1
+msgid ""
+"For example, if you want to show the percentage of the number of customers "
+"and the number of orders, you can use this block."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.counter_style_one
+msgid ""
+"For example, you can use it to display the number of customers who have "
+"visited your website."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid ""
+"For example, you want to display the total revenue of this month and the "
+"total revenue of last month."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_bar_chart
+msgid "For more information, please refer to the"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__full_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__full_name
+msgid "Full Name"
+msgstr "全名"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_list
+msgid "Full Screen"
+msgstr "全屏"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_gradient_stacked_area_chart
+msgid "Gradient Stacked Area Chart"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__aggregation
+msgid "Group Aggregation"
+msgstr "分组统计"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__group_by_infos
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__group_by_infos
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__group_by_infos
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__group_by
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Group By"
+msgstr "分组"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__has_demo_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__has_demo_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__has_demo_template
+msgid "Has Demo Template"
+msgstr "有演示模板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__has_group_by
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__has_group_by
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__has_group_by
+msgid "Has Group By"
+msgstr "具有分组字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__has_scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__has_scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__has_scripts
+msgid "Has Scripts"
+msgstr "具有脚本"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__has_styles
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__has_styles
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__has_styles
+msgid "Has Styles"
+msgstr "具有样式"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__has_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__has_template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__has_template
+msgid "Has Template"
+msgstr "具有模板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__has_time_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__has_time_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__has_time_field
+msgid "Has Time Fields"
+msgstr "具有时间字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__help
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__help
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__help
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__help
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Help"
+msgstr "帮助"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_temperature_change_in_the_coming_week
+msgid "High And Low Points"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.history_data_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_history_data
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__history_datas
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__history_datas
+msgid "History Data"
+msgstr "历史数据"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__history_data_domain_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__history_data_domain_ids
+msgid "History Data Domain"
+msgstr "历史数据域"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.list_style2
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_candlestick
+msgid "How to use"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__id
+msgid "ID"
+msgstr "编号"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__image_files
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__image_files
+msgid "Image Files"
+msgstr "图像"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__search_immidiate
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+msgid "Immidiate"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.import_wizard_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_import_wizard
+msgid "Import Wizard"
+msgstr "导入向导"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__inited
+msgid "Inited"
+msgstr "已初始化"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__integer
+msgid "Integer"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__interval
+msgid "Interval"
+msgstr "间隔"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__category
+msgid "Is Category"
+msgstr "是否为类别"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__is_custom
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__is_custom
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__is_custom
+msgid "Is Custom"
+msgstr "是否为自定义"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid "It is a simple chart that can be used to display a single value."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.counter_style_one
+msgid "It is also useful for displaying the number of sales you have made."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.counter_style_one
+msgid "It is useful for displaying a number that is constantly increasing."
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__js_files
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__js_files
+msgid "Js Files"
+msgstr "Js文件"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__js_urls
+msgid "Js Urls"
+msgstr "Js文件地址"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Json"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__json_data
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__json_data
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__json_data
+msgid "Json Data"
+msgstr "Json数据"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__json_data_format
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__json_data_format
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__json_data_format
+msgid "Json Data Format"
+msgstr "Json数据格式"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_field_info__aggregation
+msgid "Just when there has group by field"
+msgstr "只有当存在分组时"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "KPI Card"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__json_data_format__key_val
+msgid "Key & Val"
+msgstr "键&值"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block____last_update
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config____last_update
+msgid "Last Modified on"
+msgstr "最后修改时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__write_uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_content_editor__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_base__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__write_date
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__limit
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__limit
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__limit
+msgid "Limit"
+msgstr "限制"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__link_action_domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__link_action_domain
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__link_action_domain
+msgid "Link Action Domain"
+msgstr "关联动作域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__link_action_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__link_action_field
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__link_action_field
+msgid "Link Action Field"
+msgstr "关联动作字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__link_action_operator
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__link_action_operator
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__link_action_operator
+msgid "Link Action Operator"
+msgstr "关联动作操作符"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__link_to_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__link_to_config
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__link_to_config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Link To Config"
+msgstr "关联的配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_any_config__linked_config_ids
+msgid "Linked Configs"
+msgstr "已关联的配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__logic_type
+msgid "Logic Type"
+msgstr "逻辑类型"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.bind_menu_wizard_act_window
+msgid "Mana Bind Menu Wizard"
+msgstr "菜单绑定向导"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_template_base
+msgid "Mana Code Template Base"
+msgstr "模板基类"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_dashboard
+msgid "Mana Dashboard"
+msgstr "马拉看板"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.action_blocks_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_action_blocks
+msgid "Mana Dashboard Action Blocks"
+msgstr "动作区块"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_action_block_category
+msgid "Mana Dashboard Block Category"
+msgstr "区块类别"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_order_by_info
+msgid "Mana Dashboard Chart Order By Info"
+msgstr "排序信息"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_config
+msgid "Mana Dashboard Config"
+msgstr "看板配置"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_config_base
+msgid "Mana Dashboard Config Base"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_data_source_base
+msgid "Mana Dashboard Data Source Base"
+msgstr "数据源基类"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_data_source_mixin
+msgid "Mana Dashboard Data Source Mixin"
+msgstr "数据源Mixin"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.field_info_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_field_info
+msgid "Mana Dashboard Field Info"
+msgstr "字段信息"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_file_content
+msgid "Mana Dashboard File Content"
+msgstr "文件内容"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.marquee_traits_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_marquee_traits
+msgid "Mana Dashboard Marquee Trait"
+msgstr "滚动属性"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.order_by_info_act_window
+msgid "Mana Dashboard Order By Info"
+msgstr "排序信息"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.parameter_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_parameter
+msgid "Mana Dashboard Parameter"
+msgstr "看板参数"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.search_info_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_search_info
+msgid "Mana Dashboard Search Info"
+msgstr "搜索信处"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_dashboard_template
+msgid "Mana Dashboard Template"
+msgstr "模板"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.timer_config_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_timer_config
+msgid "Mana Dashboard Timer Config"
+msgstr "时间配置"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.data_source_type_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_data_source_type
+msgid "Mana Data Source Type"
+msgstr "数据源类别"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.datetime_range_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_datetime_range
+msgid "Mana Date Time Range"
+msgstr "时间范围"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_datetime_range_base
+msgid "Mana Date Time Range Base"
+msgstr "时间范围基类"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_field_datetime_range
+msgid "Mana Field Date Time Range"
+msgstr "时间范围"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.range_filter_traits_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_range_filter_traits
+msgid "Mana Range Filter Traits"
+msgstr "时间过滤器属性"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.raw_field_info_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_raw_field_info
+msgid "Mana Raw Field Info"
+msgstr "原如字段信息"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_template
+msgid "Mana Template"
+msgstr "模板"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_data_source
+msgid "Mana data source"
+msgstr "数据源"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_send_to_dashboard
+msgid "Mana send to dashboard"
+msgstr "发送到看板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__column_arggregation__max
+msgid "Max"
+msgstr "最大"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__measure
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__measure
+msgid "Measure"
+msgstr "衡量"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_field_info.py:0
+#: code:addons/mana_dashboard/models/mana_field_info.py:0
+#, python-format
+msgid "Measure and Category can not be both True"
+msgstr "测量和类别不能都为True"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__group_access_ids
+msgid "Menu Group Access"
+msgstr "权限组"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__message
+msgid "Message"
+msgstr "消息"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__method
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__method
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__method
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Method"
+msgstr "方法"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__column_arggregation__min
+msgid "Min"
+msgstr "最小"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__model
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__model
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__model
+msgid "Model"
+msgstr "模型"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_data_source_mixin.py:0
+#: code:addons/mana_dashboard/models/mana_field_info.py:0
+#: code:addons/mana_dashboard/models/mana_order_by_info.py:0
+#, python-format
+msgid "Model %s not found"
+msgstr "模型%s没有找到"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__model_fields
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__model_fields
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__model_fields
+msgid "Model Fields"
+msgstr "模型字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__model_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__model_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__model_name
+msgid "Model Name"
+msgstr "模型名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__multi_data_source
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__multi_data_source
+msgid "Multi Data Source"
+msgstr "多数据源"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__multi_data_source
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config_base__multi_data_source
+msgid "Multi Datas Source"
+msgstr "多数据源"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__multi_group_by
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__multi_group_by
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__multi_group_by
+msgid "Multi Group By"
+msgstr "分组"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__config_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__config_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__config_id
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__config_id
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__config_id
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__config_id
+msgid "Multi Source Config"
+msgstr "数据源配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__field_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__name
+msgid "Name"
+msgstr "名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__need_category
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__need_category
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__need_category
+msgid "Need Category"
+msgstr "需要分类"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__need_column_aggregation
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__need_column_aggregation
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__need_column_aggregation
+msgid "Need Column Aggregation"
+msgstr "需要列统计"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__need_measure
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__need_measure
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__need_measure
+msgid "Need Measure"
+msgstr "需要衡量"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__operations
+msgid "Operations"
+msgstr "操作"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_dashboard__operations
+msgid "Operations for dashboard"
+msgstr "看板操作"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__operator
+msgid "Operator"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__order_by_infos
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__order_by_infos
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__order_by_infos
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Order By"
+msgstr "排序"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_order_by_info.py:0
+#, python-format
+msgid "Order Type %s not found"
+msgstr "排序类型%s没有找到!"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__type__other
+msgid "Other"
+msgstr "其它"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__parameter_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__parameter_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__parameter_ids
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Parameters"
+msgstr "参数"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__parent_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_list
+msgid "Parent Menu"
+msgstr "父菜单"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.percentage_style_1
+msgid "Percentage block is used to show the percentage of two measures."
+msgstr "百分比区块是用来设置两个度量值的比例"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Please Enter The Method Name"
+msgstr "请输入方法名称"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_data_source_base.py:0
+#, python-format
+msgid "Please set model fields, group by, order by or limit!"
+msgstr "请设置模型字段、分组、排序及限制"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__preview
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__preview
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__preview
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__preview
+msgid "Preview"
+msgstr "预览"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__preview_background_color
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__preview_background_color
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__preview_background_color
+msgid "Preview Background Color"
+msgstr "预览背景颜色"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__previous_end_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__previous_end_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__previous_end_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__previous_end_time
+msgid "Previous End Time"
+msgstr "上周期结束时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__previous_start_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__previous_start_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__previous_start_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__previous_start_time
+msgid "Previous Start Time"
+msgstr "上周期开始时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__code
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__code
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__code
+msgid "Python Code"
+msgstr "Python代码"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__data_validate
+msgid "Python Code for Data Source Validate"
+msgstr "验证代码"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Query"
+msgstr "查询"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__range_end_time
+msgid "Range End Time"
+msgstr "范围结束时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__range_start_time
+msgid "Range Start Time"
+msgstr "范围开始时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__range_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__range_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__range_type
+msgid "Range Type"
+msgstr "范围类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__raw_fields
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__raw_fields
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__raw_fields
+msgid "Raw Fields"
+msgstr "原如字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__remark
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__remark
+msgid "Remark"
+msgstr "备注"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__repeat
+msgid "Repeat"
+msgstr "重复"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__res_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__res_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__res_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Res Id"
+msgstr "资源ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Result Datas"
+msgstr "结果数据"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "Result Fields"
+msgstr "结果字段"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.result_type_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_result_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__result_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__result_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__result_type
+msgid "Result Type"
+msgstr "结果类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__result_type_domain_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__result_type_domain_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__result_type_domain_ids
+msgid "Result Type Domain"
+msgstr "结果类型域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__result_type_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__result_type_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__result_type_name
+msgid "Result Type Name"
+msgstr "结果类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__scripts
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__scripts
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Scripts"
+msgstr "脚本"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__search_config_id
+msgid "Search Config"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.search_group_traits_act_window
+msgid "Search Container Trait"
+msgstr "搜索容器属性"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_search_group_traits
+msgid "Search Group Trait"
+msgstr "搜索分组属性"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__search_info
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__search_info
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__search_info
+msgid "Search Info"
+msgstr "查询信息"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "Second data source is used to get the previous value."
+msgstr "第二个数据目的是为了取得上一周期的值"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "Second data source is used to get the total revenue of last month."
+msgstr ""
+
+#. module: mana_dashboard
+#. odoo-javascript
+#: code:addons/mana_dashboard/static/src/send_to_dashboard/send_to_dashboard.xml:0
+#, python-format
+msgid "Send To Dashboard"
+msgstr ""
+
+#. module: mana_dashboard
+#. odoo-javascript
+#: code:addons/mana_dashboard/static/src/send_to_dashboard/send_to_dashboard.js:0
+#, python-format
+msgid "Send To Dashboard Success!"
+msgstr "成功发送到看板!"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_type__sequence
+msgid "Sequence"
+msgstr "序列"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__series_type
+msgid "Series Type"
+msgstr "系列类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__series_type_name
+msgid "Series Type Name"
+msgstr "系列类型名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__share
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+msgid "Share"
+msgstr "共享"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__shared
+msgid "Shared"
+msgstr "已共享"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__show_category
+msgid "Show Category"
+msgstr "显示分类"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__show_group_by
+msgid "Show Group By"
+msgstr "显示分组"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__show_measure
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__show_measure
+msgid "Show Measure"
+msgstr "显示度量"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__show_time
+msgid "Show Time"
+msgstr "显示时间"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid "Simple Gauge Chart"
+msgstr "简单仪表盘"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid "Simple Gauge Chart is a simple gauge chart."
+msgstr "简单仪表盘"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_line_chart
+msgid "Simple Line Chart"
+msgstr "简单折线图"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_smooth_area_chart
+msgid "Smooth Area Chart"
+msgstr "平滑区域图"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_smoothed_line
+msgid "Smoothed Line Chart"
+msgstr "平滑折线图"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__data_source_type_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__data_source_type_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__data_source_type_name
+msgid "Source Type Name"
+msgstr "数据源类别名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__sql
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__sql
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__sql
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "Sql"
+msgstr "Sql"
+
+#. module: mana_dashboard
+#. odoo-python
+#: code:addons/mana_dashboard/models/mana_data_source_base.py:0
+#: code:addons/mana_dashboard/models/mana_data_source_base.py:0
+#, python-format
+msgid "Sql Error: %s"
+msgstr "Sql错误"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_stacked_area_chart
+msgid "Stacked Area Chart"
+msgstr "堆叠区域图"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_stacked_line_chart
+msgid "Stacked Line Chart"
+msgstr "堆叠折线图"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_domain_type__standard
+msgid "Standard"
+msgstr "标准"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__start_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range_base__start_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_datetime_range__start_time
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__start_time
+msgid "Start Time"
+msgstr "开始时间"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__style_files
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__style_files
+msgid "Style Files"
+msgstr "样式文件"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__style_urls
+msgid "Style Urls"
+msgstr "样式文件地址"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__styles
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__styles
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__styles
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Styles"
+msgstr "样式"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_raw_field_info__column_arggregation__sum
+msgid "Sum"
+msgstr "求和"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__supported_result_types
+msgid "Supported Data Result Types"
+msgstr "支持的结果数据类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__supported_result_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__supported_result_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__supported_result_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__supported_result_types
+msgid "Supported Data Result Types, if empty, all types are supported"
+msgstr "支持的结果数据类型，如果为空，则所有类型都支持！"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__supported_data_source_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__supported_data_source_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__supported_data_source_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__supported_data_source_types
+msgid "Supported Data Source Types"
+msgstr "支持的数据源类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__supported_data_source_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__supported_data_source_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__supported_data_source_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__supported_data_source_types
+msgid "Supported Data Source Types, if empty, all types are supported"
+msgstr "支持的数据源类型，如果为空则所有类型都支持"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Supported Data Types"
+msgstr "支持的数据类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__supported_result_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__supported_result_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__supported_result_types
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Supported Result Types"
+msgstr "支持的结果数据类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__supported_series_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__supported_series_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__supported_series_types
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__supported_series_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__supported_series_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template__supported_series_types
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_template_base__supported_series_types
+msgid "Supported Series Types"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__svg_icon
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_send_to_dashboard__svg_icon
+msgid "Svg Icon"
+msgstr "Svg图标"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__targets
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_timer_config__targets
+msgid "Targets"
+msgstr "目标"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__template_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__template_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__template_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__template_id
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__template
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__template_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.simple_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "Template"
+msgstr "模板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__block_template_ids
+msgid "Template Blocks"
+msgstr "模板区块"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__template_category
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__template_category
+msgid "Template Category"
+msgstr "模板分类"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__template_domain_ids
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__template_domain_ids
+msgid "Template Domain"
+msgstr "模板域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__template_inited
+msgid "Template Inited"
+msgstr "模板已初始化"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__template_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__template_name
+msgid "Template Name"
+msgstr "模板名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__template_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_base__template_type
+msgid "Template Type"
+msgstr "模板类型"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.dashboard_template_act_window
+msgid "Template for mana dashboard"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_config_base_config_name_dashboard_id_unique
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_config_config_name_dashboard_id_unique
+msgid "The config name must be unique!"
+msgstr "配置名称必需唯一"
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_action_block_category_name_unique
+msgid "The name of the category must be unique!"
+msgstr "分类名称必需唯一"
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_dashboard_template_name_unique
+msgid "The name of the template must be unique!"
+msgstr "模板名称必需唯一"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "Then you can use the formula to calculate the KPIs."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid ""
+"Then, the chart will calculate the percentage of the current value to the "
+"total value."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid ""
+"Then, the chart will calculate the percentage of the number of orders to the"
+" total number of customers."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "Third data source is used to get the target revenue of this month."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "Third data source is used to get the target value."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.percentage_style_1
+msgid ""
+"This block needs two data sources, and the first data source is the "
+"numerator, and the second data source is the denominator."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_sankey
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_sunburst
+msgid "This chart just support custom data source."
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__search_info
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__search_info
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__search_info
+msgid "This field is used to store search info"
+msgstr "此字段用于保存搜索信息"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__fake_field
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__fake_field
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__fake_field
+msgid "This field is used to trigger onchange event"
+msgstr "这个字段用于触犯onchange事件"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_basic_area_chart
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_smooth_area_chart
+msgid ""
+"This is a simple area chart, to use it, you need to select a category and a "
+"measure."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_line_chart
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_smoothed_line
+msgid ""
+"This is a simple line chart, to use it, you need to select a category and a "
+"measure."
+msgstr "这是一个简单的折线图模板，你需要选择一个类别(分组)和一个度量来使用。"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_dashboard__custom_css
+msgid "This is custom css for dashboard"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "This template is used to display KPIs in a card."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.progress_bar_style_one
+msgid "This template is used to show progress bar."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_candlestick
+msgid "This template need 4 measures."
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_history_data__title
+msgid "Title"
+msgstr "标题"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_bar_chart
+msgid ""
+"To create a bar chart, you need to select a data source, and then select the"
+" category and measures."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.counter_style_one
+msgid ""
+"To use the Counter widget, you need to select a field and choose the column "
+"aggregation."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_simple_gauge_chart
+msgid ""
+"To use this chart, you need to select two data sources. one as the current "
+"value, and the other as the total value."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_temperature_change_in_the_coming_week
+msgid ""
+"To use this template, you need to add two data soruce, one for the high and "
+"one for the low."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_bubble_scatter
+msgid ""
+"To use this template, you need to choose one category and four measures."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_one
+#: model_terms:mana_dashboard.template,help:mana_dashboard.kpi_card_style_two
+msgid "To use this template, you need to config three data sources."
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_stacked_area_chart
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_stacked_line_chart
+msgid ""
+"To use this template, you need to have at least one category and more than "
+"one measure."
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_parameter__type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_group_traits__type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template__type
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+msgid "Type"
+msgstr "类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__use_template
+msgid "Use Template"
+msgstr "使用模板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__uid
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_datetime_range__uid
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+msgid "User"
+msgstr "用户"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_config__sql
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source__sql
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_data_source_mixin__sql
+msgid "User can use custom sql to get datas"
+msgstr "用户可以使用自定义Sql去获取数据"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_list
+msgid "View Board"
+msgstr "查看看板"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_blocks__view_mode
+msgid "View Mode"
+msgstr "查看模式"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_bubble_scatter
+msgid ""
+"[\n"
+"    [44056, 81.8, 23968973, 'Australia', 2015],\n"
+"    [43294, 81.7, 35939927, 'Canada', 2015],\n"
+"    [13334, 76.9, 1376048943, 'China', 2015],\n"
+"    [21291, 78.5, 11389562, 'Cuba', 2015],\n"
+"    [38923, 80.8, 5503457, 'Finland', 2015],\n"
+"    [37599, 81.9, 64395345, 'France', 2015],\n"
+"    [44053, 81.1, 80688545, 'Germany', 2015],\n"
+"    [42182, 82.8, 329425, 'Iceland', 2015],\n"
+"    [5903, 66.8, 1311050527, 'India', 2015],\n"
+"    [36162, 83.5, 126573481, 'Japan', 2015],\n"
+"    [1390, 71.4, 25155317, 'North Korea', 2015],\n"
+"    [34644, 80.7, 50293439, 'South Korea', 2015],\n"
+"    [34186, 80.6, 4528526, 'New Zealand', 2015],\n"
+"    [64304, 81.6, 5210967, 'Norway', 2015],\n"
+"    [24787, 77.3, 38611794, 'Poland', 2015],\n"
+"    [23038, 73.13, 143456918, 'Russia', 2015],\n"
+"    [19360, 76.5, 78665830, 'Turkey', 2015],\n"
+"    [38225, 81.4, 64715810, 'United Kingdom', 2015],\n"
+"    [53354, 79.1, 321773631, 'United States', 2015]\n"
+"  ]"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__action_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_list
+msgid "action"
+msgstr "动作"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+msgid "action id"
+msgstr "动作ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+msgid "action_id"
+msgstr "动作ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "aggregate_by_count"
+msgstr "统计数量"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_list
+msgid "aggregation"
+msgstr "统计"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.aggregation_type_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_aggregation_type
+msgid "aggregation function types"
+msgstr "统计函数类型"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_list
+msgid "alias"
+msgstr "别名"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__logic_type__and
+msgid "and"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+msgid "any_config_id"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_order_by_info__order_type__asc
+msgid "asc"
+msgstr "升序"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "binded_menu_ids"
+msgstr "已经绑定的菜单id"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.dashboard_template_form
+msgid "block_template_ids"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard__action_id
+msgid "board action id"
+msgstr "看板动作ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.content_editor_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.import_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_form
+msgid "cancel"
+msgstr "取消"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_list
+msgid "category"
+msgstr "类别"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__type__char
+msgid "char"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_operator__child_of
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__link_action_operator__child_of
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__child_of
+msgid "child_of"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__circular
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "circular"
+msgstr "循环"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "code"
+msgstr "代码"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.any_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.any_config_list
+msgid "config"
+msgstr "配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__config_id
+msgid "config id"
+msgstr "配置ID"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_config__config_help
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source__config_help
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_data_source_mixin__config_help
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "config_help"
+msgstr "配置帮助"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__config_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+msgid "config_id"
+msgstr "配置ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.simple_config_form
+msgid "config_name"
+msgstr "配置名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_file_content__content
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.content_editor_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.content_editor_list
+msgid "content"
+msgstr "内容"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "context"
+msgstr "上下文"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "custom_css"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:res.groups,name:mana_dashboard.manager
+msgid "dashboard manager"
+msgstr "看板管理员"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "dashboard_html"
+msgstr "看板HTML"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__dashboard_id
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_info_list
+msgid "dashboard_id"
+msgstr "看板ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "dashboard_js"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__dashboard_template_id
+msgid "dashboard_template"
+msgstr "看板模板"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.history_data_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.history_data_list
+msgid "data"
+msgstr "数据"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__data_source_mixin
+msgid "data source mixin"
+msgstr "数据源混入"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "data_source_ids"
+msgstr "数据源IDS"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_form
+msgid "data_source_mixin"
+msgstr "数据源混入"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_list
+msgid "data_source_mixin_id"
+msgstr "数据源混入ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "data_source_type"
+msgstr "数据源类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__type__date
+msgid "date"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__type__datetime
+msgid "datetime"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__day
+msgid "day"
+msgstr "天"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_block_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_block_list
+msgid "default_scripts"
+msgstr "默认脚本"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__default_template_id
+msgid "default_template"
+msgstr "模让模板"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_list
+msgid "default_value"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_order_by_info__order_type__desc
+msgid "desc"
+msgstr "降序"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__field_description
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_list
+msgid "description"
+msgstr "描述"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__direction
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "direction"
+msgstr "方向"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "domain"
+msgstr "值域"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_marquee_traits__direction__down
+msgid "down"
+msgstr "向下"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "drill_domain"
+msgstr "下钻"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "drill_field"
+msgstr "下钻查询字段"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "drill_operator"
+msgstr "下钻操作符"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__end_time
+msgid "end time"
+msgstr "结束时间"
+
+#. module: mana_dashboard
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_series_type
+msgid "false"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__field
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.group_by_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.group_by_info_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.order_by_info_form
+msgid "field"
+msgstr "字段"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__field_description
+msgid "field description"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__field_name
+msgid "field name"
+msgstr "字段名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__field_type
+msgid "field type"
+msgstr "字段类型"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.field_statistics_style_1
+msgid ""
+"field_statistics block is used to show the field_statistics of two measures."
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__file
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.import_wizard_form
+msgid "file"
+msgstr "文件"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__file_name
+msgid "file name"
+msgstr "文件名称"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__type__float
+msgid "float"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__full_name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__full_name
+msgid "full name"
+msgstr "全名"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_range_filter_traits__type__global
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_search_group_traits__type__global
+msgid "global"
+msgstr "全局"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__granularity
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.group_by_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.group_by_info_list
+msgid "granularity"
+msgstr "聚合粒度"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.group_by_info_act_window
+#: model:ir.model,name:mana_dashboard.model_mana_dashboard_group_by_info
+msgid "group by info"
+msgstr "分组信息"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+msgid "group_access_ids"
+msgstr "访问权限组"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+msgid "help"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__hour
+msgid "hour"
+msgstr "小时"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__hoverstop
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "hoverstop"
+msgstr "悬停暂停"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_timer_config__targets
+msgid "if not set, all targets will be notified"
+msgstr "如果没有设置，所有的目标都会通通知"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_operator__ilike
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__link_action_operator__ilike
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__ilike
+msgid "ilike"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "image_files"
+msgstr "图像文件"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_operator__in
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__link_action_operator__in
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__in
+msgid "in"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__type__int
+msgid "int"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_list
+msgid "interval"
+msgstr "间隔"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__inverthover
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "inverthover"
+msgstr "悬停反转"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "js_files"
+msgstr "js文件"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "json_data"
+msgstr "Json数据"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "json_data_format"
+msgstr "json数据格式"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_marquee_traits__direction__left
+msgid "left"
+msgstr "向左"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_operator__like
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__link_action_operator__like
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__like
+msgid "like"
+msgstr ""
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "limit"
+msgstr "限制"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "link_action_domain"
+msgstr "值域"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "link_action_field"
+msgstr "查询字段"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "link_action_operator"
+msgstr "操作符"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "link_to_config"
+msgstr "配置"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__loop
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "loop"
+msgstr "循环"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.template_base_act_window
+msgid "mana code template base"
+msgstr "代码模板基类"
+
+#. module: mana_dashboard
+#: model:ir.module.category,name:mana_dashboard.security_groups
+msgid "mana dashboard"
+msgstr "马拉看板"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.data_source_act_window
+msgid "mana data source"
+msgstr "数据源"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.send_to_dashboard_act_window
+msgid "mana send to dashboard wizard"
+msgstr "发送向导"
+
+#. module: mana_dashboard
+#: model:ir.actions.act_window,name:mana_dashboard.series_type_act_window
+msgid "mana_dashboard.series_type"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_action_blocks__domain
+msgid "maybe the user will dynamic set the domain"
+msgstr "用户可能动态设置值域"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_list
+msgid "measure"
+msgstr "度量"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_form
+msgid "message"
+msgstr "消息"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "method"
+msgstr "方法"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__minute
+msgid "minute"
+msgstr "分"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "model"
+msgstr "模型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__month
+msgid "month"
+msgstr "月"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "multi_data_source"
+msgstr "多数据源"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_action_block_category__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_aggregation_type__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_dashboard_template__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_import_wizard__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_result_type__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_series_type__name
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__name
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.aggregation_type_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.aggregation_type_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.dashboard_template_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.dashboard_template_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_type_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_type_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.import_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.raw_field_info_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.result_type_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.result_type_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.series_type_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.series_type_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_block_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_block_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_list
+msgid "name"
+msgstr "名称"
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_timer_config_name_dashboard_id_unique
+msgid "name and dashboard_id must be unique"
+msgstr "看板名称必需唯一"
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_aggregation_type_name_unique
+msgid "name must be unique"
+msgstr "名称必需唯一"
+
+#. module: mana_dashboard
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_data_source_type_name_unique
+#: model:ir.model.constraint,message:mana_dashboard.constraint_mana_dashboard_result_type_name_unique
+msgid "name need to be unique"
+msgstr "名称必需唯一"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__not_child_of
+msgid "not child_of"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__not_ilike
+msgid "not ilike"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_operator__not_in
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__link_action_operator__not_in
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__not_in
+msgid "not in"
+msgstr "not in "
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__not_like
+msgid "not like"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__not_parent_of
+msgid "not parent_of"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__logic_type__or
+msgid "or"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__order_type
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.order_by_info_form
+msgid "order type"
+msgstr "排序类别"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.order_by_info_form
+msgid "order_type"
+msgstr "排序类别"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__drill_operator__parent_of
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_data_source_mixin__link_action_operator__parent_of
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_parameter__operator__parent_of
+msgid "parent_of"
+msgstr "parent of"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.simple_config_form
+msgid "preview"
+msgstr "预览"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+msgid "preview_background_color"
+msgstr "预览区域背景颜色"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.datetime_range_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.datetime_range_list
+msgid "range_type"
+msgstr "范围类型"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.any_config_form
+msgid "ref_config"
+msgstr "参考配置"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.history_data_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.history_data_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_list
+msgid "remark"
+msgstr "备注"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_list
+msgid "repeat"
+msgstr "重复"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "res_id"
+msgstr "资源ID"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "result_type"
+msgstr "结果类型"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_marquee_traits__direction__right
+msgid "right"
+msgstr "向右"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__runshort
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "runshort"
+msgstr "短暂运行"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.content_editor_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.import_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_form
+msgid "save"
+msgstr "保存"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_block_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_block_list
+msgid "scripts"
+msgstr "脚本"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__scrollamount
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "scrollamount"
+msgstr "滚动次数"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_marquee_traits__scrolldelay
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.marquee_traits_list
+msgid "scrolldelay"
+msgstr "滚动延迟"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__search_infos
+msgid "search infos"
+msgstr "搜索信息"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+msgid "search_immidiate"
+msgstr "立即搜索"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_info_list
+msgid "search_infos"
+msgstr "查询信息"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__second
+msgid "second"
+msgstr "秒"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_bind_menu_wizard__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_order_by_info__sequence
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_raw_field_info__sequence
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.bind_menu_wizard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.field_info_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.order_by_info_form
+msgid "sequence"
+msgstr "序列"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+msgid "share"
+msgstr "共享"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_form
+msgid "shared"
+msgstr "已共享"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__show_category
+msgid "show category"
+msgstr "显示分类"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_group_by_info__show_granularity
+msgid "show granularity"
+msgstr "显示聚合粒度"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.group_by_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.group_by_info_list
+msgid "show_granularity"
+msgstr "显示聚合粒度"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_range_filter_traits__type__specified
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_search_group_traits__type__specified
+msgid "specified"
+msgstr "指定"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.data_source_form
+msgid "sql"
+msgstr "Sql"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "style_files"
+msgstr "样式文件"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.simple_config_form
+msgid "styles"
+msgstr "样式"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.send_to_dashboard_form
+msgid "svg_icon"
+msgstr "svg图标"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__targets
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__targets
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.range_filter_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.range_filter_traits_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.timer_config_list
+msgid "targets"
+msgstr "目标"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_template_block__template
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.dashboard_template_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.template_form
+msgid "template"
+msgstr "模板"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.config
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.simple_config_form
+msgid "template_id"
+msgstr "模板ID"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__title
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.history_data_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.history_data_list
+msgid "title"
+msgstr "标题"
+
+#. module: mana_dashboard
+#: model_terms:mana_dashboard.template,help:mana_dashboard.template_gradient_stacked_area_chart
+msgid ""
+"to use this template, you need to have a category field and more than o"
+msgstr ""
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_field_info__field_type
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_range_filter_traits__type
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.parameter_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.range_filter_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.range_filter_traits_list
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_group_traits_list
+msgid "type"
+msgstr "类别"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,field_description:mana_dashboard.field_mana_dashboard_search_info__uid
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_info_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.search_info_list
+msgid "uid"
+msgstr "用户"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_marquee_traits__direction__up
+msgid "up"
+msgstr "向上"
+
+#. module: mana_dashboard
+#: model:ir.model.fields,help:mana_dashboard.field_mana_dashboard_field_info__field_type
+msgid "use for front compute"
+msgstr "用于前端计算"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.mana_dashboard_form
+msgid "use_template"
+msgstr "使用模板"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_list
+msgid "view mode"
+msgstr "查看"
+
+#. module: mana_dashboard
+#: model_terms:ir.ui.view,arch_db:mana_dashboard.action_blocks_form
+msgid "view_mode"
+msgstr "模式"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__week
+msgid "week"
+msgstr "周"
+
+#. module: mana_dashboard
+#: model:ir.model.fields.selection,name:mana_dashboard.selection__mana_dashboard_group_by_info__granularity__year
+msgid "year"
+msgstr "年"

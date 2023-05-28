@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Simple Funnel Chart -->
+        <record id="mana_dashboard.template_simple_funnel_chart" model="mana_dashboard.template">
+            <field name="name">Simple Funnel Chart</field>
+            <field name="category">chart</field>
+            <field name="type">funnel chart</field>
+            <field name="component_type">funnel_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/funnel/funnel_simple.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+// get data source
+let data_source = this.get_data_source()
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+    return
+}
+
+// get categories
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+    return
+}
+
+// get series
+let series = []
+let records = data_source.get_records()
+let datas = []
+for (let i = 0; i < records.length; i++) {
+    let record = records[i]
+    let item = {
+        name: record.get_value(categories[0]),
+        value: record.get_value(measures[0])
+    }
+    datas.push(item)
+}
+
+let option = {
+  title: {
+    text: 'Funnel'
+  },
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c}%'
+  },
+  toolbox: {
+    feature: {
+      dataView: { readOnly: false },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  legend: {
+    data: data_source.get_col_values(categories[0])
+  },
+  series: [
+    {
+      name: categories[0],
+      type: 'funnel',
+      left: '10%',
+      top: 60,
+      bottom: 60,
+      width: '80%',
+      min: 0,
+      max: 100,
+      minSize: '0%',
+      maxSize: '100%',
+      sort: 'descending',
+      gap: 2,
+      label: {
+        show: true,
+        position: 'inside'
+      },
+      labelLine: {
+        length: 10,
+        lineStyle: {
+          width: 1,
+          type: 'solid'
+        }
+      },
+      itemStyle: {
+        borderColor: '#fff',
+        borderWidth: 1
+      },
+      emphasis: {
+        label: {
+          fontSize: 20
+        }
+      },
+      data: datas
+    }
+  ]
+};
+
+this.setOption(option)
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>
